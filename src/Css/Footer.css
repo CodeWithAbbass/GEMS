@@ -1,24 +1,41 @@
-.site-footer-header{
+.newsletter{
     background-color: #1b1b1b;
     color: white;
-    width: 100%;
-    padding-top: 15px;
-    /* border: 1px solid red; */
 }
 
-.site-footer-header > div > i{
-    padding: 10px;
+.input-icon{
+    margin-left: 5rem!important;
+}
+.input-icon > input {
+    padding-right: 6rem;
+    width: 27%;
+}
+.input-icon i {
+    position: relative;
+    min-width: 50px;
+    top: 1px;
+    right: 73px;
+    color: black;
+    padding: 18px 30px;
+    background: linear-gradient(to left, white 50%, black 50%) right;
+    background-size: 200%;
+    transition: .3s ease-out;
+}
+.input-icon i:hover {
+    background-position: left;
+    color: white;
 }
 
-.site-footer-header > div > i:hover{
+
+.socialIcon:hover{
     color: #808080;
 }
 
-.Footer{
+.footer{
     background-color: black;
 }
 
-.Footer > .col > .row{
+.footer > .col > .row{
     height: 300px;
     width: 100%;
     margin: 0;
@@ -27,43 +44,91 @@
     align-content: center;
     justify-content: space-around;
 }
-.Footer_link_Linklist > .Linklist__Item > a{
+.col > li{
+    list-style: none;
+}
+.col > a > .socialIcon{
+    font-size: 20px;
+}
+.Linklist__Item > a{
     text-decoration: none;
     font-family: 'Montserrat';
     color: #808080;
     font-size: 13px;
+    font-weight: 600;
 }
+
+
 .Footer__content{
     width: 100%;
     /* border: 1px solid red; */
     justify-content: center;
     align-items: center;
-    padding-top: 40px;
+    padding-top: 10px;
     border-top: 1px solid #3e3a39;
-}
-
-.Footer > .col > .footer-brand-container > div >.cell{
-    width: 160px;
-    padding-left: 30px;
-    padding-right: 30px;
-    opacity: 0.5;
 }
 
 .Footer__content > .Footer__ThemeAuthor{
     font-size: 13px;
+    font-weight: 600;
     color: #808080;
-    padding: 2px 9px;
 }
 
 .Footer__content > .Footer__ThemeAuthor > a{
     text-decoration: none;
     color: #808080;
+    font-size: 12px;
+}
+.desktop__Footer_bottom >p{
     font-size: 13px;
 }
-
-.Footer__content > div > a{
+.desktop__Footer_bottom >a{
+    font-size: 13px!important;
+}
+.Footer__content >  a{
     text-decoration: none;
     color: #808080;
-    font-size: 13px;
-    padding: 2px 9px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+}
+
+
+.curiourCompany>li{
+    list-style: none;
+    max-width: 44px;
+    border: 1px solid #5a5a5a;
+    border-radius: 5px;
+}
+
+.PaymentList> li{
+    list-style: none;
+    max-width: 28%;
+    display: block;
+    margin: auto;
+}
+.accordion-body {
+    padding: 0rem 2rem;
+}
+
+
+
+.footer__mobile>.col>.row{
+    padding: 5rem 2rem;
+}
+@media (max-width:768px ) {
+    .footer_desktop{
+        display: none;
+    }
+    .footer__mobile{
+        display: block;
+    }
+}
+@media (min-width:768px ) {
+    .footer_desktop{
+        display: block;
+    }
+    .footer__mobile{
+        display: none;
+    }
 }

@@ -15,6 +15,8 @@ import Search from './components/Search';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import User from './components/User';
+import About from './components/About';
+import NewsRoom from './components/NewsRoom';
 import Footer from './components/Footer';
 function App() {
   return (
@@ -34,6 +36,9 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/newsroom" element={<NewsRoom />} />
           <Route path="/user" element={<User />} />
         </Routes>
         <Footer />
