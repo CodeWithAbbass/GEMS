@@ -18,13 +18,31 @@ import User from './components/User';
 import About from './components/About';
 import NewsRoom from './components/NewsRoom';
 import Footer from './components/Footer';
+
+
 function App() {
+  //Get the button
+  const backToTopBtn = document.querySelector(".scrollUp");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+const ScrollUpFunc = async function () {
+    if (document.body.scrollTop > 20 || 
+        document.documentElement.scrollTop > 20
+      )  
+    {
+      backToTopBtn.style.display = 'block';
+      console.log(backToTopBtn);
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+    };
+
   return (
-    <>
+    <div id="Back_to_Top">
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home myFunc={ScrollUpFunc}/>} />
           <Route path="/allproducts" element={<AllProducts />} />
           <Route path="/newarrivals" element={<NewArrivals />} />
           <Route path="/helpcenter" element={<HelpCenter />} />
@@ -41,9 +59,11 @@ function App() {
           <Route path="/newsroom" element={<NewsRoom />} />
           <Route path="/user" element={<User />} />
         </Routes>
+        <a href="#Back_to_Top" className="btn scrollUp bg-white border-5 border-white"><i className="fa fa-angle-up" /></a>
         <Footer />
       </BrowserRouter>
-    </>
+
+    </div>
   );
 }
 

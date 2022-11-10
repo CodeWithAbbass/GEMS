@@ -11,27 +11,27 @@ const Footer = () => {
   return (
     <div className='footer'>
       {/* ***************DESKTOP FOOTER******************** */}
-      <div className='footer_desktop text-center text-white bg-black mt-5'>
-        <div className='newsletter text-white py-5 '>
+      <div className='newsletter text-white text-center pt-5 '>
           <p className='mb-4'>Sign up for our newsletter for the latest news and exclusive deals</p>
           <form action='' className=''>
-              <div className='input-icon'>
-              <input type="email" className="form-control ps-3 py-3 rounded-0 m-auto d-inline border-0 outline-0 shadow-none" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email address"/>
-                <i className="fa fa-angle-right"/>
-              </div>
+            <div className='input-icon'>
+              <input type="email" className="form-control ps-3 py-3 rounded-0 m-auto border-0 outline-0 shadow-none" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email address" />
+              <i className="fa fa-angle-right" />
+            </div>
           </form>
         </div>
-
+      <div className='footer_desktop text-center text-white bg-black'>
         <section>
           <div className="col">
+              {/* // ******************Supponser Companies****************** */}
             <div className='hidden-phone d-flex justify-content-around opacity-25' style={{ paddingTop: '78px' }}>
               <div><img className='cell' src={img1} alt="" /> </div>
               <div><img className='cell' src={img2} alt="" /> </div>
               <div><img className='cell' src={img3} alt="" /> </div>
               <div><img className='cell' src={img4} alt="" /> </div>
             </div>
-            <div className='row p-5' style={{ textAlign: 'left' }}>
-              {/* ******************SoundPeats Menus****************** */}
+            <div className='row p-5 m-0' style={{ textAlign: 'left' }}>
+              {/* // ******************SoundPeats Menus****************** */}
               <div className='col'>
                 <h6 className='text-uppercase text-white pb-3'><strong>SOUNDPEATS</strong></h6>
                 <li className="Linklist__Item py-2">
@@ -41,7 +41,7 @@ const Footer = () => {
                 </li>
               </div>
 
-              {/* ******************Account Menus****************** */}
+              {/* // ******************Account Menus****************** */}
               <div className='col' >
                 <h6 className='text-uppercase text-white pb-3'><strong>ACCOUNT</strong></h6>
                 <li className="Linklist__Item py-2">
@@ -51,25 +51,29 @@ const Footer = () => {
                 </li>
               </div>
 
+              {/* // ******************Support Menus****************** */}
               <div className='col'>
                 <h6 className='text-uppercase text-white pb-3'><strong>SUPPORT</strong></h6>
                 <li className="Linklist__Item py-2">
-                    <a href="/pages/faq" className="d-block py-2 Link--primary">HELP CENTER</a>
-                    <a href="/pages/download" className="d-block py-2 Link--primary">DOWNLOADS</a>
-                    <a href="/pages/warranty" className="d-block py-2 Link--primary">WARRANTY &amp; SERVICE</a>
-                    <a href="/pages/claim-your-warranty" className="d-block py-2 Link--primary">CLAIM YOUR WARRANTY</a>
-                    <a href="/pages/return-refund-policy" className="d-block py-2 Link--primary">RETURN &amp; REFUND POLICY</a>
+                  <a href="/pages/faq" className="d-block py-2 Link--primary">HELP CENTER</a>
+                  <a href="/pages/download" className="d-block py-2 Link--primary">DOWNLOADS</a>
+                  <a href="/pages/warranty" className="d-block py-2 Link--primary">WARRANTY &amp; SERVICE</a>
+                  <a href="/pages/claim-your-warranty" className="d-block py-2 Link--primary">CLAIM YOUR WARRANTY</a>
+                  <a href="/pages/return-refund-policy" className="d-block py-2 Link--primary">RETURN &amp; REFUND POLICY</a>
                 </li>
               </div>
 
+              {/* // ******************Shop Menus****************** */}
               <div className='col'>
                 <h6 className='text-uppercase text-white pb-3'><strong>SHOP</strong></h6>
                 <li className="Linklist__Item py-2">
-                    <a href="/collections/all-products pb-3" className="d-block py-2 Link--primary">ALL PRODUCT</a>
-                    <a href="/pages/shipping-policy pb-3" className="d-block py-2 Link--primary">SHIPPING POLICY</a>
-                    <a href="/pages/soundpeats-wireless-earbuds-wheretobuy" className="d-block py-2 Link--primary">WHERE TO BUY</a>
+                  <a href="/collections/all-products pb-3" className="d-block py-2 Link--primary">ALL PRODUCT</a>
+                  <a href="/pages/shipping-policy pb-3" className="d-block py-2 Link--primary">SHIPPING POLICY</a>
+                  <a href="/pages/soundpeats-wireless-earbuds-wheretobuy" className="d-block py-2 Link--primary">WHERE TO BUY</a>
                 </li>
               </div>
+
+              {/* // ******************Social Icons****************** */}
               <div className="col align-self-end ">
                 <a className='twitter text-light px-2' href="https://twitter.com/SOUNDPEATS/" target={'_blank'}><i className="fa-brands fa-twitter socialIcon" /></a>
                 <a className='facebook text-light px-2' href="https://www.facebook.com/SOUNDPEATS.Official/" target={'_blank'}><i className="fa-brands fa-facebook socialIcon" /></a>
@@ -80,6 +84,7 @@ const Footer = () => {
             </div>
           </div>
 
+              {/* // ******************Companies****************** */}
           <div className="d-flex my-5">
             <div className="curiourCompany w-25 d-flex justify-content-evenly align-items-center ">
               <div className="dropdown navBar__currency  ps-2 px-0">
@@ -95,7 +100,6 @@ const Footer = () => {
               <li className=''><img className='w-100' src="https://cdn.shopifycdn.net/s/files/1/0508/7461/3942/files/upslogo.png?v=1626084099" alt="" /></li>
               <li className=''><img className='w-100' src="https://cdn.shopifycdn.net/s/files/1/0508/7461/3942/files/dhllogo.png?v=1626084099" alt="" /></li>
               <li className=''><img className='w-100' src="https://cdn.shopifycdn.net/s/files/1/0508/7461/3942/files/fedexlogo.png?v=1626084099" alt="" /></li>
-              {/* curiourCompany__li */}
             </div>
             <div className="PaymentList w-50 ">
               <li><img className='w-100' src={PaymentList} alt="" /></li>
@@ -107,6 +111,7 @@ const Footer = () => {
           </div>
         </section>
 
+              {/* // ******************Bottom Footer****************** */}
         <div className='desktop__Footer_bottom Footer__content py-5 d-flex bg-black justify-content-evenly' >
           <p className="Footer__ThemeAuthor w-25"> © 2019-2022, <a href="/en-mx" title="">SOUNDPEATS</a>. All Rights Reserved</p>
           <a href="/en-mx/pages/privacy-policy">Privacy Policy</a>
@@ -120,7 +125,7 @@ const Footer = () => {
 
       {/* ***************MOBILE FOOTER******************** */}
       <div className="footer__mobile me-4 ms-4">
-        <div className="accordion accordion-flush mt-2" id="accordionFlushExample">
+        <div className="accordion accordion-flush" id="accordionFlushExample">
           <div className="accordion-item bg-transparent">
             <h2 className="accordion-header" id="flush-headingTwo">
               <button className="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseTwo">SOUNDPEATS</button>
@@ -205,8 +210,6 @@ const Footer = () => {
           <a href="/en-mx/pages/intellectual-property-rights">粤ICP备2020078239号</a>
         </div>
       </div>
-
-
     </div>
   );
 }

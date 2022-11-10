@@ -1,7 +1,5 @@
-
 .header {
   width: 100%;
-  /* margin-bottom: 5rem; */
 }
 
 .header__topBar {
@@ -13,10 +11,9 @@
 
 .header__navBar {
   height: 66px;
-  padding: 18px 60px;    
-  margin: 40px 0px;
+  padding: 18px 60px;
+  /* margin: 40px 0px; */
   width: 100%;
-  border-top: 5px solid white;
 }
 
 .blackLogo {
@@ -38,7 +35,8 @@
   font-size: 16px !important;
   width: 20%;
 }
-#rightIcon{
+
+#rightIcon {
   color: white;
 }
 
@@ -148,48 +146,60 @@
   margin-left: 7rem;
 }
 
-@media screen and (max-width: 768px ) {
-  .header{
-    width: 100%;
-  }
-  .header__navBar{
+@media screen and (max-width: 768px) {
+.header_static{
+  position: static;
+  background: #c4c4c4;
+}
+  .header__navBar {
     width: 100%;
     padding: 16px 20px;
   }
-.navBar__left {
-  align-self: center;
-  width: 10%;
-}
-.navBar__center {
-  width: 10%;
-  align-self: center!important;
-}
-.navBar__right {
-  width: 10%;
-  align-self: center;
-}
-.navBar__currency{
-  display: none;
-}
-.navBar__country{
-  display: none;
-}
-.navBar__right .fa-magnifying-glass{
-  display: none;
-}
-.navBar__right .fa-user{
-  display: none;
-}
+
+  .navBar__left {
+    align-self: center;
+    width: 10%;
+  }
+
+  .navBar__center {
+    width: 10%;
+    align-self: center !important;
+  }
+
+  .navBar__right {
+    width: 10%;
+    align-self: center;
+  }
+
+  .navBar__currency {
+    display: none;
+  }
+
+  .navBar__country {
+    display: none;
+  }
+
+  .navBar__right .fa-magnifying-glass {
+    display: none;
+  }
+
+  .navBar__right .fa-user {
+    display: none;
+  }
+
   .sidenav {
     padding-top: 100px;
-    margin-right: 50px!important;
+    margin-right: 50px !important;
   }
+
   .sidenav a {
     font-size: 18px;
   }
+
   .sidenav .container {
     padding: 0 50px !important;
   }
+
   .sidenav .closebtn {
     margin-left: 3rem;
     margin-top: 0rem;
@@ -223,16 +233,23 @@
   padding: 0rem 5rem;
 }
 
-.bottomBtn{
+.bottomBtn {
   border: none;
 }
-.searchBar{    
-  margin-top: -180px;
+
+.searchBar {
   padding: 20px 0px 10px 0px;
   display: none;
+  z-index: 2;
+  position: fixed;
+  top: 6%;
+  transform: translateY(-25px);
 }
-.searchBar .form-control{
+
+
+.searchBar .form-control {
   padding: 3rem 5rem;
   padding-top: 6rem;
   width: 100%;
 }
+

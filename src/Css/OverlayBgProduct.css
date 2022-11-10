@@ -1,0 +1,54 @@
+.card-img-overlay {
+    top: 95%;
+    left: 3%;
+}
+
+.text_box_OverlayBg>.title {
+    color: #000;
+    letter-spacing: -1px;
+    font-size: 23px;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.text_box_OverlayBg>.btn {
+    min-width: 100px;
+    color: white;
+    padding: 14px 28px;
+    font-size: 12px;
+    line-height: normal;
+    letter-spacing: 0.2em;
+    background: linear-gradient(to left, black 50%, white 50%) right;
+    background-size: 201%;
+    transition: .3s ease-out;
+    color: white;
+}
+
+.text_box_OverlayBg>.btn:hover {
+    background-position: left;
+    color: black !important;
+}
+
+.card>img {
+    max-height: 31rem !important;
+}
+.MBAnotherProductImg{
+    display: none;
+}
+
+@media (max-width:768px) {
+    .card-img-overlay {
+        top: 95%;
+    }
+
+    .text_box_OverlayBg>.title {
+        font-size: 20px;
+    }
+    .AnotherProductImg{
+        display: none;
+    }
+    .MBAnotherProductImg{
+        display: block;
+    }
+
+}
