@@ -1,0 +1,43 @@
+.Signup{
+    margin-top: 15rem;
+    margin-bottom: 10rem;
+}
+.Signup
+>h2{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+.Signup
+>p{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.Signup>form>input:focus{
+    border: 1px solid black;
+ }
+.Signup
+>form
+>input[placeholder]
+{
+    font-size: 14px;
+    font-weight: 500;
+}
+.Signup
+>form
+>button[type=submit]{
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    background: linear-gradient(to left, black 50%, white 50%) right;
+    background-size: 201%;
+    transition: .3s ease-out;
+    color: white;
+}
+.Signup
+>form
+>button[type=submit]:hover{
+    background-position: left;
+    color: black !important;
+}

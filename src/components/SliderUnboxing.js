@@ -7,11 +7,10 @@ import "../Css/SliderUnboxing.css";
 import { Pagination, Navigation } from "swiper";
 import  SliderUnboxingSlide  from "./SlideUnboxingSlide";
 
-const SliderUnboxing = () => {
-  return (
+const SliderUnboxing =  () => {
+  return(
     <div className='SliderUnboxing py-5'>
         <h2 className='py-4'>UNBOXING & REVIEWS</h2>
-
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
@@ -32,9 +31,9 @@ const SliderUnboxing = () => {
         videoUrl={"https://www.youtube.com/embed/zur8Viw1N6g"}
         subtitle={"SoundPEATS Air3 Pro : AptX Adaptive & Noise Cancelling for $59!"}
         title={"GAMESKY!"}/>
+        </SwiperSlide>
 
         {/* Slide 2 */}
-        </SwiperSlide>
         <SwiperSlide className=''>
         <SliderUnboxingSlide 
         id={5431342}
@@ -43,8 +42,8 @@ const SliderUnboxing = () => {
         title={"FLOSSY CARTER!"}
         />
 
-        {/* Slide 3 */}
         </SwiperSlide>
+        {/* Slide 3 */}
         <SwiperSlide className=''>
         <SliderUnboxingSlide 
         id={5431343}

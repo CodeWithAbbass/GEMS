@@ -10,7 +10,7 @@
     box-shadow: 0 2px 10px rgb(54 54 54 / 15%);
     font-size: 20px;
     padding: 0;
-    background-color: green;
+    /* background-color: green; */
 }
  @keyframes buttonFromTopToBottom {
     25%{
@@ -86,6 +86,8 @@
     height: 100%;
     padding: 0 20px;
 }
+
+
 
 @media (max-width:768px) {
     .twoOverlayProduct{

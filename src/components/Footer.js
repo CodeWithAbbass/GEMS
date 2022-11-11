@@ -10,6 +10,23 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div className='footer'>
+      <div className="why_choose_us py-5 text-center ">
+            <h2 className='py-4'>SHOP BUDS FROM OUR 'GRAM</h2>
+            <div className="why_choose_us_items d-flex flex-wrap justify-content-between align-items-center w-100">
+              <div className="why_choose_us_item d-flex flex-wrap justify-content-center align-items-center my-3">
+                <i className='fas fa-plane'></i><p> Worldwide Shipping</p>
+              </div>
+              <div className="why_choose_us_item d-flex flex-wrap justify-content-center align-items-center my-3">
+               <i className="fa-regular fa-sack-dollar"></i><p> Money-Back Guarantee</p>
+              </div>
+              <div className="why_choose_us_item d-flex flex-wrap justify-content-center align-items-center my-3">
+                <i className="fa-regular fa-shield-halved"></i><p> Hassle-Free Warranty</p>
+              </div>
+              <div className="why_choose_us_item d-flex flex-wrap justify-content-center align-items-center my-3">
+                <i className='fas fa-headset'></i><p> Online Customer Service</p>
+              </div>
+            </div>
+          </div>
       {/* ***************DESKTOP FOOTER******************** */}
       <div className='newsletter text-white text-center pt-5 '>
           <p className='mb-4'>Sign up for our newsletter for the latest news and exclusive deals</p>

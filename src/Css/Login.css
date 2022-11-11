@@ -1,0 +1,61 @@
+.Login {
+    margin-top: 15rem;
+    margin-bottom: 10rem;
+}
+
+.Login>h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.Login>p {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.Login>form>input:focus{
+   border: 1px solid black;
+}
+.Login>form>input[placeholder] {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.Login>form>button[type=submit] {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    background: linear-gradient(to left, black 50%, white 50%) right;
+    background-size: 201%;
+    transition: .3s ease-out;
+    color: white;
+}
+
+.Login>form>button[type=submit]:hover {
+    background-position: left;
+    color: black !important;
+}
+
+.Login>form>button[type=button] {
+    position: absolute;
+    transform: translate(160%, -150%);
+    font-size: 14px;
+    font-weight: 500;
+    color: #6A6A6A;
+}
+.Login>form>button[type=button]:hover {
+    color: #000;
+}
+.Login>form>.createOne {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6A6A6A;
+    margin: 2rem 0;
+}
+.Login>form>.createOne>a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+}
