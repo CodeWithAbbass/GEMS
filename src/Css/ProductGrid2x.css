@@ -87,7 +87,7 @@ a {
 }
 
 
-.ProductGrid2x>a>.item_info>.title_heading>p {
+.ProductGrid2x>a>.item_info>.name_heading>p {
     text-decoration: none;
     color: #1C1B1B;
     font-size: 15px;
@@ -95,14 +95,14 @@ a {
 
 }
 
-.ProductGrid2x>a>.item_info>.title_heading>i {
+.ProductGrid2x>a>.item_info>.name_heading>i {
     font-size: 20px;
     color: #000;
     transition: all 0.35s ease;
     transform: translateX(0px);
 }
 
-.ProductGrid2x>a>.item_info>.title_heading>.active_i {
+.ProductGrid2x>a>.item_info>.name_heading>.active_i {
     transition: all 0.35s ease;
     transform: translateX(-10px);
 }
@@ -155,10 +155,10 @@ a {
     .ProductGrid2x>a>.item_info>.brand>p {
         font-size: 12px;
     }
-    .ProductGrid2x>a>.item_info>.title_heading>p {
+    .ProductGrid2x>a>.item_info>.name_heading>p {
         font-size: 14px;
     }
-    .ProductGrid2x>a>.item_info>.title_heading>i {
+    .ProductGrid2x>a>.item_info>.name_heading>i {
         font-size: 12px;
     }
     .ProductGrid2x>a>.item_info {

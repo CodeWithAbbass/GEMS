@@ -20,12 +20,11 @@ import MBHeadPhone from "../../images/MBHeadPhone.png";
 import FeatureReviewSlider from '../FeatureReviewSlider';
 import MBFeatureReviewSlider from '../MBFeatureReviewSlider';
 import SliderUnboxing from '../SliderUnboxing';
-// import stateContext from '../../context/stateContext';
-// import { useContext } from "react"
+
 const Home = (props) => {
   
   return (
-    <div id="Back_to_Top">
+    <div>
       <div className='home'>
         <MainSlider />
         <a href="#home__container  " className="btn scrollDown bg-white border-5 border-white"><i className="fa fa-angle-down" /></a>

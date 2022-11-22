@@ -12,11 +12,10 @@ const SingleProductSlider = ({ image }) => {
         slidesToShow: 1,
         slidesToScroll: 1
     };
-    let imgData = Object.values(image); 
     return (
         <div className="SingleProductSlider">
             <Slider {...settings}>
-                {imgData.map((item, index) => {
+                {image.map((item, index) => {
                     return (
                         <div key={index}>
                             <ReactImageMagnify {...{

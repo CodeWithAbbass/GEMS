@@ -1,12 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import ".././Css/ProductGrid3x.css"
 import { Link } from "react-router-dom";
-import StateContext from "../context/StateContext";
+import PriceFormat from '../Helpers/PriceFormat';
 
-const ProductGrid3x = ({ id, discount, tag, brand, title, description, newPrice, oldPrice, pMainImg, pOtherImg, }) => {
+const ProductGrid3x = ({ id, discount, tag, brand, name, description, newPrice, oldPrice, pMainImg, pOtherImg, }) => {
 
-    const context = useContext(StateContext);
-    const { CurrencyFormat } = context; // Destructure
     const [isHovering, setIsHovering] = useState(false);
     function handleHoverIn() {
         setIsHovering(true);
@@ -30,15 +28,15 @@ const ProductGrid3x = ({ id, discount, tag, brand, title, description, newPrice,
                 </div>
                 <div className="item_info mt-5">
                     <div className="brand"><p>{brand}</p></div>
-                    <h2 className="title_heading d-flex justify-content-between">
-                        <p>{title}</p>
+                    <h2 className="name_heading d-flex justify-content-between">
+                        <p>{name}</p>
                         <i className={`fas fa-long-arrow-alt-right ${isHovering ? "active_i" : ""}`} />
                     </h2>
                     <div className={`item_footer ${isHovering ? "active_footer" : ""}`}>
                         <div className="description"><p>{description}</p></div>
                         <div className="priceList">
-                            <span className="priceList_newPrice">{CurrencyFormat(newPrice)}</span>
-                            <span className="priceList_oldPrice ms-3">{CurrencyFormat(oldPrice)}</span>
+                            <span className="priceList_newPrice">{PriceFormat(newPrice)}</span>
+                            <span className="priceList_oldPrice ms-3">{PriceFormat(oldPrice)}</span>
                         </div>
                     </div>
                 </div>

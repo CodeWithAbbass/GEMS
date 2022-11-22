@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
-import StateContext from "../../context/StateContext";
 import "../../Css/AddProduct.css";
+import React, { useState } from "react";
+import { useCartContext } from "../../context/cart_context";
+
 const AddProduct = (props) => {
     const [product, setProduct] = useState({
         id: "",
@@ -14,10 +15,9 @@ const AddProduct = (props) => {
         description: "",
         oldPrice: "",
         pMainImg: "",
-        pOtherImg: "",
-    });
-    const context = useContext(StateContext);
-    const { addProductItem, getProducts } = context;
+        pOtherImg: "",});
+
+    const { addProductItem, getProducts } = useCartContext(); 
     const handleAdd = (e) => {
         e.preventDefault();
         addProductItem(

@@ -1,23 +1,22 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import StateContext from "../../context/StateContext";
+import { useProductContext } from "../../context/product_context";
 import ProductGrid3x from "../ProductGrid3x";
 import ProductGrid2x from '../ProductGrid2x';
 import "../../Css/AllProducts.css"
 
 const AllProducts = (props) => {
   const location = useLocation()
-  const context = useContext(StateContext);
-  const { products } = context; // Destructure
+  const { products } = useProductContext();  // Destructure
   const [data, setData] = useState(products);
   const [Grid2xActive, setGrid2xActive] = useState(true);
   const [Grid3xActive, setGrid3xActive] = useState(false);
   useEffect(() => {
-    props.setProgress(10)
-    props.setProgress(30)
-    props.setProgress(50)
-    props.setProgress(100)
-    window.scrollTo(0, 0)
+    props.setProgress(10);
+    props.setProgress(30);
+    props.setProgress(50);
+    props.setProgress(100);
+    window.scrollTo(0, 0);
     // eslint-disable-next-line
   }, [location]);
 
@@ -53,11 +52,11 @@ const AllProducts = (props) => {
         setData(resultBestSelling);
         break;
       case "A - Z":
-        const resultAZ = CopyAllProducts.sort((a, b) => a.title.localeCompare(b.title));
+        const resultAZ = CopyAllProducts.sort((a, b) => a.name.localeCompare(b.name));
         setData(resultAZ);
         break;
       case "Z - A":
-        const resultZA = CopyAllProducts.sort((a, b) => b.title.localeCompare(a.title));
+        const resultZA = CopyAllProducts.sort((a, b) => b.name.localeCompare(a.name));
         setData(resultZA);
         break;
       case "Low to High":
@@ -69,7 +68,7 @@ const AllProducts = (props) => {
         setData(resultHightoLow);
         break;
       default:
-        const defaultResult = CopyAllProducts.sort((a, b) => a.title.localeCompare(b.title));
+        const defaultResult = CopyAllProducts.sort((a, b) => a.name.localeCompare(b.name));
         setData(defaultResult);
     }
 
@@ -139,14 +138,13 @@ const AllProducts = (props) => {
       <div className={`container d-flex justify-content-center g-0 ${Grid3xActive ? "d-block" : "d-none"}`}>
         <div className="row w-100 justify-content-between">
           {data.map((item, index) => {
-            const { id, title, tag, brand, category, weight, discount, description, newPrice, oldPrice, image } = item;
-            const imgData = Object.values(image);
-            const [pMainImg, pOtherImg] = imgData; // Destructuring From Array
+            const { id, name, tag, brand, category, weight, discount, description, newPrice, oldPrice, image,} = item;
+            const [pMainImg, pOtherImg] = image; // Destructuring From Array
             return (
               <div className="col-4 m-0 p-0 ProductGrid3x_Column mb-5" key={index}>
                 <ProductGrid3x
                   id={id}
-                  title={title}
+                  name={name}
                   tag={tag}
                   brand={brand}
                   category={category}
@@ -165,14 +163,13 @@ const AllProducts = (props) => {
       <div className={`container ProductGrid2x_Column d-flex justify-content-center g-0 ${Grid2xActive ? "d-block" : "d-none"}`}>
         <div className="row w-100 justify-content-between m-0">
           {data.map((item, index) => {
-            const { id, title, tag, brand, category, weight, discount, description, newPrice, oldPrice, image } = item;
-            const imgData = Object.values(image);
-            const [pMainImg, pOtherImg] = imgData; // Destructuring From Array
+            const { id, name, tag, brand, category, weight, discount, description, newPrice, oldPrice, image } = item;
+            const [pMainImg, pOtherImg] = image; // Destructuring From Array
             return (
               <div className="col-6 m-0 p-0 mb-5" key={index}>
                 <ProductGrid2x
                   id={id}
-                  title={window.innerWidth <= 768 ? `${title.slice(0, 28)}...` : title}
+                  name={window.innerWidth <= 768 ? `${name.slice(0, 28)}...` : name}
                   tag={tag}
                   brand={brand}
                   category={category}

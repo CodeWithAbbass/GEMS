@@ -79,10 +79,10 @@
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
+    border: 1px solid  #1fbaff;
     background: linear-gradient(to left, #1fbaff 50%, black 50%) right;
     background-size: 200%;
     transition: .3s ease-out;
-    border: 1px solid  #1fbaff !important;
 }
 
 .SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.btn:hover {
@@ -91,10 +91,10 @@
 }
 
 .SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.BuyNowBtn {
+    border: 1px solid black;
     background: linear-gradient(to left, black 50%, white 50%) right;
     background-size: 200%;
     transition: .3s ease-out;
-    border: 1px solid black !important;
     color: white;
 }
 .SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.BuyNowBtn:hover {

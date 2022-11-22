@@ -1,14 +1,12 @@
-import React, { useContext, useEffect} from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import "../../Css/Cart.css"
-// import { reducer } from "../../reducer/reducer";
-// import { Link } from "react-router-dom";
-import StateContext from "../../context/StateContext";
+import { useCartContext } from "../../context/cart_context";
 import CartItem from '../CartItem';
+import PriceFormat from '../../Helpers/PriceFormat';
 const Cart = (props) => {
   const location = useLocation();
-  const context = useContext(StateContext);
-  const { cart } = context; // Destructure
+  const { cart, clearCart, totalItem, total_price } = useCartContext();
   useEffect(() => {
     props.setProgress(10)
     props.setProgress(30)
@@ -19,6 +17,16 @@ const Cart = (props) => {
   }, [location]);
 
 
+  ////////////////////////////////////////////
+  if (cart.length === 0) {
+    return (
+        <div className="Continue_Shopping w-100 d-flex flex-column justify-content-center align-items-center">
+          <h1 className="EmptyStateTitle">Your cart is empty</h1>
+          <Link to={"/allproducts"} className="Continue_Shopping_Btn">Continue Shopping</Link>
+        </div>
+    );
+  }
+  ////////////////////////////////////////////
   return (
     <div className='cart'>
       <div className="container">
@@ -30,22 +38,20 @@ const Cart = (props) => {
             <div className="cart_headItem cart_headItem_Quantity">Quantity</div>
             <div className="cart_headItem cart_headItem_Total">Total</div>
           </div>
-          {cart.map((item, index) => {
-            const { id, title, color, oldPrice, newPrice, image } = item;
-            const imgData = Object.values(image);
-            const [pMainImg] = imgData;
+          {cart.map((curItem, index) => {
             return (
               <CartItem
-                key={index}
-                id={id}
-                pMainImg={pMainImg}
-                title={title}
-                color={color}
-                oldPrice={oldPrice}
-                newPrice={newPrice}
+                key={curItem.id}
+                {...curItem}
               />
             )
           })}
+          <div className="card-total">
+            <h3>Cart Total : <span>{PriceFormat(total_price)}</span>
+            </h3>
+            <Link to={"/checkout"}>Checkout</Link>
+            <Link className="clear-cart" onClick={() => { clearCart() }}>Clear Cart</Link>
+          </div>
         </div>
       </div>
     </div>
@@ -53,3 +59,10 @@ const Cart = (props) => {
 }
 
 export default Cart;
+
+
+
+
+
+
+

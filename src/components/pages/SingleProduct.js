@@ -1,36 +1,35 @@
-import React, { useContext, useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import "../../Css/SingleProduct.css"
 import SingleProductSlider from '../SingleProductSlider';
-import StateContext from '../../context/StateContext';
+import { useCartContext } from "../../context/cart_context";
+import { useProductContext } from "../../context/product_context";
 import { Link } from "react-router-dom";
-const SingleProduct = (props) => {
+import PriceFormat from '../../Helpers/PriceFormat';
+
+const SingleProduct = ({ setProgress }) => {
   const location = useLocation();
-  const context = useContext(StateContext);
   const { id } = useParams();
-  const { products, CurrencyFormat, addToCart } = context;
+  const { products } = useProductContext();  // Destructure
+  const { addToCart } = useCartContext();
   const Data = products.filter((item) => item.id === id); // Filter Specific Product.
 
   useEffect(() => {
-    props.setProgress(10)
-    props.setProgress(30)
-    props.setProgress(50)
-    props.setProgress(100)
+    setProgress(10);
+    setProgress(30);
+    setProgress(50);
+    setProgress(100);
     window.scrollTo(0, 0)
     // eslint-disable-next-line
   }, [location]);
-  
+
 
 
   return (
     <div className='SingleProduct'>
       {Data.map((item, index) => {
-        const {id, title, description, newPrice, oldPrice, image, productMeta, color } = item; // Destructure From Object.
-        let productMetaData = []; // Empty MetaData New Variable.
-        if (Object.keys(productMeta).length > 0) { // Check Weather productMeta Length is greater than 0. Its mandatory to create an Object in Original Array, Weather Throw Error. 
-          productMetaData = Object.values(productMeta); // Assign Values 
-        }
-        const [line1, line2, line3, line4] = productMetaData; // Destructure From Array
+        const { id, name, description, newPrice, oldPrice, image, color, productMeta, quantity } = item; // Destructure From Object.
+        const [line1, line2, line3, line4] = productMeta; // Destructure From Array
         return (
           <div className="container" key={index}>
             <div className="row d-flex flex-md-wrap justify-content-between m-0 p-0">
@@ -38,9 +37,9 @@ const SingleProduct = (props) => {
                 <SingleProductSlider image={image} />
               </div>
               <div className="col-6">
-                <h1>{title}</h1>
+                <h1>{name}</h1>
                 <p>{description}</p>
-                <ul className={`${productMetaData.length > 0 ? "d-block" : "d-none"}`}>
+                <ul className={`${productMeta.length > 0 ? "d-block" : "d-none"}`}>
                   <li>{line1}</li>
                   <li>{line2}</li>
                   <li>{line3}</li>
@@ -49,13 +48,13 @@ const SingleProduct = (props) => {
                 {/* <Link to="#Down"className="overview">Overview{'>'}</Link> */}
                 <div className="SingleProduct_DetailsFooter">
                   <div className="priceCol">
-                    <p>{CurrencyFormat(newPrice)}</p>
-                    <span className={`${CurrencyFormat(oldPrice) !== undefined ? "d-block" : "d-none"}`}>Hurry ! Offer Ends Soon!  <span className='oldPrice'>{CurrencyFormat(oldPrice)}</span></span>
+                    <p>{PriceFormat(newPrice)}</p>
+                    <span className={`${PriceFormat(oldPrice) !== undefined ? "d-block" : "d-none"}`}>Hurry ! Offer Ends Soon!  <span className='oldPrice'>{PriceFormat(oldPrice)}</span></span>
                   </div>
                   <div className="btnCol row m-0 p-0 ">
-                    <Link to="/cart" className='btn border-0 outline-0 shadow-none rounded-0 col-6' onClick={()=>{addToCart(id, title, newPrice, oldPrice, image, color, item)}}>Add to Cart</Link>
-                    <button className='btn border-0 outline-0 shadow-none rounded-0 col-6'>Buy On Amazon</button>
-                    <button className='btn BuyNowBtn border-0 outline-0 shadow-none rounded-0 col-6'>Buy It Now</button>
+                    <Link to="/cart" className='btn outline-0 shadow-none rounded-0 col-6' onClick={() => { addToCart(id, color, quantity, item) }}>Add to Cart</Link>
+                    <Link className='btn outline-0 shadow-none rounded-0 col-6'>Buy On Amazon</Link>
+                    <Link className='btn BuyNowBtn outline-0 shadow-none rounded-0 col-6'>Buy It Now</Link>
                   </div>
                   <div className="socialCol">
                     <Link to={"https://www.facebook.com/sharer.php?u=https://us.soundpeats.com/products/soundpeats-truefree-plus-wireless-in-ear-sport-earbuds"}><i className="fa-brands fa-facebook"></i></Link>
