@@ -7,7 +7,7 @@ const Login = () => {
   const Navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    const {name, email, password} = credentials;
+    // const {name, email, password} = credentials;
     Navigate("/");
   }
   const onChange = (e) => { setCredentials({ ...credentials, [e.target.name]: e.target.value }); }

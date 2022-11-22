@@ -12,13 +12,13 @@
   justify-content: center;
 }
 
-.slick-active {
+.SliderSlicker>.slick-slider>.slick-list>.slick-track>.slick-active{
   margin-top: -15px;
   padding: 30px 0;
   background: #f2f2f2;
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.8s;  
 }
-.slick-arrow{
+.SliderSlicker>.slick-slider>.slick-arrow{
   display: none!important;
 }
 

@@ -9,7 +9,9 @@ const Productitem = ({ id, subtitle, title, ProductImage, btntxt = "DISCOVER" })
                     <p className="title fw-bold" >{title}</p>
                     <button type="button" className="btn rounded-0 shadow-0 border-1 border-dark fw-semibold bg-black text-white">{btntxt}</button>
                 </div>
+                <div className="product_img">
                 <img className='align-self-center' src={ProductImage} alt="Earbuds" />
+                </div>
             </div>
         </>
     );

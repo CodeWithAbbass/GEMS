@@ -5,31 +5,33 @@ import img3 from '../images/3.jpg'
 import img4 from '../images/4.jpg'
 import PaymentList from '../images/PaymentList-removebg-preview.png'
 import '../Css/Footer.css'
+import '../Css/General.css'
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <div className='footer'>
       <div className="why_choose_us py-5 text-center ">
-            <h2 className='py-4'>SHOP BUDS FROM OUR 'GRAM</h2>
-            <div className="why_choose_us_items d-flex flex-wrap justify-content-between align-items-center w-100">
-              <div className="why_choose_us_item d-flex flex-wrap justify-content-center align-items-center my-3">
-                <i className='fas fa-plane'></i><p> Worldwide Shipping</p>
-              </div>
-              <div className="why_choose_us_item d-flex flex-wrap justify-content-center align-items-center my-3">
-               <i className="fa-regular fa-sack-dollar"></i><p> Money-Back Guarantee</p>
-              </div>
-              <div className="why_choose_us_item d-flex flex-wrap justify-content-center align-items-center my-3">
-                <i className="fa-regular fa-shield-halved"></i><p> Hassle-Free Warranty</p>
-              </div>
-              <div className="why_choose_us_item d-flex flex-wrap justify-content-center align-items-center my-3">
-                <i className='fas fa-headset'></i><p> Online Customer Service</p>
-              </div>
-            </div>
+        <h2 className='py-4'>SHOP BUDS FROM OUR 'GRAM</h2>
+        <div className="why_choose_us_items d-flex flex-wrap justify-content-between align-items-center w-100">
+          <div className="why_choose_us_item d-flex flex-wrap justify-content-center align-items-center my-3">
+            <i className='fas fa-plane' /><p> Worldwide Shipping</p>
           </div>
+          <div className="why_choose_us_item d-flex flex-wrap justify-content-center align-items-center my-3">
+            <i className="fa-regular fa-sack-dollar" /><p> Money-Back Guarantee</p>
+          </div>
+          <div className="why_choose_us_item d-flex flex-wrap justify-content-center align-items-center my-3">
+            <i className="fa-regular fa-shield-halved" /><p> Hassle-Free Warranty</p>
+          </div>
+          <div className="why_choose_us_item d-flex flex-wrap justify-content-center align-items-center my-3">
+            <i className='fas fa-headset'></i><p> Online Customer Service</p>
+          </div>
+        </div>
+      </div>
       {/* ***************DESKTOP FOOTER******************** */}
-      <div className='newsletter text-white text-center pt-5 '>
-          <p className='mb-4'>Sign up for our newsletter for the latest news and exclusive deals</p>
+      <div className='newsletter text-white text-center py-5 '>
+        <p className='mb-4'>Sign up for our newsletter for the latest news and exclusive deals</p>
+        <div className="container">
           <form action='' className=''>
             <div className='input-icon'>
               <input type="email" className="form-control ps-3 py-3 rounded-0 m-auto border-0 outline-0 shadow-none" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email address" />
@@ -37,10 +39,11 @@ const Footer = () => {
             </div>
           </form>
         </div>
+      </div>
       <div className='footer_desktop text-center text-white bg-black'>
         <section>
           <div className="col">
-              {/* // ******************Supponser Companies****************** */}
+            {/* // ******************Supponser Companies****************** */}
             <div className='hidden-phone d-flex justify-content-around opacity-25' style={{ paddingTop: '78px' }}>
               <div><img className='cell' src={img1} alt="" /> </div>
               <div><img className='cell' src={img2} alt="" /> </div>
@@ -52,9 +55,9 @@ const Footer = () => {
               <div className='col'>
                 <h6 className='text-uppercase text-white pb-3'><strong>SOUNDPEATS</strong></h6>
                 <li className="Linklist__Item py-2">
-                  <a href="/pages/about-us" className="d-block py-2 Link--primary">ABOUT US</a>
-                  <a href="/pages/affiliate" className="d-block py-2 Link--primary">AFFILIATE</a>
-                  <a href="/pages/media" className="d-block py-2 Link--primary">NEWSROOM</a>
+                  <Link to="/pages/about-us" className="d-block py-2 Link--primary">ABOUT US</Link>
+                  <Link to="/pages/affiliate" className="d-block py-2 Link--primary">AFFILIATE</Link>
+                  <Link to="/pages/media" className="d-block py-2 Link--primary">NEWSROOM</Link>
                 </li>
               </div>
 
@@ -62,9 +65,9 @@ const Footer = () => {
               <div className='col' >
                 <h6 className='text-uppercase text-white pb-3'><strong>ACCOUNT</strong></h6>
                 <li className="Linklist__Item py-2">
-                  <a href="/collections/all-products" className="d-block py-2 Link--primary">ALL PRODUCT</a>
-                  <a href="/pages/shipping-policy" className="d-block py-2 Link--primary">SHIPPING POLICY</a>
-                  <a href="/pages/soundpeats-wireless-earbuds-wheretobuy" className="d-block py-2 Link--primary">WHERE TO BUY</a>
+                  <Link to="/collections/all-products" className="d-block py-2 Link--primary">ALL PRODUCT</Link>
+                  <Link to="/pages/shipping-policy" className="d-block py-2 Link--primary">SHIPPING POLICY</Link>
+                  <Link to="/pages/soundpeats-wireless-earbuds-wheretobuy" className="d-block py-2 Link--primary">WHERE TO BUY</Link>
                 </li>
               </div>
 
@@ -72,11 +75,11 @@ const Footer = () => {
               <div className='col'>
                 <h6 className='text-uppercase text-white pb-3'><strong>SUPPORT</strong></h6>
                 <li className="Linklist__Item py-2">
-                  <a href="/pages/faq" className="d-block py-2 Link--primary">HELP CENTER</a>
-                  <a href="/pages/download" className="d-block py-2 Link--primary">DOWNLOADS</a>
-                  <a href="/pages/warranty" className="d-block py-2 Link--primary">WARRANTY &amp; SERVICE</a>
-                  <a href="/pages/claim-your-warranty" className="d-block py-2 Link--primary">CLAIM YOUR WARRANTY</a>
-                  <a href="/pages/return-refund-policy" className="d-block py-2 Link--primary">RETURN &amp; REFUND POLICY</a>
+                  <Link to="/pages/faq" className="d-block py-2 Link--primary">HELP CENTER</Link>
+                  <Link to="/pages/download" className="d-block py-2 Link--primary">DOWNLOADS</Link>
+                  <Link to="/pages/warranty" className="d-block py-2 Link--primary">WARRANTY &amp; SERVICE</Link>
+                  <Link to="/pages/claim-your-warranty" className="d-block py-2 Link--primary">CLAIM YOUR WARRANTY</Link>
+                  <Link to="/pages/return-refund-policy" className="d-block py-2 Link--primary">RETURN &amp; REFUND POLICY</Link>
                 </li>
               </div>
 
@@ -84,24 +87,24 @@ const Footer = () => {
               <div className='col'>
                 <h6 className='text-uppercase text-white pb-3'><strong>SHOP</strong></h6>
                 <li className="Linklist__Item py-2">
-                  <a href="/collections/all-products pb-3" className="d-block py-2 Link--primary">ALL PRODUCT</a>
-                  <a href="/pages/shipping-policy pb-3" className="d-block py-2 Link--primary">SHIPPING POLICY</a>
-                  <a href="/pages/soundpeats-wireless-earbuds-wheretobuy" className="d-block py-2 Link--primary">WHERE TO BUY</a>
+                  <Link to="/collections/all-products pb-3" className="d-block py-2 Link--primary">ALL PRODUCT</Link>
+                  <Link to="/pages/shipping-policy pb-3" className="d-block py-2 Link--primary">SHIPPING POLICY</Link>
+                  <Link to="/pages/soundpeats-wireless-earbuds-wheretobuy" className="d-block py-2 Link--primary">WHERE TO BUY</Link>
                 </li>
               </div>
 
               {/* // ******************Social Icons****************** */}
               <div className="col align-self-end ">
-                <a className='twitter text-light px-2' href="https://twitter.com/SOUNDPEATS/" target={'_blank'}><i className="fa-brands fa-twitter socialIcon" /></a>
-                <a className='facebook text-light px-2' href="https://www.facebook.com/SOUNDPEATS.Official/" target={'_blank'}><i className="fa-brands fa-facebook socialIcon" /></a>
-                <a className='instagram text-light px-2' href="https://www.instagram.com/soundpeats_global/" target={'_blank'}><i className="fa-brands fa-instagram socialIcon" /></a>
-                <a className='youtube text-light px-2' href="https://www.youtube.com/channel/UCYRNJk2TjaTj_fWJ5omNoBA/" target={'_blank'}><i className="fa-brands fa-youtube socialIcon" /></a>
-                <a className='tiktok text-light px-2' href="https://www.tiktok.com/@soundpeatsaudio/" target={'_blank'}><i className="fa-brands fa-tiktok socialIcon" /></a>
+                <Link className='twitter text-light px-2' to="https://twitter.com/SOUNDPEATS/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-twitter socialIcon" /></Link>
+                <Link className='facebook text-light px-2' to="https://www.facebook.com/SOUNDPEATS.Official/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-facebook socialIcon" /></Link>
+                <Link className='instagram text-light px-2' to="https://www.instagram.com/soundpeats_global/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-instagram socialIcon" /></Link>
+                <Link className='youtube text-light px-2' to="https://www.youtube.com/channel/UCYRNJk2TjaTj_fWJ5omNoBA/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-youtube socialIcon" /></Link>
+                <Link className='tiktok text-light px-2' to="https://www.tiktok.com/@soundpeatsaudio/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-tiktok socialIcon" /></Link>
               </div>
             </div>
           </div>
 
-              {/* // ******************Companies****************** */}
+          {/* // ******************Companies****************** */}
           <div className="d-flex my-5">
             <div className="curiourCompany w-25 d-flex justify-content-evenly align-items-center ">
               <div className="dropdown navBar__currency  ps-2 px-0">
@@ -128,15 +131,15 @@ const Footer = () => {
           </div>
         </section>
 
-              {/* // ******************Bottom Footer****************** */}
+        {/* // ******************Bottom Footer****************** */}
         <div className='desktop__Footer_bottom Footer__content py-5 d-flex bg-black justify-content-evenly' >
-          <p className="Footer__ThemeAuthor w-25"> © 2019-2022, <a href="/en-mx" title="">SOUNDPEATS</a>. All Rights Reserved</p>
-          <a href="/en-mx/pages/privacy-policy">Privacy Policy</a>
-          <a href="//en-mx/pages/cookie-preferences">Cookie Policy</a>
-          <a href="/en-mx/pages/terms-of-use">Term of Use</a>
-          <a href="/en-mx/pages/weee">WEEE</a>
-          <a href="/en-mx/pages/intellectual-property-rights">Intellectual Property Rights</a>
-          <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery">粤ICP备2020078239号</a>
+          <p className="Footer__ThemeAuthor w-25"> © 2019-2022, <Link to="/en-mx" title="">SOUNDPEATS</Link>. All Rights Reserved</p>
+          <Link to="/en-mx/pages/privacy-policy">Privacy Policy</Link>
+          <Link to="/en-mx/pages/cookie-preferences">Cookie Policy</Link>
+          <Link to="/en-mx/pages/terms-of-use">Term of Use</Link>
+          <Link to="/en-mx/pages/weee">WEEE</Link>
+          <Link to="/en-mx/pages/intellectual-property-rights">Intellectual Property Rights</Link>
+          <Link to="https://beian.miit.gov.cn/#/Integrated/recordQuery">粤ICP备2020078239号</Link>
         </div>
       </div>
 
@@ -202,11 +205,11 @@ const Footer = () => {
         </div>
         {/* *****************CTA*************** */}
         <div className=" mt-2 ">
-          <a className='twitter text-light pe-4' href="https://twitter.com/SOUNDPEATS/" target={'_blank'}><i className="fa-brands fa-twitter socialIcon" /></a>
-          <a className='facebook text-light pe-4' href="https://www.facebook.com/SOUNDPEATS.Official/" target={'_blank'}><i className="fa-brands fa-facebook socialIcon" /></a>
-          <a className='instagram text-light pe-4' href="https://www.instagram.com/soundpeats_global/" target={'_blank'}><i className="fa-brands fa-instagram socialIcon" /></a>
-          <a className='youtube text-light pe-4' href="https://www.youtube.com/channel/UCYRNJk2TjaTj_fWJ5omNoBA/" target={'_blank'}><i className="fa-brands fa-youtube socialIcon" /></a>
-          <a className='tiktok text-light pe-4' href="https://www.tiktok.com/@soundpeatsaudio/" target={'_blank'}><i className="fa-brands fa-tiktok socialIcon" /></a>
+          <Link className='twitter text-light pe-4' to="https://twitter.com/SOUNDPEATS/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-twitter socialIcon" /></Link>
+          <Link className='facebook text-light pe-4' to="https://www.facebook.com/SOUNDPEATS.Official/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-facebook socialIcon" /></Link>
+          <Link className='instagram text-light pe-4' to="https://www.instagram.com/soundpeats_global/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-instagram socialIcon" /></Link>
+          <Link className='youtube text-light pe-4' to="https://www.youtube.com/channel/UCYRNJk2TjaTj_fWJ5omNoBA/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-youtube socialIcon" /></Link>
+          <Link className='tiktok text-light pe-4' to="https://www.tiktok.com/@soundpeatsaudio/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-tiktok socialIcon" /></Link>
         </div>
         {/* *****************COMPANY*************** */}
         <div className='d-flex flex-wrap text-center opacity-100 justify-content-center pt-5'>
@@ -219,12 +222,12 @@ const Footer = () => {
         <div className='Footer__content text-center bg-black pb-5 '>
           <p className="Footer__ThemeAuthor"> © 2019-2022,<a href="/en-mx" title="">
             SOUNDPEATS</a>. All Rights Reserved</p>
-          <a href="/en-mx/pages/privacy-policy">Privacy Policy</a>
-          <a href="//en-mx/pages/cookie-preferences">Cookie Policy</a>
-          <a href="/en-mx/pages/terms-of-use">Term of Use</a>
-          <a href="/en-mx/pages/weee">WEEE</a>
-          <a href="/en-mx/pages/intellectual-property-rights">Intellectual Property Rights</a>
-          <a href="/en-mx/pages/intellectual-property-rights">粤ICP备2020078239号</a>
+          <Link to="/en-mx/pages/privacy-policy">Privacy Policy</Link>
+          <Link to="//en-mx/pages/cookie-preferences">Cookie Policy</Link>
+          <Link to="/en-mx/pages/terms-of-use">Term of Use</Link>
+          <Link to="/en-mx/pages/weee">WEEE</Link>
+          <Link to="/en-mx/pages/intellectual-property-rights">Intellectual Property Rights</Link>
+          <Link to="/en-mx/pages/intellectual-property-rights">粤ICP备2020078239号</Link>
         </div>
       </div>
     </div>

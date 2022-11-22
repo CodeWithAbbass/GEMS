@@ -61,10 +61,10 @@
 > a
 > .MBFeatureReviewimgContainer 
 {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    min-height: 80px;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  height: 100px;
 }
 
 .MBFeatureReviewSlider
@@ -78,7 +78,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 
@@ -108,5 +108,3 @@
   font-weight: 400;
   padding: 0 10px;
 }
-
-

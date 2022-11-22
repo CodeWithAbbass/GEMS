@@ -35,6 +35,19 @@
   font-size: 16px !important;
   width: 20%;
 }
+.navBar__right >a{
+  text-decoration: none;
+}
+.navBar__right >a>.total_cartProduct{
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  background: #000;
+  padding: 2px 6px;
+  position: absolute;
+  transform: translate(-5px, -12px);
+  border-radius: 100%;
+}
 
 #rightIcon {
   color: white;
@@ -97,10 +110,11 @@
   z-index: 2000;
   top: 0;
   left: 0;
-  background-color: #00000091;
+  background-color: #000;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 150px;
+  padding-bottom: 50px;
 }
 
 .sidenav a {
@@ -121,7 +135,7 @@
   top: 0;
   left: 0;
   font-size: 36px !important;
-  margin-left: 6rem;
+  margin-left: 3rem;
   margin-top: 5rem;
 }
 
@@ -146,6 +160,63 @@
   margin-left: 7rem;
 }
 
+
+
+.sidenav>.container>.accordion {
+  border-bottom: 1px solid white;
+}
+
+.sidenav>.container>.accordion-item {
+  background-color: #000000 !important;
+  border: none !important;
+}
+
+.sidenav>.container>.accordion>.accordion-item>.accordion-header>.accordion-button{
+  font-size: 15px;
+  padding: 25px 0 !important;
+  box-shadow: none !important;
+  padding: 1rem 0;
+  box-shadow: none;
+}
+
+.sidenav>.container>.accordion>.accordion-item>.accordion-header>.accordion-button>.accordion-button::after {
+  color: #FFFFFF !important;
+}
+
+.sidenav>.container>.accordion>.accordion-item>.accordion-header>.accordion-button>.accordion-button:hover {
+  color: #1fbaff !important;
+}
+
+.sidenav>.container>.accordion>.accordion-item>.accordion-collapse>.accordion-body {
+  padding: 0rem 5rem;
+}
+
+.bottomBtn {
+  border: none;
+}
+
+.searchBar {
+  padding: 20px 0px 10px 0px;
+  display: none;
+  z-index: 2;
+  position: fixed;
+  top: 6%;
+  transform: translateY(-25px);
+}
+
+
+.searchBar .form-control {
+  padding: 3rem 5rem;
+  padding-top: 6rem;
+  width: 100%;
+}
+
+
+/* 
+***********************************************************
+                    Media Query
+*********************************************************** */
+
 @media screen and (max-width: 768px) {
 .header_static{
   position: static;
@@ -162,7 +233,6 @@
   }
 
   .navBar__center {
-    width: 10%;
     align-self: center !important;
   }
 
@@ -206,50 +276,20 @@
   }
 }
 
-.accordion {
-  border-bottom: 1px solid white;
+
+@media (max-width:1024px) {
+  .navBar__left {
+      width: 30%!important;
+  }
+  .navBar__right {
+      width: 30%!important;
+  }
 }
-
-.header__navBar .sidenav .accordion-item {
-  background-color: #000000 !important;
-  border: none !important;
+@media (max-width:1440px) {
+  .navBar__left {
+      width: 25%;
+  }
+  .navBar__right {
+      width: 25%;
+  }
 }
-
-.accordion-button {
-  font-size: 15px;
-  padding: 25px 0 !important;
-  box-shadow: none !important;
-}
-
-.accordion-button::after {
-  color: #FFFFFF !important;
-}
-
-.accordion-button:hover {
-  color: #1fbaff !important;
-}
-
-.accordion-body {
-  padding: 0rem 5rem;
-}
-
-.bottomBtn {
-  border: none;
-}
-
-.searchBar {
-  padding: 20px 0px 10px 0px;
-  display: none;
-  z-index: 2;
-  position: fixed;
-  top: 6%;
-  transform: translateY(-25px);
-}
-
-
-.searchBar .form-control {
-  padding: 3rem 5rem;
-  padding-top: 6rem;
-  width: 100%;
-}
-

@@ -33,7 +33,9 @@
     background: #f2f2f2;
 }
 
-
+.SliderUnboxing>h2{
+    text-align: center;
+}
 
 .SliderUnboxing>.swiper>.swiper-wrapper>.swiper-slide>.Unboxing_Container>.video_container {
     min-height: 160px;
@@ -86,11 +88,14 @@
 .SliderUnboxing>.swiper>.swiper-wrapper>.swiper-slide>.Unboxing_Container>.text_container {
     min-height: 200px!important;
 }
-
+.SliderUnboxing>h2{
+    font-weight: 600;
+    font-size: 20px;
+}
   }
   @media screen and (max-width: 1080px) and (min-width: 768px ) {
     .SliderUnboxing>.swiper >.swiper-wrapper>.swiper-slide {
-        width: 50%!important;
+        width: 49%!important;
     }  
 
     

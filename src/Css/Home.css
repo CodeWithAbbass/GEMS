@@ -42,8 +42,12 @@
 ```````````````Home Products Start````````````
 ********************************************** */
 
-.twoProduct{
-    max-width: 49%;
+.home
+>#home__container
+>.desktop_Products
+>.d-flex
+>.twoProduct{
+    width: 49%;
 }
 
 
@@ -116,11 +120,17 @@
     .overlayBgProduct{
         margin: 0!important;
      }
-     .MBFeatureReviewSlider{
+    }
+  
+    
+@media (max-width:1024px) {
+    .MBFeatureReviewSlider{
         display: block;
      }
      .FeatureReviewSlider{
         display: none;
      }
-    }
-  
+}
+@media (max-width:1440px) {
+
+}

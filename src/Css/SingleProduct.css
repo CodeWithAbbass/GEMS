@@ -1,0 +1,131 @@
+.SingleProduct {
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+    background: #FBFBFB;
+}
+
+.SingleProduct>.container>.row {
+    overflow: hidden;
+}
+
+.SingleProduct>.container>.row>.col-6 {
+    width: 48%;
+    text-align: left;
+}
+
+
+.SingleProduct>.container>.row>.col-6>h1 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.SingleProduct>.container>.row>.col-6>p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9fa0a0;
+}
+
+.SingleProduct>.container>.row>.col-6>ul {
+    list-style-type: circle;
+    padding-left: 1.1rem;
+    margin-bottom: 0rem;
+}
+
+.SingleProduct>.container>.row>.col-6>ul>li {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}
+
+.SingleProduct>.container>.row>.col-6>.overview {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1fbaff;
+    cursor: pointer;
+}
+
+.SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter {
+    margin-top: 60px;
+}
+
+.SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.priceCol>p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+
+.SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.priceCol>span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6A6A6A;
+}
+.SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.priceCol>.oldPrice{
+    text-decoration: line-through;
+}
+
+.SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol {
+    margin-top: 10px !important;
+}
+
+.SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.btn {
+    width: 40%;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 14px 2px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: linear-gradient(to left, #1fbaff 50%, black 50%) right;
+    background-size: 200%;
+    transition: .3s ease-out;
+    border: 1px solid  #1fbaff !important;
+}
+
+.SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.btn:hover {
+    background-position: left;
+    color: white;
+}
+
+.SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.BuyNowBtn {
+    background: linear-gradient(to left, black 50%, white 50%) right;
+    background-size: 200%;
+    transition: .3s ease-out;
+    border: 1px solid black !important;
+    color: white;
+}
+.SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.BuyNowBtn:hover {
+    background-position: left;
+    color: #000;
+}
+
+.SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.socialCol>a {
+    margin-right: 1rem;
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+}
+.SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.socialCol>a:hover {
+    color: rgb(83, 83, 83);
+}
+.SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.socialCol{
+    margin-top: 2rem;
+}
+.SingleProduct_DetailsFooter>.benefitsCol>li{
+    list-style: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+.SingleProduct_DetailsFooter>.benefitsCol>li>svg{
+    margin-right: 1rem;
+}
+
+@media (max-width:768px) {
+    .SingleProduct>.container>.row>.col-6 {
+        width: 100%;
+    }
+}

@@ -1,5 +1,6 @@
 import "../Css/MainSlider.css";
-import React, { useRef, useState } from "react";
+import React, {  } from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper React components
 import "swiper/css"; // Import Swiper styles
 import "swiper/css/pagination";
@@ -31,8 +32,6 @@ import {
     // Navigation
 } from "swiper"; // import required modules 
 
-// import React from 'react';
-
 const MainSlider = () => {
     return (
         <div className="Main_Slider">
@@ -59,7 +58,7 @@ const MainSlider = () => {
                         <div className="overlay"></div>
                         <div className="carousel-caption d-md-block px-5 text-center">
                             <div className="btn_container">
-                                <a className="sliderBtn rounded-0 bg-white border border-white outline-0">ENTER NOW</a>
+                                <Link to={"_blank"} className="sliderBtn rounded-0 bg-white border border-white outline-0">ENTER NOW</Link>
                             </div>
                         </div>
                     </div>
@@ -75,8 +74,8 @@ const MainSlider = () => {
                             <h3>LIFE On Ear, LIFE Comes Near</h3>
                             <h2 className='py-2' >LIFE | Active Noise Cancelling</h2>
                             <div className="btn_container life_btn">
-                                <a className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='' type="button">GET A LIFE!</a>
-                                <a className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button">LEARN MORE</a>
+                                <Link to={"_blank"} className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='' type="button">GET A LIFE!</Link>
+                                <Link to={"_blank"} className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button">LEARN MORE</Link>
                             </div>
                         </div>
                     </div>
@@ -93,8 +92,8 @@ const MainSlider = () => {
                             <h3>Half in Ear True Wireless Earbuds</h3>
                             <h2 className='py-2' >Air3 Deluxe</h2>
                             <div className="btn_container air3_btn ">
-                                <a className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button" >LEARN MORE</a>
-                                <a className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button" >SHOP NOW</a>
+                                <Link to={"_blank"} className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button" >LEARN MORE</Link>
+                                <Link to={"_blank"} className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button" >SHOP NOW</Link>
                             </div>
                         </div>
                     </div>
@@ -112,8 +111,8 @@ const MainSlider = () => {
                                 <h2 className='py-2'>COMPACT YET POWERFUL</h2>
                             </div>
                             <div className="btn_container align-self-end">
-                                <a className="sliderBtn learn_more rounded-0 m-2 border border-white outline-0" href='#' type="button" >LEARN MORE</a>
-                                <a className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button" >SHOP NOW</a>
+                                <Link to={"_blank"} className="sliderBtn learn_more rounded-0 m-2 border border-white outline-0" href='#' type="button" >LEARN MORE</Link>
+                                <Link to={"_blank"} className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button" >SHOP NOW</Link>
                             </div>
                         </div>
                     </div>
@@ -131,8 +130,8 @@ const MainSlider = () => {
                                 <h2 className='py-2'>LITTLE BUDS WITH SUPRIOR SOUND</h2>
                             </div>
                             <div className="btn_container align-self-end">
-                                <a className="sliderBtn learn_more rounded-0 m-2 border border-white outline-0" href='#' type="button" >LEARN MORE</a>
-                                <a className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button" >SHOP NOW</a>
+                                <Link to={"_blank"} className="sliderBtn learn_more rounded-0 m-2 border border-white outline-0" href='#' type="button" >LEARN MORE</Link>
+                                <Link to={"_blank"} className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button" >SHOP NOW</Link>
                             </div>
                         </div>
                     </div>
@@ -149,8 +148,8 @@ const MainSlider = () => {
                                 <h2 className='py-2'>UNLEASH THE TRUE SOUND</h2>
                             </div>
                             <div className="btn_container align-self-end">
-                                <a className="btn sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button">LEARN MORE</a>
-                                <a className="btn sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button">SHOP NOW</a>
+                                <Link to={"_blank"} className="btn sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button">LEARN MORE</Link>
+                                <Link to={"_blank"} className="btn sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button">SHOP NOW</Link>
                             </div>
                         </div>
                     </div>
@@ -174,8 +173,8 @@ const MainSlider = () => {
                             <h3>Air3 Delux HS</h3>
                             <h2 className='py-2' >Redefining The Standard For Wireless Earbuds</h2>
                             <div className="btn_container life_btn">
-                                <a className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='' type="button">LEARN MORE</a>
-                                <a className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button">SHOP NOW</a>
+                                <Link to={"_blank"} className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='' type="button">LEARN MORE</Link>
+                                <Link to={"_blank"} className="sliderBtn rounded-0 m-2 bg-white border border-white outline-0" href='#' type="button">SHOP NOW</Link>
                             </div>
                         </div>
                     </div>

@@ -1,76 +1,197 @@
-import React, { useContext, useState } from 'react';
-import stateContext from '../../context/stateContext';
-import "../../Css/AddProduct.css"
+import React, { useContext, useState } from "react";
+import StateContext from "../../context/StateContext";
+import "../../Css/AddProduct.css";
 const AddProduct = (props) => {
     const [product, setProduct] = useState({
-        id: '', 
-        name: '',
-        category: '',
-        quantity: '',
-        weight: '',
-        discount: '',
-        date: '',
-        author: '',
-        description: '', 
-        pMainImage: '',
-        pOtherImage: '',
+        id: "",
+        name: "",
+        tag: "",
+        brand: "",
+        title: "",
+        category: "",
+        date: "",
+        discount: "",
+        description: "",
+        oldPrice: "",
+        pMainImg: "",
+        pOtherImg: "",
     });
-    const context = useContext(stateContext);
-    const {  } = context;
+    const context = useContext(StateContext);
+    const { addProductItem, getProducts } = context;
     const handleAdd = (e) => {
         e.preventDefault();
-        // addNote(note.title, note.description, note.tag)
-        // setNote({ title: '', description: '', tag: 'default' });
-    }
+        addProductItem(
+            product.id,
+            product.name,
+            product.tag,
+            product.brand,
+            product.title,
+            product.category,
+            product.date,
+            product.discount,
+            product.description,
+            product.newPrice,
+            product.oldPrice,
+            product.pMainImg,
+            product.pOtherImg,
+        );
+        setProduct({
+            id: '',
+            name: '',
+            tag: '',
+            brand: '',
+            title: '',
+            category: '',
+            date: '',
+            discount: '',
+            description: '',
+            newPrice: '',
+            oldPrice: '',
+            pMainImg: '',
+            pOtherImg: '',
+        });
+        getProducts()
+    };
     const onChange = (e) => {
         // console.log('Onchange');
-        setProduct({ ...product, [e.target.name]: e.target.value })
-    }
+        setProduct({ ...product, [e.target.name]: e.target.value });
+    };
+
     return (
-        <div className='AddProduct text-center'>
+        <div className="AddProduct text-center">
             <h2>What's New</h2>
             <p>Please fill in the information below:</p>
-
-            {/* <form>
-                    <div className="mb-3">
-                        <label htmlFor="title" className="form-label">Title</label>
-                        <input type="text" value={note.title} className="form-control" id="title" name='title' aria-describedby="emailHelp" onChange={onChange} required/>
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="description" className="form-label">Description</label>
-                        <input type="text" value={note.description} className="form-control" id="description" name='description' onChange={onChange} required/>
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="tag" className="form-label">Tag</label>
-                        <input type="text" value={note.tag} className="form-control" id="tag" name='tag' onChange={onChange} />
-                    </div>
-                    <button disabled={note.title.length<3 || note.description.length<5} type="submit" className="btn btn-success " onClick={handleAdd}>Add Note</button>
-                </form> */}
-
             <form className="my-4">
                 <fieldset>
-                    <input id="product_id" name="product_id" placeholder="PRODUCT ID" className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" required="" type="text" value={product.id} onChange={onChange}/>
-                    <input id="product_name" name="product_name" placeholder="PRODUCT NAME" className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" required="" type="text" value={product.name}  onChange={onChange}/>
-                    <select className="form-select form-select outline-none shadow-none rounded-0 mb-3 py-2 px-3" aria-label=".form-select-sm example" value={product.category} onChange={onChange}>
-                        <option selected>PRODUCT CATEGORY</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <input
+                        id="id"
+                        name="id"
+                        placeholder="PRODUCT ID"
+                        className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3"
+                        required=""
+                        type="text"
+                        value={product.id}
+                        onChange={onChange}
+                    />
+                    <input
+                        id="name"
+                        name="name"
+                        placeholder="PRODUCT NAME"
+                        className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3"
+                        required=""
+                        type="text"
+                        value={product.name}
+                        onChange={onChange}
+                    />
+                    <input
+                        id="tag"
+                        name="tag"
+                        placeholder="TAG"
+                        className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3"
+                        required=""
+                        type="text"
+                        value={product.tag}
+                        onChange={onChange}
+                    />
+                    <input
+                        id="brand"
+                        name="brand"
+                        placeholder="BRAND"
+                        className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3"
+                        required=""
+                        type="text"
+                        value={product.brand}
+                        onChange={onChange}
+                    />
+                    <input
+                        id="title"
+                        name="title"
+                        placeholder="TITLE"
+                        className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3"
+                        required=""
+                        type="text"
+                        value={product.title}
+                        onChange={onChange}
+                    />
+                    <select
+                        id="category"
+                        name="category"
+                        className="form-select form-select outline-none shadow-none rounded-0 mb-3 py-2 px-3"
+                        aria-label=".form-select-sm example"
+                        value={product.category}
+                        onChange={onChange}
+                    >
+                        <option defaultValue >PRODUCT CATEGORY</option>
+                        <option name="1">One</option>
+                        <option name="2">Two</option>
+                        <option name="3">Three</option>
                     </select>
-                    <input id="available_quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" required="" type="text" value={product.quantity} onChange={onChange}/>
-                    <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" required="" type="text" value={product.weight}  onChange={onChange}/>
-                    <input id="percentage_discount" name="percentage_discount" placeholder="PERCENTAGE DISCOUNT" className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" required="" type="text" value={product.discount} onChange={onChange}/>
-                    <input id="date" name="date" type="date" className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" required="" value={product.date} onChange={onChange}/>
-                    <input id="author" name="author" placeholder="AUTHOR" className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" required="" type="text" value={product.author} onChange={onChange}/>
-                    <textarea id="product_description" name="product_description" placeholder='DESCRIPTION' className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" value={product.description} onChange={onChange}></textarea>
-                    <input id="filebutton" name="filebutton" className="input-file form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" type="file" value={product.pMainImage} onChange={onChange}/>
-                    <input id="filebutton" name="filebutton" className="input-file form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" type="file" value={product.pOtherImage} onChange={onChange}/>
-                    <button type="submit" id="singlebutton" name="singlebutton" className="btn rounded-0 border border-1 border-dark w-100 py-2 px-3" onClick={handleAdd}>ADD PRODUCT</button>
-
+                    <input
+                        id="weight"
+                        name="weight"
+                        placeholder="PRODUCT WEIGHT"
+                        className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3"
+                        required=""
+                        type="text"
+                        value={product.weight}
+                        onChange={onChange}
+                    />
+                    <input
+                        id="date"
+                        name="date"
+                        placeholder="DATE"
+                        className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3"
+                        required=""
+                        type="date"
+                        value={product.date}
+                        onChange={onChange} />
+                    <input
+                        id="discount"
+                        name="discount"
+                        placeholder="PERCENTAGE DISCOUNT"
+                        className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3"
+                        required=""
+                        type="text"
+                        value={product.discount}
+                        onChange={onChange}
+                    />
+                    <textarea
+                        id="description"
+                        name="description"
+                        placeholder="DESCRIPTION"
+                        className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3"
+                        value={product.description}
+                        onChange={onChange}
+                    ></textarea>
+                    <input
+                        id="pMainImage"
+                        name="pMainImage"
+                        className="input-file form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3"
+                        type="file"
+                        value={product.pMainImg}
+                        onChange={onChange}
+                    />
+                    <input
+                        id="pOtherImg"
+                        name="pOtherImg"
+                        className="input-file form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3"
+                        type="file"
+                        value={product.pOtherImg}
+                        onChange={onChange}
+                    />
+                    <button
+                        type="submit"
+                        id="singlebutton"
+                        name="singlebutton"
+                        className="btn rounded-0 border border-1 border-dark w-100 py-2 px-3"
+                        onClick={handleAdd}
+                    >
+                        ADD PRODUCT
+                    </button>
                 </fieldset>
             </form>
         </div>
     );
-}
+};
 
 export default AddProduct;

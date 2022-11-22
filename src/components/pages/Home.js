@@ -23,13 +23,7 @@ import SliderUnboxing from '../SliderUnboxing';
 // import stateContext from '../../context/stateContext';
 // import { useContext } from "react"
 const Home = (props) => {
-  // const context = useContext(stateContext);
-  // const { ScrollUpFunc } = context; // Destructure
-  // const backToTopBtn = document.querySelector(".scrollUp");
-  //   window.onscroll = () => {
-  //     ScrollUpFunc(backToTopBtn);
-  //   }
-
+  
   return (
     <div id="Back_to_Top">
       <div className='home'>

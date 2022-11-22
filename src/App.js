@@ -1,7 +1,7 @@
-
 import './App.css';
 import './Css/General.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Header from './components/Header';
 import Home from './components/pages/Home';
 import AllProducts from './components/pages/AllProducts';
@@ -20,18 +20,31 @@ import About from './components/pages/About';
 import NewsRoom from './components/pages/NewsRoom';
 import AddProduct from './components/pages/AddProduct';
 import Footer from './components/Footer';
-import StateProvider from './context/StateProvider';
+import StateContext from './context/StateContext';
+import LoadingBar from 'react-top-loading-bar'
+import SingleProduct from './components/pages/SingleProduct';
+import ErrorPage from './components/pages/ErrorPage';
 
  
-function App() {
+function App(props) {
+  const scrollBtn = document.querySelector('.scrollUp');
+  const [progress, setProgress] = useState(0);
+
   return (
     <div id="Back_to_Top">
-      <StateProvider>
+      <StateContext>
       <BrowserRouter>
+        <LoadingBar
+            color='#1FBAFF'
+            height={3}
+            shadow={true}
+            progress={progress}
+            // onLoaderFinished={() => setProgress(0)}
+            />
         <Header />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path="/allproducts" element={<AllProducts />} />
+          <Route path='/' element={<Home scrollBtn={scrollBtn}/>} />
+          <Route path="/allproducts" element={<AllProducts setProgress={setProgress}/>} />
           <Route path="/newarrivals" element={<NewArrivals />} />
           <Route path="/helpcenter" element={<HelpCenter />} />
           <Route path="/download" element={<Download />} />
@@ -46,13 +59,17 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/newsroom" element={<NewsRoom />} />
           <Route path="/addproduct" element={<AddProduct />} />
+          <Route path="/singleproduct/:id" element={<SingleProduct setProgress={setProgress}/>} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
-      <a href="#Back_to_Top" className="btn scrollUp bg-white border-5 border-white"><i className="fa fa-angle-up" /></a>
+      <Link to="#Back_to_Top" className="btn scrollUp bg-white border-5 border-white"><i className="fa fa-angle-up" /></Link>
       </BrowserRouter>
-      </StateProvider>
+      </StateContext>
     </div>
   );
 }
 
 export default App;
+
+
