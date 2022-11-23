@@ -14,7 +14,7 @@ const CartItem = ({ id, name, color, oldPrice, newPrice, image, quantity, }) => 
                     <img src={image} alt="item" />
                 </div>
                 <div className="cart_item_details_info align-self-center">
-                    <h2><Link to={`/singleproduct/${id}`}>{name}</Link></h2>
+                    <h2><Link to={`/singleproduct/${id}`}>{window.innerWidth <= 768 ? `${name.slice(0, 50)}...` : name}</Link></h2>
                     <p>{color}</p>
                     <div className="cart_item_details_info_priceList">
                         <span className="">{PriceFormat(newPrice)}</span>
@@ -26,7 +26,7 @@ const CartItem = ({ id, name, color, oldPrice, newPrice, image, quantity, }) => 
             <div className="cart_item_action d-flex flex-column align-self-center">
                 <div className="cart_item_action_innerDiv">
                     <i className="fa-solid fa-minus" onClick={() => setDecrease(id)}></i>
-                    <input type="text" placeholder={`${quantity}`} />
+                    <input type="text" readOnly placeholder={`${quantity}`}  />
                     <i className="fa-solid fa-plus" onClick={() => setIncrement(id)}></i>
                 </div>
                 <button className="Remove p-0" onClick={() => { removeItem(id) }}>Remove</button>

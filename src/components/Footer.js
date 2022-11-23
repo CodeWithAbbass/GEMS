@@ -55,9 +55,9 @@ const Footer = () => {
               <div className='col'>
                 <h6 className='text-uppercase text-white pb-3'><strong>SOUNDPEATS</strong></h6>
                 <li className="Linklist__Item py-2">
-                  <Link to="/pages/about-us" className="d-block py-2 Link--primary">ABOUT US</Link>
-                  <Link to="/pages/affiliate" className="d-block py-2 Link--primary">AFFILIATE</Link>
-                  <Link to="/pages/media" className="d-block py-2 Link--primary">NEWSROOM</Link>
+                  <Link to="/aboutus" rel="noreferrer" className="d-block py-2 Link--primary">ABOUT US</Link>
+                  <Link to="/affiliate" rel="noreferrer" className="d-block py-2 Link--primary">AFFILIATE</Link>
+                  <Link to="/blog" rel="noreferrer" className="d-block py-2 Link--primary">NEWSROOM</Link>
                 </li>
               </div>
 
@@ -65,9 +65,9 @@ const Footer = () => {
               <div className='col' >
                 <h6 className='text-uppercase text-white pb-3'><strong>ACCOUNT</strong></h6>
                 <li className="Linklist__Item py-2">
-                  <Link to="/collections/all-products" className="d-block py-2 Link--primary">ALL PRODUCT</Link>
-                  <Link to="/pages/shipping-policy" className="d-block py-2 Link--primary">SHIPPING POLICY</Link>
-                  <Link to="/pages/soundpeats-wireless-earbuds-wheretobuy" className="d-block py-2 Link--primary">WHERE TO BUY</Link>
+                  <Link to="/allproducts" rel="noreferrer" className="d-block py-2 Link--primary">ALL PRODUCTS</Link>
+                  <Link to="/shippingpolicy" rel="noreferrer" className="d-block py-2 Link--primary">SHIPPING POLICY</Link>
+                  <Link to="/wheretobuy" rel="noreferrer" className="d-block py-2 Link--primary">WHERE TO BUY</Link>
                 </li>
               </div>
 
@@ -75,11 +75,11 @@ const Footer = () => {
               <div className='col'>
                 <h6 className='text-uppercase text-white pb-3'><strong>SUPPORT</strong></h6>
                 <li className="Linklist__Item py-2">
-                  <Link to="/pages/faq" className="d-block py-2 Link--primary">HELP CENTER</Link>
-                  <Link to="/pages/download" className="d-block py-2 Link--primary">DOWNLOADS</Link>
-                  <Link to="/pages/warranty" className="d-block py-2 Link--primary">WARRANTY &amp; SERVICE</Link>
-                  <Link to="/pages/claim-your-warranty" className="d-block py-2 Link--primary">CLAIM YOUR WARRANTY</Link>
-                  <Link to="/pages/return-refund-policy" className="d-block py-2 Link--primary">RETURN &amp; REFUND POLICY</Link>
+                  <Link to="/helpcenter" rel="noreferrer" className="d-block py-2 Link--primary">HELP CENTER</Link>
+                  <Link to="/download" rel="noreferrer" className="d-block py-2 Link--primary">DOWNLOADS</Link>
+                  <Link to="/warranty" rel="noreferrer" className="d-block py-2 Link--primary">WARRANTY &amp; SERVICE</Link>
+                  <Link to="/warranty" rel="noreferrer" className="d-block py-2 Link--primary">CLAIM YOUR WARRANTY</Link>
+                  <Link to="/returnpolicy" rel="noreferrer" className="d-block py-2 Link--primary">RETURN &amp; REFUND POLICY</Link>
                 </li>
               </div>
 
@@ -87,9 +87,9 @@ const Footer = () => {
               <div className='col'>
                 <h6 className='text-uppercase text-white pb-3'><strong>SHOP</strong></h6>
                 <li className="Linklist__Item py-2">
-                  <Link to="/collections/all-products pb-3" className="d-block py-2 Link--primary">ALL PRODUCT</Link>
-                  <Link to="/pages/shipping-policy pb-3" className="d-block py-2 Link--primary">SHIPPING POLICY</Link>
-                  <Link to="/pages/soundpeats-wireless-earbuds-wheretobuy" className="d-block py-2 Link--primary">WHERE TO BUY</Link>
+                  <Link to="/allproducts pb-3" rel="noreferrer" className="d-block py-2 Link--primary">ALL PRODUCTS</Link>
+                  <Link to="/shipping- pb-3" rel="noreferrer" className="d-block py-2 Link--primary">SHIPPING POLICY</Link>
+                  <Link to="/wheretobuy" rel="noreferrer" className="d-block py-2 Link--primary">WHERE TO BUY</Link>
                 </li>
               </div>
 
@@ -133,13 +133,13 @@ const Footer = () => {
 
         {/* // ******************Bottom Footer****************** */}
         <div className='desktop__Footer_bottom Footer__content py-5 d-flex bg-black justify-content-evenly' >
-          <p className="Footer__ThemeAuthor w-25"> © 2019-2022, <Link to="/en-mx" title="">SOUNDPEATS</Link>. All Rights Reserved</p>
-          <Link to="/en-mx/pages/privacy-policy">Privacy Policy</Link>
-          <Link to="/en-mx/pages/cookie-preferences">Cookie Policy</Link>
-          <Link to="/en-mx/pages/terms-of-use">Term of Use</Link>
-          <Link to="/en-mx/pages/weee">WEEE</Link>
-          <Link to="/en-mx/pages/intellectual-property-rights">Intellectual Property Rights</Link>
-          <Link to="https://beian.miit.gov.cn/#/Integrated/recordQuery">粤ICP备2020078239号</Link>
+          <p className="Footer__ThemeAuthor w-25"> © 2019-2022, <Link rel="noreferrer" title="">GEMS</Link>. All Rights Reserved</p>
+          <Link rel="noreferrer">Privacy Policy</Link>
+          <Link rel="noreferrer">Cookie Policy</Link>
+          <Link rel="noreferrer">Term of Use</Link>
+          <Link rel="noreferrer">WEEE</Link>
+          <Link rel="noreferrer">Intellectual Property Rights</Link>
+          <Link rel="noreferrer">粤ICP备2020078239号</Link>
         </div>
       </div>
 

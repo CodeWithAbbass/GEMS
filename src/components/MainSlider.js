@@ -7,10 +7,14 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 // import "swiper/css/navigation";
 // import "./styles.css";
-import SliderImg1 from "../images/SliderImg1.png";
-import SliderImg2 from "../images/SliderImg2.png";
-import SliderImg3 from "../images/SliderImg3.png";
-import SliderImg4 from "../images/SliderImg4.png";
+import BTW86 from "../images/GEMS/1600x700/BTW86.jpg";
+import BTW92 from "../images/GEMS/1600x700/BTW92.jpg";
+import BTW98 from "../images/GEMS/1600x700/BTW98.jpg";
+import BT260 from "../images/GEMS/1600x700/BT260.jpg";
+// import SliderImg1 from "../images/SliderImg1.png";
+// import SliderImg2 from "../images/SliderImg2.png";
+// import SliderImg3 from "../images/SliderImg3.png";
+// import SliderImg4 from "../images/SliderImg4.png";
 import SliderImg5 from "../images/SliderImg5.png";
 import SliderImg6 from "../images/SliderImg6.png";
 import SliderImg7 from "../images/SliderImg7.png";
@@ -53,7 +57,7 @@ const MainSlider = () => {
                 {/* Item 1 */}
                 <SwiperSlide>
                     <div className="Swiper_inner">
-                        <img src={SliderImg1} className="d-block desktop_img w-100 sliderImg" alt="earbuds" />
+                        <img src={BTW86} className="d-block desktop_img w-100 sliderImg" alt="earbuds" />
                         <img src={SliderImgMB1} className="d-none mobile_img w-100 sliderImg" alt="earbuds" />
                         <div className="overlay"></div>
                         <div className="carousel-caption d-md-block px-5 text-center">
@@ -66,7 +70,7 @@ const MainSlider = () => {
                 {/* Item 2 */}
                 <SwiperSlide>
                     <div className="Swiper_inner">
-                        <img src={SliderImg2} className="d-block desktop_img w-100 sliderImg" alt="earbuds" />
+                        <img src={BTW92} className="d-block desktop_img w-100 sliderImg" alt="earbuds" />
                         <img src={SliderImgMB2} className="d-none mobile_img w-100 sliderImg" alt="earbuds" />
                         <div className="overlay"></div>
                         <div className="overlay"></div>
@@ -83,7 +87,7 @@ const MainSlider = () => {
                 {/* Item 3 */}
                 <SwiperSlide>
                     <div className="Swiper_inner">
-                        <img src={SliderImg3} className="d-block desktop_img w-100 sliderImg" alt="earbuds" />
+                        <img src={BTW98} className="d-block desktop_img w-100 sliderImg" alt="earbuds" />
                         <img src={SliderImgMB3}
                             className="d-none mobile_img w-100 sliderImg" alt="earbuds" />
                         <div className="overlay"></div>
@@ -98,11 +102,10 @@ const MainSlider = () => {
                         </div>
                     </div>
                 </SwiperSlide>
-
                 {/* Item 4 */}
                 <SwiperSlide>
                     <div className="Swiper_inner">
-                        <img src={SliderImg4} className="d-block desktop_img w-100 sliderImg" alt="earbuds" />
+                        <img src={BT260} className="d-block desktop_img w-100 sliderImg" alt="earbuds" />
                         <img src={SliderImgMB4} className="d-none mobile_img mobile_img_imagination w-100 sliderImg" alt="earbuds" />
                         <div className="overlay"></div>
                         <div className="carousel-caption d-md-flex justify-content-between w-100 align-items-center minipro_container px-5">

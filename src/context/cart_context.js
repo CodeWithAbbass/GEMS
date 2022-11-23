@@ -6,7 +6,6 @@ const CartContext = createContext();
 
 const initialState = {
   cart: [],
-  // cart: getLocalCartData(),
   total_item: "",
   total_price: "",
   shipping_fee: 50000,
@@ -20,7 +19,6 @@ const CartProvider = ({ children }) => {
   };
 
   // increment and decrement the product
-
   const setDecrease = (id) => {
     dispatch({ type: "SET_DECREMENT", payload: id });
   };

@@ -6,7 +6,8 @@ import CartItem from '../CartItem';
 import PriceFormat from '../../Helpers/PriceFormat';
 const Cart = (props) => {
   const location = useLocation();
-  const { cart, clearCart, totalItem, total_price } = useCartContext();
+  const { cart, clearCart, total_item, total_price } = useCartContext();
+  console.log(total_item);
   useEffect(() => {
     props.setProgress(10)
     props.setProgress(30)

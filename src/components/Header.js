@@ -2,8 +2,12 @@ import React, { useEffect, } from "react";
 import { Link, useLocation } from 'react-router-dom';
 import "https://kit.fontawesome.com/b3b18b68d1.js";
 import "../Css/Header.css";
+import { useCartContext } from "../context/cart_context";
+import GEMSLOGO from ".././images/GEMS/GEMSLOGO.png"
 const Header = () => {
 
+  const { total_item } = useCartContext();
+  
   const location = useLocation()
 
   useEffect(() => {
@@ -27,16 +31,12 @@ const Header = () => {
     const topBar = document.querySelector('.header__topBar');
     const headeNavBar = document.querySelector(".header__navBar");
     const currencyBtn = document.querySelector(".currency_Btn");
-    const whiteLogo = document.querySelector(".whiteLogo");
-    const blackLogo = document.querySelector(".blackLogo");
     const hamIcon = document.querySelectorAll(".hamburger__Icon");
     const rightIcon = document.querySelectorAll("#rightIcon");
     if (location.pathname !== "/") {      // Page is Not = "/"? Check! 
       topBar.style.display = "none";
       headeNavBar.style.background = "#FFFFFF";
       currencyBtn.style.color = "#000000";
-      whiteLogo.style.display = "none";
-      blackLogo.style.display = "block";
       for (const iterator of hamIcon) {
         iterator.style.backgroundColor = "#000000";
       }
@@ -46,8 +46,6 @@ const Header = () => {
     } else {
       topBar.style.display = "block";
       currencyBtn.style.color = "#FFFFFF";
-      whiteLogo.style.display = "block";
-      blackLogo.style.display = "none";
       for (const iterator of hamIcon) {
         iterator.style.backgroundColor = "#FFFFFF";
       }
@@ -62,15 +60,11 @@ const Header = () => {
       if (document.querySelector(".header")) {
         const headeNavBar = document.querySelector(".header__navBar");
         const currencyBtn = document.querySelector(".currency_Btn");
-        const whiteLogo = document.querySelector(".whiteLogo");
-        const blackLogo = document.querySelector(".blackLogo");
         const hamIcon = document.querySelectorAll(".hamburger__Icon");
         const rightIcon = document.querySelectorAll("#rightIcon");
         headeNavBar.style.transition = "all 0.5s";
         headeNavBar.style.backgroundColor = "#FFFFFF";
         currencyBtn.style.color = "#000000"
-        whiteLogo.style.display = "none";
-        blackLogo.style.display = "block";
         for (const iterator of hamIcon) {
           iterator.style.backgroundColor = "#000000";
         }
@@ -86,15 +80,11 @@ const Header = () => {
       if (document.querySelector(".header")) {
         const headeNavBar = document.querySelector(".header__navBar");
         const currencyBtn = document.querySelector(".currency_Btn");
-        const whiteLogo = document.querySelector(".whiteLogo");
-        const blackLogo = document.querySelector(".blackLogo");
         const hamIcon = document.querySelectorAll(".hamburger__Icon");
         const rightIcon = document.querySelectorAll("#rightIcon");
         headeNavBar.style.transition = "all 0.5s";
         headeNavBar.style.backgroundColor = "transparent";
         currencyBtn.style.color = "#FFFFFF";
-        whiteLogo.style.display = "block";
-        blackLogo.style.display = "none";
         for (const iterator of hamIcon) {
           iterator.style.backgroundColor = "#FFFFFF";
         }
@@ -118,7 +108,7 @@ const Header = () => {
     }
   };
   const handleOnChange = (v) => {
-    console.log('Clicked')
+    // console.log('Clicked')
   }
   const searchBarAppearance = () => {
     const searchBar = document.querySelector(".searchBar");
@@ -143,8 +133,7 @@ const Header = () => {
           </div>
 
           <div className="navBar__center align-self-center text-center">
-            <Link to="/"><img className="whiteLogo" src="https://cdn.shopify.com/s/files/1/0508/7461/3942/files/sound-logo_18x.png?v=1626159675" alt="SoundPeats" /></Link>
-            <Link to="/"><img className="blackLogo" src="https://cdn.shopify.com/s/files/1/0508/7461/3942/files/sound-logo-black_18x.png?v=1626159717" alt="SoundPeats" /></Link>
+            <Link to="/"><img className="" src={GEMSLOGO} alt="GEMS" /></Link>
           </div>
           <div className="navBar__right d-flex align-items-center justify-content-between text-white">
             <div className="dropdown navBar__currency  ps-2 pr-2 px-0">
@@ -159,7 +148,7 @@ const Header = () => {
             </div>
             <Link onClick={searchBarAppearance}><i className="fa-solid fa-magnifying-glass  searchIcon" id="rightIcon"></i></Link>
             <Link to="/user"><i className="fa-regular fa-user" id="rightIcon"></i></Link>
-            <Link to="/cart"><i className="fa-solid fa-cart-shopping" id="rightIcon"></i><span className="total_cartProduct">0</span></Link>
+            <Link to="/cart"><i className="fa-solid fa-cart-shopping" id="rightIcon"></i><span className="total_cartProduct">{total_item}</span></Link>
             <div className="dropdown navBar__country px-6 px-1">
               <button className="btn dropdown-toggle text-white px-2 py-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://cdn.weglot.com/flags/circle/us.svg" alt="American" />
