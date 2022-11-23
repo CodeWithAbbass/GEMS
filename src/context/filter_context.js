@@ -58,11 +58,13 @@ export const FilterContextProvider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: "FILTER_PRODUCTS" });
     dispatch({ type: "SORTING_PRODUCTS" });
+        // eslint-disable-next-line
   }, [products, state.sorting_value, state.filters]);
 
   // to load all the products for grid and list view
   useEffect(() => {
     dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
+    // eslint-disable-next-line
   }, [products]);
 
   return (

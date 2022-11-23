@@ -43,6 +43,7 @@ const CartProvider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: "CART_TOTAL_ITEM" });
     dispatch({ type: "CART_TOTAL_PRICE" });
+        // eslint-disable-next-line
   }, [state.cart]);
 
   return (

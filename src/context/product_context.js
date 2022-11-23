@@ -153,6 +153,7 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     // getProducts(API);
+        // eslint-disable-next-line
   }, []);
 
   return (

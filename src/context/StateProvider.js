@@ -52,6 +52,7 @@ useEffect(() => {
   dispatch({ type: "CART_TOTAL_ITEM" });
   dispatch({ type: "CART_TOTAL_PRICE" });
   localStorage.setItem("thapaCart", JSON.stringify(state.cart));
+      // eslint-disable-next-line
 }, [state.cart]);
 
 
@@ -298,6 +299,7 @@ useEffect(() => {
 //     useEffect(() => {
 //       dispatch({ type: "GET_TOTAL" });
 //       // console.log("Awesome");
+    // eslint-disable-next-line
 //     }, [state.item]);
     
     ///////////////////////////////////////////////////////////////////////////

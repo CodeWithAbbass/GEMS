@@ -25,7 +25,6 @@ import LoadingBar from 'react-top-loading-bar'
 import SingleProduct from './components/pages/SingleProduct';
 import ErrorPage from './components/pages/ErrorPage';
 import ComingSoon from './Coming Soon Page/ComingSoon';
-// import StateProvider from './context/StateProvider';
 
 function App(props) {
   const [progress, setProgress] = useState(0);

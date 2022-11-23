@@ -1,12 +1,10 @@
 import React, { useState} from 'react';
 import ".././Css/ProductGrid2x.css"
 import { Link } from "react-router-dom";
-import { useCartContext } from "../context/cart_context";
 import PriceFormat from '../Helpers/PriceFormat';
 
 const ProductGrid2x = ({ id, discount, tag, brand, name, description, newPrice, oldPrice, pMainImg, pOtherImg, }) => {
 
-    const { } = useCartContext(); // Destructure
     const [isHovering, setIsHovering] = useState(false);
     function handleHoverIn() {
         setIsHovering(true);
