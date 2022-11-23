@@ -1,6 +1,5 @@
 import React, { useEffect, } from "react";
 import { Link, useLocation } from 'react-router-dom';
-import "https://kit.fontawesome.com/b3b18b68d1.js";
 import "../Css/Header.css";
 import { useCartContext } from "../context/cart_context";
 import GEMSLOGO from ".././images/GEMS/GEMSLOGO.png"
