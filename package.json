@@ -1,6 +1,6 @@
 {
   "name": "gems",
-  "homepage":"https://public_html/gemslifestyle.com",
+  "homepage":"https://gemslifestyle.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
