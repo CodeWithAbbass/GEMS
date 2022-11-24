@@ -5,8 +5,8 @@ const AppContext = createContext();
 
 
 const initialState = {
-  isLoading: false,
-  isError: false,
+  // isLoading: false, // Pending..
+  // isError: false, // Pending..
   products: [
     {
       id: "12341",
@@ -141,9 +141,9 @@ const initialState = {
       ]
     },
   ],
-  // featureProducts: [],
-  // isSingleLoading: false,
-  // singleProduct: {},
+  // featureProducts: [], // Pending..
+  // isSingleLoading: false, // Pending..
+  // singleProduct: {}, // Pending..
 };
 
 const AppProvider = ({ children }) => {
@@ -152,7 +152,7 @@ const AppProvider = ({ children }) => {
 
 
   useEffect(() => {
-    // getProducts(API);
+    // getProducts(API); // Pending..
         // eslint-disable-next-line
   }, []);
 
