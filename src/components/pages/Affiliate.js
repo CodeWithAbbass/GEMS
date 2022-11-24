@@ -6,7 +6,6 @@ import { useState } from "react";
 
 const Affiliate = () => {
   const [toggleBtn, setToggleBtn] = useState(1);
-
   const handleToggleTab = (index) => {
     setToggleBtn(index);
   };
@@ -15,6 +14,10 @@ const Affiliate = () => {
   return (
     <div className="Affiliate">
       <div className="container py-5">
+
+        {/* *********************************************************
+                          Hero Banner
+      ********************************************************* */}
         <div className="heroBanner pb-5">
           <div className="heroImage">
             <img
@@ -28,13 +31,17 @@ const Affiliate = () => {
               in people's lives.</p>
           </div>
         </div>
+
+        {/* *********************************************************
+                        Affilitate TabSection
+      ********************************************************* */}
         <div className="affilitate_container">
           <hr />
           <div className="affilitate_navbar">
-            <div className={`affilitate_navbar_heading`} onClick={() => handleToggleTab(1)}>HOW IT WORKS</div>
-            <div className={`affilitate_navbar_heading`} onClick={() => handleToggleTab(2)}>YOUR BENEFITS</div>
-            <div className={`affilitate_navbar_heading`} onClick={() => handleToggleTab(3)}>YOUR CUSTOMERS BENEFITS</div>
-            <div className={`affilitate_navbar_heading`} onClick={() => handleToggleTab(4)} >JOIN US</div>
+            <div className={`affilitate_navbar_heading ${toggleBtn === 1 ? "activeBtn" : ""}`} onClick={() => handleToggleTab(1)}>HOW IT WORKS</div>
+            <div className={`affilitate_navbar_heading ${toggleBtn === 2 ? "activeBtn" : ""}`} onClick={() => handleToggleTab(2)}>YOUR BENEFITS</div>
+            <div className={`affilitate_navbar_heading ${toggleBtn === 3 ? "activeBtn" : ""}`} onClick={() => handleToggleTab(3)}>YOUR CUSTOMERS BENEFITS</div>
+            <div className={`affilitate_navbar_heading ${toggleBtn === 4 ? "activeBtn" : ""}`} onClick={() => handleToggleTab(4)} >JOIN US</div>
           </div>
           <hr />
           <div className="affilitate_navbar_section_container mt-4">
@@ -95,6 +102,10 @@ const Affiliate = () => {
           </div>
         </div>
       </div>
+
+      {/* *********************************************************
+                        Affilitate Platforms
+      ********************************************************* */}
       <div className="affilitate_platforms">
         <h2 className="affilitate_platforms_heading">PROCESS</h2>
         <div className="Affiliate_card_container row">
@@ -129,47 +140,49 @@ const Affiliate = () => {
         </div>
       </div>
 
+      {/* *********************************************************
+                            ShareASale
+      ********************************************************* */}
       <div className="affilitate_ShareASale container py-5 text-center">
         <h3>GET STARTED WITH PARTNER AFFILIATE PLATFORMS</h3>
         <img className="mb-4" src="https://cdn.shopify.com/s/files/1/0508/7461/3942/files/4532de5a6fc6f01392a1576217f2fd5c_296x.png?v=1629257809" alt="" />
         <div className="SignUp mb-5"><a href="https://account.shareasale.com/newsignup.cfm">SIGN UP/LOG IN NOW &gt;</a></div>
         <h3 className=""> MORE COMING SOON...</h3>
       </div>
-      {/* 
-      *********************************************************
+
+      {/* *********************************************************
                                 FAQs
       ********************************************************* */}
-      <div className="accordion container" id="accordionExample">
-        <div className="accordion-item rounded-0">
-          <h2 className="accordion-header" id="headingOne">
-            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">HOW DOES THE PROGRAM WORK?</button>
+      <div className="accordion accordion-flush container" id="accordionFlushExample">
+        <h2>FAQs</h2>
+        <div className="accordion-item border-0">
+          <h2 className="accordion-header" id="flush-headingOne">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              HOW DOES THE PROGRAM WORK?
+            </button>
           </h2>
-          <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div className="accordion-body rounded-0">
-              The SOUNDPEATS Affiliate Program allows you to make money by referring customers. Each time you refer a customer to one of our websites and that customer makes a purchase, you earn a commission (a percentage of each sale). We handle the transaction processing, fulfillment and customer service. We provide you with detailed reports on sales that were referred from your website and every month, we send you a check for the commission you earned.
-            </div>
+          <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div className="accordion-body">The SOUNDPEATS Affiliate Program allows you to make money by referring customers. Each time you refer a customer to one of our websites and that customer makes a purchase, you earn a commission (a percentage of each sale). We handle the transaction processing, fulfillment and customer service. We provide you with detailed reports on sales that were referred from your website and every month, we send you a check for the commission you earned.</div>
           </div>
         </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header" id="headingTwo">
-            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">WHAT DOES IT COST TO JOIN?</button>
+        <div className="accordion-item border-0">
+          <h2 className="accordion-header" id="flush-headingTwo">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              WHAT DOES IT COST TO JOIN?
+            </button>
           </h2>
-          <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div className="accordion-body">
-              Applying to and participating in the SOUNDPEATS Affiliate Program is absolutely FREE. There are no fees of any kind - there is no charge to apply and no minimum sales requirement.
-            </div>
+          <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div className="accordion-body">Applying to and participating in the SOUNDPEATS Affiliate Program is absolutely FREE. There are no fees of any kind - there is no charge to apply and no minimum sales requirement.</div>
           </div>
         </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header" id="headingThree">
-            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <div className="accordion-item border-0">
+          <h2 className="accordion-header" id="flush-headingThree">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
               HOW DO I GET STARTED?
             </button>
           </h2>
-          <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-            <div className="accordion-body">
-              Register a ShareASale affiliate account. Sign up for SOUNDPEATS & ShareASale Program. Get accepted to the program. Create links to SOUNDPEATS brands from the Ads section on Impact. Promote SOUNDPEATS family of brands on your site. Login to Impact at any time to see reports of how your website is doing, how many people are browsing and what they're buying. Run reports your way whenever you want - they're updated every day. Get paid up to 20% commission!
-            </div>
+          <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div className="accordion-body">Register a ShareASale affiliate account. Sign up for SOUNDPEATS & ShareASale Program. Get accepted to the program. Create links to SOUNDPEATS brands from the Ads section on Impact. Promote SOUNDPEATS family of brands on your site. Login to Impact at any time to see reports of how your website is doing, how many people are browsing and what they're buying. Run reports your way whenever you want - they're updated every day. Get paid up to 20% commission!</div>
           </div>
         </div>
       </div>
