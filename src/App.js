@@ -9,7 +9,7 @@ import AllProducts from './components/pages/AllProducts';
 // import HelpCenter from './components/pages/HelpCenter';
 // import Download from './components/pages/Download';
 import Blog from './components/pages/Blog';
-// import Affiliate from './components/pages/Affiliate';
+import Affiliate from './components/pages/Affiliate';
 // import WhereToBuy from './components/pages/WhereToBuy';
 import Cart from './components/pages/Cart';
 // import Checkout from './components/pages/Checkout';
@@ -46,7 +46,7 @@ function App(props) {
           <Route path="/helpcenter" element={<ComingSoon />} />
           <Route path="/download" element={<ComingSoon />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/affiliate" element={<ComingSoon />} />
+          <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/wheretobuy" element={<ComingSoon />} />
           <Route path="/cart" element={<Cart setProgress={setProgress}/>} />
           <Route path="/checkout" element={<ComingSoon/>} />
