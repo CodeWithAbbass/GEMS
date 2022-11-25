@@ -141,7 +141,7 @@ const AllProducts = (props) => {
             const { id, name, tag, brand, category, weight, discount, description, newPrice, oldPrice, image,} = item;
             const [pMainImg, pOtherImg] = image; // Destructuring From Array
             return (
-              <div className="col-4 m-0 p-0 ProductGrid3x_Column mb-5" key={index}>
+              <div className="col-4 m-0 p-0 mb-5" key={index}>
                 <ProductGrid3x
                   id={id}
                   name={name}

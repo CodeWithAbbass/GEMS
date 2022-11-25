@@ -45,18 +45,18 @@ function App(props) {
           <Route path="/newarrivals" element={<ComingSoon />} />
           <Route path="/helpcenter" element={<ComingSoon />} />
           <Route path="/download" element={<ComingSoon />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/affiliate" element={<Affiliate />} />
+          <Route path="/blog" element={<Blog setProgress={setProgress}/>} />
+          <Route path="/affiliate" element={<Affiliate setProgress={setProgress}/>} />
           <Route path="/wheretobuy" element={<ComingSoon />} />
           <Route path="/cart" element={<Cart setProgress={setProgress}/>} />
           <Route path="/checkout" element={<ComingSoon/>} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/user" element={<User />} />
+          <Route path="/search" element={<Search setProgress={setProgress}/>} />
+          <Route path="/login" element={<Login setProgress={setProgress}/>} />
+          <Route path="/signup" element={<Signup setProgress={setProgress}/>} />
+          <Route path="/user" element={<User setProgress={setProgress}/>} />
           <Route path="/about" element={<ComingSoon />} />
           <Route path="/newsroom" element={<ComingSoon />} />
-          <Route path="/addproduct" element={<AddProduct />} />
+          <Route path="/addproduct" element={<AddProduct setProgress={setProgress}/>} />
           <Route path="/singleproduct/:id" element={<SingleProduct setProgress={setProgress}/>} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>

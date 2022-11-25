@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AppProvider } from "./context/product_context";
 import { CartProvider } from "./context/cart_context";
+import { BlogProvider } from './context/blog_context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <AppProvider>
+    <BlogProvider>
       <CartProvider>
         <App />
       </CartProvider>
+      </BlogProvider>
   </AppProvider>
 );
 

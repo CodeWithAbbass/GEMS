@@ -281,6 +281,10 @@
     margin-left: 3rem;
     margin-top: 0rem;
   }
+  .sidenav>.container>.accordion>.accordion-item>.accordion-collapse>.accordion-body {
+    padding: 0rem 1rem;
+  }
+  
 }
 
 
