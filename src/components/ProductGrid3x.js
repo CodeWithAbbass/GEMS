@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import ".././Css/ProductGrid3x.css"
 import { Link } from "react-router-dom";
 import PriceFormat from '../Helpers/PriceFormat';
+import { useProductContext } from '../context/product_context';
 
-const ProductGrid3x = ({ id, discount, tag, brand, name, description, newPrice, oldPrice, pMainImg, pOtherImg, }) => {
+const ProductGrid3x = ({ id, discount, tag, brand, name, description, price, pMainImg, pOtherImg, }) => {
+    const { CalcDiscount } = useProductContext();  // Destructure
 
     const [isHovering, setIsHovering] = useState(false);
     function handleHoverIn() {
@@ -13,13 +15,13 @@ const ProductGrid3x = ({ id, discount, tag, brand, name, description, newPrice, 
         setIsHovering(false)
     }
 
-
+    const NewAmount = CalcDiscount(discount, price);
 
     return (
         <div className='ProductGrid3x'>
             <Link to={`/singleproduct/${id}`} onMouseOver={handleHoverIn} onMouseOut={handleHoverOut}>
                 <div className="item_header d-flex">
-                    <li className='item_header_items discount me-2 text-center'>{discount}</li>
+                    <li className={`item_header_items discount me-2 text-center ${discount > 0 ? "d-block" : "d-none"}`}>-{discount}%</li>
                     <li className='item_header_items tag me-2 text-center'>{tag}</li>
                 </div>
                 <div className="pImg">
@@ -35,8 +37,8 @@ const ProductGrid3x = ({ id, discount, tag, brand, name, description, newPrice, 
                     <div className={`item_footer ${isHovering ? "active_footer" : ""}`}>
                         <div className="description"><p>{description}</p></div>
                         <div className="priceList">
-                            <span className="priceList_newPrice">{PriceFormat(newPrice)}</span>
-                            <span className="priceList_oldPrice ms-3">{PriceFormat(oldPrice)}</span>
+                            <span className="priceList_newPrice">{`${NewAmount > 0 ? PriceFormat(NewAmount) : PriceFormat(price)}`}</span>
+                            <span className={`priceList_oldPrice ms-3 ${NewAmount > 0 ? "d-inline-block" : "d-none"}`}>{PriceFormat(price)}</span>
                         </div>
                     </div>
                 </div>

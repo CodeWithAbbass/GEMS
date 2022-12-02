@@ -5,30 +5,33 @@ import ProductGrid3x from "../ProductGrid3x";
 import ProductGrid2x from '../ProductGrid2x';
 import "../../Css/AllProducts.css"
 
-const AllProducts = (props) => {
+const AllProducts = ({ setProgress }) => {
   const location = useLocation()
   const { products } = useProductContext();  // Destructure
+
   const [data, setData] = useState(products);
   const [Grid2xActive, setGrid2xActive] = useState(true);
   const [Grid3xActive, setGrid3xActive] = useState(false);
   useEffect(() => {
-    props.setProgress(10);
-    props.setProgress(30);
-    props.setProgress(50);
-    props.setProgress(100);
+    setProgress(10);
+    setProgress(30);
+    setProgress(50);
+    setProgress(100);
     window.scrollTo(0, 0);
     // eslint-disable-next-line
   }, [location]);
 
   const filterRes = (category) => {
-    props.setProgress(100)
-    const result = products.filter(item => item.category === category)
+    setProgress(0);
+    const result = products.filter(item => item.category === category);
     setData(result);
+    setProgress(100);
   }
   const filterAllRes = () => {
-    props.setProgress(100)
-    const result = products.filter(item => item)
-    setData(result)
+    setProgress(0);
+    const result = products.filter(item => item);
+    setData(result);
+    setProgress(100);
   }
   const Sort = () => {
     const userSelect = document.querySelector('.form-select').value;
@@ -44,11 +47,11 @@ const AllProducts = (props) => {
         setData(resultOldtoNew);
         break;
       case "Feature":
-        const resultFeature = CopyAllProducts.sort((a, b) => a.discount.localeCompare(b.discount));
+        const resultFeature = CopyAllProducts.filter(item => item.feature === "yes");
         setData(resultFeature);
         break;
       case "Best Selling":
-        const resultBestSelling = CopyAllProducts.sort((a, b) => a.discount.localeCompare(b.discount));
+        const resultBestSelling = CopyAllProducts.sort((a, b) => b.discount.localeCompare(a.discount));
         setData(resultBestSelling);
         break;
       case "A - Z":
@@ -60,11 +63,11 @@ const AllProducts = (props) => {
         setData(resultZA);
         break;
       case "Low to High":
-        const resultLowtoHigh = CopyAllProducts.sort((a, b) => a.newPrice.localeCompare(b.newPrice));
+        const resultLowtoHigh = CopyAllProducts.sort((a, b) => a.price.localeCompare(b.price));
         setData(resultLowtoHigh);
         break;
       case "High to Low":
-        const resultHightoLow = CopyAllProducts.sort((a, b) => b.newPrice.localeCompare(a.newPrice));
+        const resultHightoLow = CopyAllProducts.sort((a, b) => b.price.localeCompare(a.price));
         setData(resultHightoLow);
         break;
       default:
@@ -73,7 +76,6 @@ const AllProducts = (props) => {
     }
 
   }
-
   const Grid2x = () => {
     setGrid3xActive(false);
     setGrid2xActive(true);
@@ -138,7 +140,7 @@ const AllProducts = (props) => {
       <div className={`container d-flex justify-content-center g-0 ${Grid3xActive ? "d-block" : "d-none"}`}>
         <div className="row w-100 justify-content-between">
           {data.map((item, index) => {
-            const { id, name, tag, brand, category, weight, discount, description, newPrice, oldPrice, image,} = item;
+            const { id, name, tag, brand, category, weight, discount, description, price, image, } = item;
             const [pMainImg, pOtherImg] = image; // Destructuring From Array
             return (
               <div className="col-4 m-0 p-0 mb-5" key={index}>
@@ -151,8 +153,7 @@ const AllProducts = (props) => {
                   weight={weight}
                   discount={discount}
                   description={description}
-                  newPrice={newPrice}
-                  oldPrice={oldPrice}
+                  price={price}
                   pMainImg={pMainImg}
                   pOtherImg={pOtherImg}
                 />
@@ -163,7 +164,7 @@ const AllProducts = (props) => {
       <div className={`container ProductGrid2x_Column d-flex justify-content-center g-0 ${Grid2xActive ? "d-block" : "d-none"}`}>
         <div className="row w-100 justify-content-between m-0">
           {data.map((item, index) => {
-            const { id, name, tag, brand, category, weight, discount, description, newPrice, oldPrice, image } = item;
+            const { id, name, tag, brand, category, weight, discount, description, price, image } = item;
             const [pMainImg, pOtherImg] = image; // Destructuring From Array
             return (
               <div className="col-6 m-0 p-0 mb-5" key={index}>
@@ -176,8 +177,8 @@ const AllProducts = (props) => {
                   weight={weight}
                   discount={discount}
                   description={window.innerWidth <= 768 ? `${description.slice(0, 50)}...` : description}
-                  newPrice={newPrice}
-                  oldPrice={oldPrice}
+                  price={price}
+                  // NewAmount={NewAmount}
                   pMainImg={pMainImg}
                   pOtherImg={pOtherImg}
                 />

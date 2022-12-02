@@ -3,6 +3,7 @@
     margin-bottom: 4rem;
     background: #FBFBFB;
 }
+
 /* 
 .SingleProduct>.container>.row {
     overflow: hidden;
@@ -12,7 +13,6 @@
     width: 48%;
     text-align: left;
 }
-
 
 .SingleProduct>.container>.row>.col-6>h1 {
     font-size: 20px;
@@ -125,6 +125,7 @@
     box-shadow: none !important;
     line-height: normal !important;
     letter-spacing: 1px;
+    border: 1px solid #1fbaff;
 }
 
 .SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.accordion>.accordion-item>.accordion-header>.accordion-button::after {
@@ -138,8 +139,6 @@
 .SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.accordion>.accordion-item>.accordion-header>.accordion-button:not(.collapsed)::after {
     color: #fff !important;
 }
-
-
 
 .SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.accordion>.accordion-item>.accordion-collapse {
     position: absolute;
@@ -168,7 +167,7 @@
 
 .SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.mobileBtn {
     display: none;
-   }
+}
 
 .SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.socialCol>a {
     margin-right: 1rem;
@@ -236,13 +235,16 @@
         margin-right: 0 !important;
         margin-bottom: 5px;
     }
+
     .SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.desktopBtn {
-     display: none;
+        display: none;
     }
+
     .SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.mobileBtn {
         display: block;
-       }
-       .SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.mobileBtn {
+    }
+
+    .SingleProduct>.container>.row>.col-6>.SingleProduct_DetailsFooter>.btnCol>.mobileBtn {
         width: 100%;
         margin-right: 0;
     }

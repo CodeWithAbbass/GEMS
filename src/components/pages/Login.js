@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../../Css/Login.css";
-const Login = () => {  
+
+const Login = ({setProgress}) => {  
   const [credentials, setCredentials] = useState({ name: '',email: '',password: '', cpassword: '', });
+  const onChange = (e) => { setCredentials({ ...credentials, [e.target.name]: e.target.value }); }
   const Navigate = useNavigate();
+
+  useEffect(() => {
+    setProgress(10);
+    setProgress(30);
+    setProgress(50);
+    setProgress(100);
+    window.scrollTo(0, 0);
+    // eslint-disable-next-line
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // const {name, email, password} = credentials;
     Navigate("/");
   }
-  const onChange = (e) => { setCredentials({ ...credentials, [e.target.name]: e.target.value }); }
+  
   const style = {
     display:'block',
     margin:'auto',

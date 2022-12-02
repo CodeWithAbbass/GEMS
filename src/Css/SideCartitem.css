@@ -1,0 +1,27 @@
+.SideCartitem {
+    border: 1px solid black;
+}
+
+.SideCartitem>.SideCartitem_img>img {
+    width: 100%;
+}
+
+.SideCartitem>.SideCartitem_details>a {
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.SideCartitem>.SideCartitem_details>.SideCartitem_details_priceList>span {
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.SideCartitem>.SideCartitem_details>.SideCartitem_details_priceList>.priceList_newPrice{
+    color: red;
+}
+.SideCartitem>.SideCartitem_details>.SideCartitem_details_priceList>.priceList_oldPrice {
+    text-decoration: line-through;
+    color: #6A6A6A;
+}

@@ -10,9 +10,10 @@ import PriceFormat from '../../Helpers/PriceFormat';
 const SingleProduct = ({ setProgress }) => {
   const location = useLocation();
   const { id } = useParams();
-  const { products } = useProductContext();  // Destructure
+  const { products, CalcDiscount } = useProductContext();  // Destructure
   const { addToCart } = useCartContext();
   const Data = products.filter((item) => item.id === id); // Filter Specific Product.
+
 
   useEffect(() => {
     setProgress(10);
@@ -28,10 +29,11 @@ const SingleProduct = ({ setProgress }) => {
   return (
     <div className='SingleProduct py-5'>
       {Data.map((item, index) => {
-        const { id, name, description, newPrice, oldPrice, image, color, productMeta, quantity } = item; // Destructure From Object.
+        const { id, name, description, discount, price, image, color, productMeta, quantity } = item; // Destructure From Object.
         const [line1, line2, line3, line4] = productMeta; // Destructure From Array
+        const NewAmount = CalcDiscount(discount, price);
         return (
-          <div className="container" key={index}>
+          <div className="container p-0 g-0" key={index}>
             <div className="row d-flex flex-md-wrap justify-content-between m-0 p-0">
               <div className="col-6">
                 <SingleProductSlider image={image} />
@@ -48,44 +50,44 @@ const SingleProduct = ({ setProgress }) => {
                 {/* <Link to="#Down"className="overview">Overview{'>'}</Link> */}
                 <div className="SingleProduct_DetailsFooter">
                   <div className="priceCol">
-                    <p>{PriceFormat(newPrice)}</p>
-                    <span className={`${PriceFormat(oldPrice) !== undefined ? "d-block" : "d-none"}`}>Hurry ! Offer Ends Soon!  <span className='oldPrice'>{PriceFormat(oldPrice)}</span></span>
+                    <p>{discount > 0 ? PriceFormat(NewAmount) : PriceFormat(price)}</p>
+                    <span className={`${discount > 0 ? "d-block" : "d-none"}`}>Hurry! Offer Ends Soon! <span className='oldPrice'>{PriceFormat(price)}</span></span>
                   </div>
                   <div className="btnCol row m-0 p-0 ">
                     <Link to="/cart" className='btn outline-0 shadow-none rounded-0 col-6' onClick={() => { addToCart(id, color, quantity, item) }}>Add to Cart</Link>
-                    <button className="accordion accordion-flush btn desktopBtn outline-0 shadow-none rounded-0 col-6" id="accordionFlushExample">
+                    <div className="accordion accordion-flush btn desktopBtn outline-0 shadow-none rounded-0 col-6" id="accordionFlushExample">
                       <div className="accordion-item bg-transparent">
                         <div className="accordion-header p-0" id="flush-headingOne">
                           <button className="accordion-button collapsed bg-transparent d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">Buy On Amazon</button>
                         </div>
                         <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                           <div className="accordion-body p-0">
-                            <a href="https://www.amazon.com/dp/B0BHQ4ND28" target={"_blank"}  rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >Buy On Amazon</a>
-                            <a href="https://www.amazon.co.uk/dp/B09V6QTQP4" target={"_blank"}  rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >True Wireless</a>
-                            <a href="https://www.amazon.de/dp/B0BJ6JJKLY" target={"_blank"}  rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >Noise Cancelling</a>
-                            <a href="https://www.amazon.es/dp/B0BJ6JJKLY" target={"_blank"}  rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >AudioPhile</a>
-                            <a href="https://www.amazon.it/dp/B0BJ6JJKLY" target={"_blank"}  rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >Others</a>
+                            <a href="https://www.amazon.com/dp/B0BHQ4ND28" target={"_blank"} rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >Buy On Amazon</a>
+                            <a href="https://www.amazon.co.uk/dp/B09V6QTQP4" target={"_blank"} rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >True Wireless</a>
+                            <a href="https://www.amazon.de/dp/B0BJ6JJKLY" target={"_blank"} rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >Noise Cancelling</a>
+                            <a href="https://www.amazon.es/dp/B0BJ6JJKLY" target={"_blank"} rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >AudioPhile</a>
+                            <a href="https://www.amazon.it/dp/B0BJ6JJKLY" target={"_blank"} rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >Others</a>
                           </div>
                         </div>
                       </div>
-                    </button>
-                    <Link className='btn BuyNowBtn outline-0 shadow-none rounded-0 col-6'>Buy It Now</Link>
-                    <button className="accordion accordion-flush btn mobileBtn outline-0 shadow-none rounded-0 col-12" id="accordionFlushExample">
+                    </div>
+                    <Link to="/checkout" className='btn BuyNowBtn outline-0 shadow-none rounded-0 col-6' onClick={() => { addToCart(id, color, quantity, item) }}>Buy It Now</Link>
+                    <div className="accordion accordion-flush btn mobileBtn outline-0 shadow-none rounded-0 col-12" id="accordionFlushExample">
                       <div className="accordion-item bg-transparent">
                         <div className="accordion-header p-0" id="flush-headingOne">
                           <button className="accordion-button btn collapsed bg-transparent d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">Buy On Amazon</button>
                         </div>
                         <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                           <div className="accordion-body p-0">
-                            <a href="https://www.amazon.com/dp/B0BHQ4ND28" target={"_blank"}  rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >Buy On Amazon</a>
-                            <a href="https://www.amazon.co.uk/dp/B09V6QTQP4" target={"_blank"}  rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >True Wireless</a>
-                            <a href="https://www.amazon.de/dp/B0BJ6JJKLY" target={"_blank"}  rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >Noise Cancelling</a>
-                            <a href="https://www.amazon.es/dp/B0BJ6JJKLY" target={"_blank"}  rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >AudioPhile</a>
-                            <a href="https://www.amazon.it/dp/B0BJ6JJKLY" target={"_blank"}  rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >Others</a>
+                            <a href="https://www.amazon.com/dp/B0BHQ4ND28" target={"_blank"} rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >Buy On Amazon</a>
+                            <a href="https://www.amazon.co.uk/dp/B09V6QTQP4" target={"_blank"} rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >True Wireless</a>
+                            <a href="https://www.amazon.de/dp/B0BJ6JJKLY" target={"_blank"} rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >Noise Cancelling</a>
+                            <a href="https://www.amazon.es/dp/B0BJ6JJKLY" target={"_blank"} rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >AudioPhile</a>
+                            <a href="https://www.amazon.it/dp/B0BJ6JJKLY" target={"_blank"} rel="noreferrer" className='text-decoration-none btn outline-0 shadow-none rounded-0 col-12 link-light' >Others</a>
                           </div>
                         </div>
                       </div>
-                    </button>
+                    </div>
                   </div>
                   <div className="socialCol">
                     <Link to={"https://www.facebook.com/sharer.php?u=https://us.soundpeats.com/products/soundpeats-truefree-plus-wireless-in-ear-sport-earbuds"}><i className="fa-brands fa-facebook"></i></Link>

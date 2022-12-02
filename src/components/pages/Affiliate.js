@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../Css/Affiliate.css";
 import AffiliateCard from "../AffiliateCard";
 import arrow from "../../images/arrow.png";
 import { useState } from "react";
 
-const Affiliate = () => {
+const Affiliate = ({setProgress}) => {
+
+  useEffect(() => {
+    setProgress(10);
+    setProgress(30);
+    setProgress(50);
+    setProgress(100);
+    window.scrollTo(0, 0);
+    // eslint-disable-next-line
+  }, []);
   const [toggleBtn, setToggleBtn] = useState(1);
+  
   const handleToggleTab = (index) => {
     setToggleBtn(index);
   };
-
 
   return (
     <div className="Affiliate">

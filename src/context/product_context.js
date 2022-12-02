@@ -5,21 +5,19 @@ const AppContext = createContext();
 
 
 const initialState = {
-  // isLoading: false, // Pending..
-  // isError: false, // Pending..
   products: [
     {
       id: "12341",
       tag: "NEW",
+      feature: "no",
       brand: "SoundPeates",
       name: "SOUNDPEATS Life Wireless Earbuds",
       category: "AudioPhile",
       color: "Black",
       date: "05/08/22",
-      discount: "-12%",
+      discount: "12",
       description: "Best Budget Solution for ANC Wireless Earbuds",
-      newPrice: "39",
-      oldPrice: "45",
+      price: "39",
       quantity: 1,
       stock: 5,
       productMeta: [
@@ -37,15 +35,15 @@ const initialState = {
     {
       id: "12342",
       tag: "NEW",
+      feature: "no",
       brand: "SoundPeates",
       name: "BEST Wireless Earbuds",
       category: "True Wireless",
       color: "Black",
       date: "06/08/22",
-      discount: "0%",
+      discount: "0",
       description: "Best Budget Solution for ANC Wireless Earbuds",
-      newPrice: "50",
-      oldPrice: "69",
+      price: "50",
       quantity: 1,
       stock: 6,
       productMeta: [
@@ -63,15 +61,15 @@ const initialState = {
     {
       id: "12343",
       tag: "Personal",
+      feature: "no",
       brand: "BRAND",
       name: "SOUNDPEATS Free2 Classic Wireless Earbuds",
       category: "Noise Cancelling",
       color: "Black",
       date: "07/08/22",
-      discount: "5%",
+      discount: "5",
       description: "Stylish Design with Ultra-long Battery Life for 30hrs",
-      newPrice: "39.99",
-      oldPrice: "",
+      price: "39.99",
       quantity: 1,
       stock: 7,
       productMeta: [
@@ -89,15 +87,15 @@ const initialState = {
     {
       id: "12344",
       tag: "Old",
+      feature: "no",
       brand: "Adidas",
       name: "SOUNDPEATS TrueFree + True Wireless In-Ear Sports Earbuds",
       category: "Others",
       color: "Black",
       date: "07/08/22",
-      discount: "10%",
+      discount: "50",
       description: "Zero Boundaries. Max Performance.",
-      newPrice: "49.99",
-      oldPrice: "",
+      price: "49.99",
       quantity: 1,
       stock: 8,
       productMeta: [
@@ -115,16 +113,16 @@ const initialState = {
     },
     {
       id: "12345",
-      tag: "Old",
+      tag: "Feature",
+      feature: "yes",
       brand: "BRAND",
       name: "SOUNDPEATS TrueFree + True Wireless In-Ear Sports Earbuds",
       category: "CATEGORY",
       color: "Black",
       date: "07/08/22",
-      discount: "10%",
+      discount: "50",
       description: "Zero Boundaries. Max Performance.",
-      newPrice: "49.99",
-      oldPrice: "",
+      price: "49.99",
       quantity: 1,
       stock: 9,
       productMeta: [
@@ -141,24 +139,29 @@ const initialState = {
       ]
     },
   ],
-  // featureProducts: [], // Pending..
-  // isSingleLoading: false, // Pending..
-  // singleProduct: {}, // Pending..
 };
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  // Minus discount  
+  const CalcDiscount = (discount, amount) => {
+    if (discount > 0) {
+      let NewAmount = (amount - ((amount * discount) / 100));
+      return NewAmount;
+    }
+  }
 
 
   useEffect(() => {
-    // getProducts(API); // Pending..
-        // eslint-disable-next-line
+    window.scrollTo(0, 0);
+    // eslint-disable-next-line
   }, []);
 
   return (
     <AppContext.Provider value={{
       ...state,
+      CalcDiscount,
     }}>
       {children}
     </AppContext.Provider>

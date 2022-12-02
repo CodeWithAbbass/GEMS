@@ -34,9 +34,9 @@ const cartReducer = (state, action) => {
         name: product.name,
         color,
         quantity,
+        discount: product.discount,
         image: product.image[0],
-        newPrice: product.newPrice,
-        oldPrice: product.oldPrice,
+        price: product.price,
         stock: product.stock,
       };
 
@@ -46,7 +46,6 @@ const cartReducer = (state, action) => {
       };
     }
   }
-
   // to set the increment and decrement
   if (action.type === "SET_DECREMENT") {
     let updatedProduct = state.cart.map((curElem) => {
@@ -122,11 +121,17 @@ const cartReducer = (state, action) => {
 
   if (action.type === "CART_TOTAL_PRICE") {
     let total_price = state.cart.reduce((initialNumber, curElem) => {
-      let { newPrice, quantity } = curElem;
-      initialNumber = initialNumber + newPrice * quantity;
-      // 25000 + 0 = 25000
-      // 10199 + 25000 = 121
-
+      let { price, quantity, discount } = curElem;
+      let NewAmount;
+      if (discount > 0) {
+        NewAmount = (price - ((price * discount) / 100));
+        initialNumber = initialNumber + NewAmount * quantity;
+      } else {
+        initialNumber = initialNumber + price * quantity;
+      }
+      //    initialNumber =         0     +   50  x    1    === 50
+      //    initialNumber =         50    +   50  x    1    === 100
+      //    initialNumber =         100   +   100 x    1    === 200
       return initialNumber;
     }, 0);
 

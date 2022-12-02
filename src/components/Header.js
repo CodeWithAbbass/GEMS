@@ -1,17 +1,13 @@
 import React, { useEffect, } from "react";
 import { Link, useLocation } from 'react-router-dom';
-import "../Css/Header.css";
 import { useCartContext } from "../context/cart_context";
+import "../Css/Header.css";
 import GEMSLOGO from ".././images/GEMS/GEMSLOGO.png"
+import SideCartitem from './SideCartitem';
+
 const Header = () => {
-
-  const { total_item } = useCartContext();
-  
-  const location = useLocation()
-
-  useEffect(() => {
-    // eslint-disable-next-line
-  }, [location]);
+  const { cart, total_item } = useCartContext();
+  const location = useLocation();
 
 
   function openNav() {
@@ -25,7 +21,17 @@ const Header = () => {
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
   }
-
+  function openCart() {
+    const width = window.innerWidth;
+    if (width <= 768) {
+      document.getElementById("myCart").style.width = "100%";
+    } else {
+      document.getElementById("myCart").style.width = "30%";
+    }
+  }
+  function closeCart() {
+    document.getElementById("myCart").style.width = "0";
+  }
   if (document.querySelector(".header")) { // Header Loaded? Check! 
     const topBar = document.querySelector('.header__topBar');
     const headeNavBar = document.querySelector(".header__navBar");
@@ -73,7 +79,6 @@ const Header = () => {
       }
     }
   }
-
   function handleHoverOut() {
     if (location.pathname === "/") {
       if (document.querySelector(".header")) {
@@ -93,7 +98,6 @@ const Header = () => {
       }
     }
   }
-
   window.onscroll = function () {
     if (location.pathname === "/") {
       const topBar = document.querySelector('.header__topBar');
@@ -118,6 +122,15 @@ const Header = () => {
       searchBar.style.display = "none";
     }
   }
+  useEffect(() => {
+    // document.addEventListener("mousedown", function () {
+    //   closeCart();
+    //   closeNav();
+    // })
+    // eslint-disable-next-line
+  }, [location]);
+
+
   return (
     <div className="header">
       <div className="fixed-top header_static" tabIndex={0}>
@@ -147,7 +160,7 @@ const Header = () => {
             </div>
             <Link onClick={searchBarAppearance}><i className="fa-solid fa-magnifying-glass  searchIcon" id="rightIcon"></i></Link>
             <Link to="/user"><i className="fa-regular fa-user" id="rightIcon"></i></Link>
-            <Link to="/cart"><i className="fa-solid fa-cart-shopping" id="rightIcon"></i><span className="total_cartProduct">{total_item}</span></Link>
+            <div className="cartContainer" onClick={openCart}><i className="fa-solid fa-cart-shopping" id="rightIcon"></i><span className="total_cartProduct">{total_item}</span></div>
             <div className="dropdown navBar__country px-6 px-1">
               <button className="btn dropdown-toggle text-white px-2 py-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://cdn.weglot.com/flags/circle/us.svg" alt="American" />
@@ -168,6 +181,10 @@ const Header = () => {
       <div className="input-group searchBar" tabIndex={1}>
         <input type="text" className="form-control rounded-0 border-0" id="search" name="search" aria-label="Text input with dropdown button" placeholder="Search..." onChange={handleOnChange} />
       </div>
+
+      {/**************************************************************
+                                Side Navbar  
+      **************************************************************/}
       <div id="mySidenav" className={`sidenav`} >
         <div className="container px-5">
           <Link to="#" className="closebtn" onClick={closeNav}>&times;</Link>
@@ -195,9 +212,9 @@ const Header = () => {
               </h2>
               <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                 <div className="accordion-body">
-                  <a href="https://www.facebook.com/groups/soundpeatsglobal" target="_blank" rel="noopener noreferrer">JOIN PEATS Group</a>
-                  <Link to="/blog">Blog</Link>
-                  <Link to="/newarrivals">Unboxing Videos</Link>
+                  <a href="https://www.facebook.com/groups/soundpeatsglobal" target="_blank" rel="noopener noreferrer" onClick={closeNav}>JOIN PEATS Group</a>
+                  <Link to="/blog" onClick={closeNav}>Blog</Link>
+                  <Link to="/newarrivals" onClick={closeNav}>Unboxing Videos</Link>
                 </div>
               </div>
             </div>
@@ -209,6 +226,25 @@ const Header = () => {
           <Link className="Contact py-2 bottomBtn" to="/cart" onClick={closeNav}>CART</Link>
           <Link className="Contact py-2 bottomBtn" to="/search" onClick={closeNav}>SEARCH</Link>
           <Link className="Contact py-2 bottomBtn" to="/login" onClick={closeNav}>LOGIN IN</Link>
+        </div>
+      </div>
+      {/**************************************************************
+                                  Cart  
+      **************************************************************/}
+      <div id="myCart" className="sidecart">
+        <div className="sidecart_Header d-flex align-items-center justify-content-between">
+          <Link to={"/cart"} className="sidecart_Header_heading" onClick={closeCart}>Cart</Link>
+          <Link className="sidecart_Header_closebtn" onClick={closeCart}>&times;</Link>
+        </div>
+        <div className="container">
+          {cart.map((curItem, index) => {
+            return (
+              <SideCartitem
+                key={curItem.id}
+                {...curItem}
+              />
+            )
+          })}
         </div>
       </div>
     </div>
