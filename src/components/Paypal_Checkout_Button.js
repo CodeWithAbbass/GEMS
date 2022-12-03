@@ -18,8 +18,8 @@ const Paypal_Checkout_Button = (props) => {
     // initialOptions}}
     >
       <PayPalButtons
-        createOrder={(data, actions) => {
-          return actions.order.create({
+        createOrder={async (data, actions) => {
+          return await actions.order.create({
             purchase_units: [
               {
                 amount: {
@@ -29,8 +29,8 @@ const Paypal_Checkout_Button = (props) => {
             ],
           });
         }}
-        onApprove={(data, actions) => {
-          return actions.order.capture().then((details) => {
+        onApprove={async (data, actions) => {
+          return await actions.order.capture().then((details) => {
             const name = details.payer.name.given_name;
             alert(`Transaction completed by ${name}`);
           });

@@ -1,15 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+
 const CheckoutForm = () => {
+
     return (
         <form className="CheckoutForm mb-3">
-            <div className="CheckoutForm_headings d-flex justify-content-between">
-                <h5 className="contact__info">Contact Information</h5>
-                <span className="account">Already have an account? <Link to="/login">Log in</Link></span>
+            <div className="CheckoutForm_headings d-flex justify-content-between mb-3">
+                <p className="contact__info">Contact Information</p>
+                <p className="account">Already have an account? <Link to="/login">Log in</Link></p>
             </div>
 
             <div className="form-floating mb-3">
-                <input type="text" className="form-control shadow-none" id="email" placeholder="Email Address" required/>
+                <input type="text" className="form-control shadow-none" id="email" placeholder="Email Address" required />
                 <label htmlFor="email">Email address</label>
             </div>
 
@@ -18,10 +21,10 @@ const CheckoutForm = () => {
                 <label htmlFor="EmailCheckbox">Email me with news and offers</label>
             </div>
 
-            <div className="shipping__address my-4">
-                <h5 className="shipping__heading my-3">Shipping address</h5>
-                <select id="inputState" className="form-select p-3 mb-3 shadow-none">
-                    <option defaultValue={"Select Country"}>Select Country...</option>
+            <div className="shipping__address form-floating my-4">
+                <p className="shipping__heading my-3">Shipping address</p>
+                <select id="inputState" className="form-select mb-3 shadow-none">
+                    {/* <option >Select Country...</option> */}
                     <option value="MX">Mexico</option>
                     <option value="US">United States</option>
                     <option value="CA">Canada</option>
@@ -118,17 +121,16 @@ const CheckoutForm = () => {
                     <option value="VA">Vatican City</option>
                     <option value="VN">Vietnam</option>
                     <option value="YE">Yemen</option>
-                </select>
 
+                </select>
                 <div className="row mb-3">
-                    <div className="col">
+                    <div className="col-6 firstNameCol">
                         <div className="form-floating">
-                            <input type="text" className="form-control shadow-none" id="fname" placeholder="fname" required/>
+                            <input type="text" className="form-control shadow-none" id="fname" placeholder="fname" required />
                             <label htmlFor="fname">First Name</label>
                         </div>
                     </div>
-
-                    <div className="col">
+                    <div className="col-6">
                         <div className="form-floating">
                             <input type="text" className="form-control shadow-none" id="lname" placeholder="lname" required />
                             <label htmlFor="lname">Last Name</label>
@@ -137,32 +139,32 @@ const CheckoutForm = () => {
                 </div>
 
                 <div className="form-floating mb-3">
-                    <input type="text" className="form-control shadow-none" id="address" placeholder="address" required/>
+                    <input type="text" className="form-control shadow-none" id="address" placeholder="address" required />
                     <label htmlFor="address">Address</label>
                 </div>
 
                 <div className="form-floating mb-3">
-                    <input type="text" className="form-control shadow-none" id="apartment" placeholder="apartment, suit, etc. (optional)" required/>
+                    <input type="text" className="form-control shadow-none" id="apartment" placeholder="apartment, suit, etc. (optional)" required />
                     <label htmlFor="apartment">Apartment, suit, etc. (optional)</label>
                 </div>
 
                 <div className="row mb-3">
-                    <div className="col">
+                    <div className="col-6 cityCol">
                         <div className="form-floating">
-                            <input type="text" className="form-control shadow-none" id="city" placeholder="city" required/>
+                            <input type="text" className="form-control shadow-none" id="city" placeholder="city" required />
                             <label htmlFor="city">City</label>
                         </div>
                     </div>
-                    <div className="col">
+                    <div className="col-6">
                         <div className="form-floating">
-                            <input type="text" className="form-control shadow-none" id="postalCode" placeholder="Postal Code" required/>
+                            <input type="text" className="form-control shadow-none" id="postalCode" placeholder="Postal Code" required />
                             <label htmlFor="postalCode">Postal Code</label>
                         </div>
                     </div>
                 </div>
 
                 <div className="form-floating">
-                    <input type="text" className="form-control shadow-none" id="phone" placeholder="phone" required/>
+                    <input type="text" className="form-control shadow-none" id="phone" placeholder="phone" required />
                     <label htmlFor="phone">Phone</label>
                 </div>
             </div>
@@ -173,10 +175,7 @@ const CheckoutForm = () => {
             </div>
 
             <div className="CheckoutFooterBtn">
-                <div className="return_to_cart d-flex">
-                    <span><Link to="/cart" className="text-dark"><i className="fa-solid fa-chevron-left"></i></Link></span>
-                    <span className="return__Cart mx-2"><h6><Link to="/cart" className="text-dark">Return to Cart</Link></h6></span>
-                </div>
+                <Link  to="/cart" className="return__Cart"><i className="fa-solid fa-chevron-left me-3"></i>Return to Cart</Link>
                 <button type="submit" className="btn shadow-none"><Link to="/shipping" className="text-white">Continue to shipping</Link></button>
             </div>
         </form>

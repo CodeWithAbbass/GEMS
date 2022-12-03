@@ -7,7 +7,7 @@ const CheckoutItem = ({ id, name, color, price, image, quantity, discount }) => 
     const { CalcDiscount } = useProductContext();
     // const { total_item } = useCartContext();
     const NewAmount = CalcDiscount(discount, price)
-    // const 
+    const OldProductID = parseFloat(id);
     return (
         <>
             <div className="cart_item d-flex mb-3" key={id}>
@@ -19,7 +19,7 @@ const CheckoutItem = ({ id, name, color, price, image, quantity, discount }) => 
                     </div>
 
                     <div className="cart_item_details_info align-self-center">
-                        <h6><Link to={`/singleproduct/${id}`}>{window.innerWidth <= 768 ? `${name.slice(0, 50)}...` : name}</Link></h6>
+                        <h6><Link to={`/singleproduct/${OldProductID}`}>{window.innerWidth <= 768 ? `${name.slice(0, 50)}...` : name}</Link></h6>
                         <p>{color}</p>
                     </div>
 

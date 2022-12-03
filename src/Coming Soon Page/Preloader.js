@@ -18,8 +18,8 @@ class Preloader extends Component {
   render() {
     return (
       <div className="preloader">
-        <div class="spinner_wrap">
-          <div class="spinner" />
+        <div className="spinner_wrap">
+          <div className="spinner" />
         </div>
       </div>
     );
