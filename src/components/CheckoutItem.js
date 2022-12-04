@@ -23,7 +23,6 @@ const CheckoutItem = ({ id, name, color, price, image, quantity, discount }) => 
                         <p>{color}</p>
                     </div>
 
-
                     <div className="cart_item_details_price align-self-center">
                         <div className="cart_item_details_info_priceList text-center">
                             <div className={`oldPrice ms-2 ${discount > 0 ? "d-block" : "d-none"}`}>{PriceFormat(price)}</div>
