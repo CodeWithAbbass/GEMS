@@ -5,8 +5,10 @@ import "../../Css/Checkout.css";
 import { useCartContext } from "../../context/cart_context";
 import CheckoutItem from "../CheckoutItem";
 import PriceFormat from "../../Helpers/PriceFormat";
+import { useUserContext } from "../../context/user_context";
 
 const Shipping = ({ setProgress }) => {
+  const { user } = useUserContext();
   const { cart, shipping_fee, total_price } = useCartContext();
   let DiscountAmount = 0;
 
@@ -46,21 +48,26 @@ const Shipping = ({ setProgress }) => {
           </nav>
 
           {/* ***************************** contact info *************************** */}
-          <div className="contact__info">
-            <div className="contact">
-              <h6 className="contact__heading">Contact</h6>
-              <div className="email">Lorem ipsum dolor sit amet.</div>
-              <Link to={"/checkout"} className="change">Change</Link>
-            </div>
+          {user.map((item, index) => {
+            return (
+              <div className="contact__info" key={index}>
+                <div className="contact">
+                  <h6 className="contact__heading">Contact</h6>
+                  <div className="email">{item.email}</div>
+                  <Link to={"/checkout"} className="change">Change</Link>
+                </div>
 
-            <hr />
+                <hr />
 
-            <div className="ship">
-              <h6 className="ship_to__heading">Ship to</h6>
-              <div className="address">Lorem ipsum dolor sit amet.</div>
-              <Link to={"/checkout"} className="change">Change</Link>
-            </div>
-          </div>
+                <div className="ship">
+                  <h6 className="ship_to__heading">Ship to</h6>
+                  <div className="address">{item.address}</div>
+                  <Link to={"/checkout"} className="change">Change</Link>
+                </div>
+              </div>
+            )
+          })}
+
 
           {/* **************************************************************************** */}
           {/* ***************************** Shipping method *************************** */}
@@ -126,14 +133,14 @@ const Shipping = ({ setProgress }) => {
                 <div className="shipping">
                   {/* ***********************Subtotal******************************** */}
                   <div className="card-total">
-                    <h3 className="sub__total">Subtotal</h3>
-                    <h3 className="sub__total_price"><span>{PriceFormat(total_price)}</span></h3>
+                    <h6 className="sub__total">Subtotal</h6>
+                    <h6 className="sub__total_price"><span>{PriceFormat(total_price)}</span></h6>
                   </div>
 
                   {/* ***********************discount******************************** */}
                   <div className="card-total">
-                    <h3 className="discount">Discount</h3>
-                    <h3 className="discount__price"><span>-{PriceFormat(DiscountAmount)}</span></h3>
+                    <h6 className="discount">Discount</h6>
+                    <h6 className="discount__price"><span>-{PriceFormat(DiscountAmount)}</span></h6>
                   </div>
 
                   <div className="discount_tag">
@@ -143,8 +150,8 @@ const Shipping = ({ setProgress }) => {
 
                   {/* ***********************shipping__price************************** */}
                   <div className="card-total">
-                    <h3 className="discount">Shipping</h3>
-                    <h3 className="discount__price"><span>{PriceFormat(shipping_fee)}</span></h3>
+                    <h6 className="discount">Shipping</h6>
+                    <h6 className="discount__price"><span>{PriceFormat(shipping_fee)}</span></h6>
                   </div>
                 </div>
 

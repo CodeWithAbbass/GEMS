@@ -7,9 +7,10 @@ import CheckoutItem from "../CheckoutItem";
 import PriceFormat from "../../Helpers/PriceFormat";
 import PayPal_Logo from "../../images/Paypal_logo.png";
 import PayPalCheckoutButtons from "../Paypal_Checkout_Button";
+import { useUserContext } from "../../context/user_context";
 
 const Payment = ({ setProgress }) => {
-
+  const { user } = useUserContext();
   const { cart, shipping_fee, total_price } = useCartContext();
   let DiscountAmount = 0;
 
@@ -48,21 +49,25 @@ const Payment = ({ setProgress }) => {
           </nav>
 
           {/* ***************************** contact info *************************** */}
-          <div className="contact__info">
-            <div className="contact">
-              <h6 className="contact__heading">Contact</h6>
-              <div className="email">Lorem ipsum dolor sit amet.</div>
-              <Link to="/checkout" className="change">Change</Link>
-            </div>
+          {user.map((item, index) => {
+            return (
+              <div className="contact__info" key={index}>
+                <div className="contact">
+                  <h6 className="contact__heading">Contact</h6>
+                  <div className="email">{item.email}</div>
+                  <Link to={"/checkout"} className="change">Change</Link>
+                </div>
 
-            <hr />
+                <hr />
 
-            <div className="ship">
-              <h6 className="ship_to__heading">Ship to</h6>
-              <div className="address">Lorem ipsum dolor sit amet.</div>
-              <Link to="/checkout" className="change">Change</Link>
-            </div>
-          </div>
+                <div className="ship">
+                  <h6 className="ship_to__heading">Ship to</h6>
+                  <div className="address">{item.address}</div>
+                  <Link to={"/checkout"} className="change">Change</Link>
+                </div>
+              </div>
+            )
+          })}
 
           {/* ***************************** payment method *************************** */}
           <div className={`payment__method`}>
@@ -82,7 +87,6 @@ const Payment = ({ setProgress }) => {
           </div>
         </div>
 
-        {/* **************************************************************************** */}
         {/* *************************** payment ********************************* */}
         <div className="accordion accordion-flush MobileAccordion" id="accordionFlushExample" >
           <div className="accordion-item">
@@ -170,7 +174,7 @@ const Payment = ({ setProgress }) => {
           {/* ***********************Discount__btn********************************** */}
           <div className="discount__code d-flex my-3">
             <div className="form-floating col-9">
-              <input type="text" className="form-control shadow-none" id="DiscountCode" placeholder="Discount Code" required/>
+              <input type="text" className="form-control shadow-none" id="DiscountCode" placeholder="Discount Code" required />
               <label htmlFor="DiscountCode">Discount Code</label>
             </div>
             <button type="submit" className="btn btn-dark mx-2 col-3">Apply</button>

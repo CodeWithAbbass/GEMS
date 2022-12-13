@@ -1,32 +1,69 @@
-import React, {useState}from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ".././Css/Checkout.css";
+import { useUserContext } from "../context/user_context";
 
 const CheckoutForm = () => {
-
-    const handleSubmit = (e)=>{
+    const { SaveFillingUserInfo } = useUserContext();
+    const [userInfo, setUserInfo] = useState({
+        email: "",
+        emailMe: "",
+        country: "",
+        fName: "",
+        lName: "",
+        address: "",
+        apartment: "",
+        city: "",
+        postalCode: "",
+        phone: "",
+        saveInfoCheckbox: "",
+    });
+    const handleSubmit = (e) => {
         e.preventDefault();
+        SaveFillingUserInfo(userInfo);
+        // setUserInfo({
+        //     email: "",
+        //     emailMe: "",
+        //     country: "",
+        //     fName: "",
+        //     lName: "",
+        //     address: "",
+        //     apartment: "",
+        //     city: "",
+        //     postalCode: "",
+        //     phone: "",
+        //     saveInfoCheckbox: "",
+        // });
     }
+
+    const onChange = (e) => {
+        const { name, value } = e.target;
+        setUserInfo({
+            ...userInfo,
+            [name]: value,
+        });
+    };
+
     return (
-        <form className="CheckoutForm mb-3" id="CheckoutFormId" action='' method='POST' onSubmit={handleSubmit} >
+        <form className="CheckoutForm mb-3" id="CheckoutFormId" action='no-action' method='POST' onSubmit={handleSubmit} >
             <div className="CheckoutForm_headings d-flex justify-content-between mb-3">
                 <p className="contact__info">Contact Information</p>
                 <p className="account">Already have an account? <Link to="/login">Log in</Link></p>
             </div>
 
             <div className="form-floating mb-3">
-                <input type="text" className="form-control shadow-none" id="email" name="email" placeholder="Email Address" required />
+                <input type="text" className="form-control shadow-none" id="email" name="email" placeholder="Email Address" required value={userInfo.email} onChange={onChange} />
                 <label htmlFor="email">Email address</label>
             </div>
 
             <div className="form-check shadow-none my-2">
-                <input className="form-check-input" type="checkbox" id="EmailCheckbox" name="emailCheckBox" />
+                <input className="form-check-input" type="checkbox" id="EmailCheckbox" name="emailMe" value={userInfo.emailMe} onChange={onChange} />
                 <label htmlFor="EmailCheckbox">Email me with news and offers</label>
             </div>
 
             <div className="shipping__address form-floating my-4">
                 <p className="shipping__heading my-3">Shipping address</p>
-                <select id="inputState" name="country" className="form-select mb-3 shadow-none" aria-label=".form-select-sm example" >
+                <select id="country" name="country" className="form-select mb-3 shadow-none" aria-label=".form-select-sm example" value={userInfo.country} onChange={onChange} required>
                     {/* <option >Select Country...</option> */}
                     <option name="MX" value="MX">Mexico</option>
                     <option name="US" value="US">United States</option>
@@ -130,57 +167,57 @@ const CheckoutForm = () => {
                 <div className="row mb-3">
                     <div className="col-6 firstNameCol">
                         <div className="form-floating">
-                            <input type="text" className="form-control shadow-none" id="fName" name="fName" placeholder="first Name" required />
+                            <input type="text" className="form-control shadow-none" id="fName" name="fName" placeholder="first Name" value={userInfo.fName} onChange={onChange} required />
                             <label htmlFor="fName">First Name</label>
                         </div>
                     </div>
                     <div className="col-6">
                         <div className="form-floating">
-                            <input type="text" className="form-control shadow-none" id="lName" name="lName" placeholder="lName" required />
+                            <input type="text" className="form-control shadow-none" id="lName" name="lName" placeholder="lName" value={userInfo.lName} onChange={onChange} required />
                             <label htmlFor="lName">Last Name</label>
                         </div>
                     </div>
                 </div>
 
                 <div className="form-floating mb-3">
-                    <input type="text" className="form-control shadow-none" id="address" name="address" placeholder="address" required />
+                    <input type="text" className="form-control shadow-none" id="address" name="address" placeholder="address" value={userInfo.address} onChange={onChange} required />
                     <label htmlFor="address">Address</label>
                 </div>
 
                 <div className="form-floating mb-3">
-                    <input type="text" className="form-control shadow-none" id="apartment" name="apartment" placeholder="apartment, suit, etc. (optional)" required />
+                    <input type="text" className="form-control shadow-none" id="apartment" name="apartment" placeholder="apartment, suit, etc. (optional)" value={userInfo.apartment} onChange={onChange} required />
                     <label htmlFor="apartment">Apartment, suit, etc. (optional)</label>
                 </div>
 
                 <div className="row mb-3">
                     <div className="col-6 cityCol">
                         <div className="form-floating">
-                            <input type="text" className="form-control shadow-none" id="city" name="city" placeholder="city" required />
+                            <input type="text" className="form-control shadow-none" id="city" name="city" placeholder="city" value={userInfo.city} required onChange={onChange} />
                             <label htmlFor="city">City</label>
                         </div>
                     </div>
                     <div className="col-6">
                         <div className="form-floating">
-                            <input type="text" className="form-control shadow-none" id="postalCode" placeholder="Postal Code" required />
+                            <input type="text" className="form-control shadow-none" id="postalCode" name="postalCode" placeholder="Postal Code" value={userInfo.postalCode} required onChange={onChange} />
                             <label htmlFor="postalCode">Postal Code</label>
                         </div>
                     </div>
                 </div>
 
                 <div className="form-floating">
-                    <input type="text" className="form-control shadow-none" id="phone" name="phone" placeholder="phone" required />
+                    <input type="text" className="form-control shadow-none" id="phone" name="phone" placeholder="phone" value={userInfo.phone} required onChange={onChange} />
                     <label htmlFor="phone">Phone</label>
                 </div>
             </div>
 
             <div className="form-check shadow-none mb-3">
-                <input type="checkbox" className="form-check-input shadow-none" id="SaveInfoCheckbox" name="SaveInfoCheckbox" />
-                <label htmlFor="SaveInfoCheckbox">Save this information for next time</label>
+                <input type="checkbox" className="form-check-input shadow-none" id="saveInfoCheckbox" name="saveInfoCheckbox" value={userInfo.saveInfoCheckbox} onChange={onChange} />
+                <label htmlFor="saveInfoCheckbox">Save this information for next time</label>
             </div>
 
             <div className="CheckoutFooterBtn">
-                <Link  to="/cart" className="return__Cart"><i className="fa-solid fa-chevron-left me-3"></i>Return to Cart</Link>
-                <button type="submit" className="btn shadow-none"><Link to="/shipping" className="text-white">Continue to shipping</Link></button>
+                <Link to="/cart" className="return__Cart"><i className="fa-solid fa-chevron-left me-3"></i>Return to Cart</Link>
+                <button type="submit" className="btn shadow-none" ><Link to="/shipping" className="text-white">Continue to shipping</Link></button>
             </div>
         </form>
     );

@@ -8,10 +8,11 @@ import "../../Css/AllProducts.css"
 const AllProducts = ({ setProgress }) => {
   const location = useLocation()
   const { products } = useProductContext();  // Destructure
-
   const [data, setData] = useState(products);
   const [Grid2xActive, setGrid2xActive] = useState(true);
   const [Grid3xActive, setGrid3xActive] = useState(false);
+  const [showDetails, setShowDetails] = useState("All Products");
+
   useEffect(() => {
     setProgress(10);
     setProgress(30);
@@ -26,12 +27,14 @@ const AllProducts = ({ setProgress }) => {
     const result = products.filter(item => item.category === category);
     setData(result);
     setProgress(100);
+    setShowDetails(category);
   }
-  const filterAllRes = () => {
+  const filterAllRes = (category) => {
     setProgress(0);
     const result = products.filter(item => item);
     setData(result);
     setProgress(100);
+    setShowDetails(category);
   }
   const Sort = () => {
     const userSelect = document.querySelector('.form-select').value;
@@ -84,6 +87,8 @@ const AllProducts = ({ setProgress }) => {
     setGrid2xActive(false);
     setGrid3xActive(true);
   }
+
+
   return (
     <div className='AllProduct text-center'>
       <h2 className='mt-5'>ALL PRODUCTS</h2>
@@ -101,11 +106,11 @@ const AllProducts = ({ setProgress }) => {
           <div className="accordion accordion-flush" id="accordionFlushExample">
             <div className="accordion-item bg-transparent">
               <div className="accordion-header" id="flush-headingTwo">
-                <button className="accordion-button collapsed bg-transparent d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseTwo">All Products</button>
+                <button className="accordion-button collapsed bg-transparent d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseTwo">{showDetails}</button>
               </div>
               <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                 <div className="accordion-body">
-                  <button className='text-decoration-none link-light d-block py-2' onClick={() => filterAllRes()}>All Products</button>
+                  <button className='text-decoration-none link-light d-block py-2' onClick={() => filterAllRes("All Products")}>All Products</button>
                   <button className='text-decoration-none link-light d-block py-2' onClick={() => filterRes("True Wireless")}>True Wireless</button>
                   <button className='text-decoration-none link-light d-block py-2' onClick={() => filterRes("Noise Cancelling")}>Noise Cancelling</button>
                   <button className='text-decoration-none link-light d-block py-2' onClick={() => filterRes("AudioPhile")}>AudioPhile</button>

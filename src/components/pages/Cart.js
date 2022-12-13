@@ -39,12 +39,7 @@ const Cart = ({setProgress}) => {
             <div className="cart_headItem cart_headItem_Total">Total</div>
           </div>
           {cart.map((curItem, index) => {
-            return (
-              <CartItem
-                key={curItem.id}
-                {...curItem}
-              />
-            )
+            return (<CartItem key={curItem.id} {...curItem}/>)
           })}
           <div className="card-total">
             <h3>Cart Total : <span>{PriceFormat(total_price)}</span>

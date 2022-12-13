@@ -145,7 +145,7 @@
 /* ////////////////////////////////// */
 /* DELETE Product  */
 .DProduct>#DeleteProductContainer {
-    margin: 1rem 0;
+    margin-top: 1rem;
     visibility: hidden;
     display: none;
     -webkit-animation: fadeIn .5s ease-out;
@@ -163,7 +163,7 @@
 /* ////////////////////////////////// */
 /* EDIT Product  */
 .DProduct>#EditProductContainer {
-    margin: 1rem 0;
+    margin-top: 1rem;
     visibility: hidden;
     display: none;
     -webkit-animation: fadeIn .5s ease-out;
@@ -181,7 +181,7 @@
 /* ////////////////////////////////// */
 /* ALL Product  */
 .DProduct>#AllProductsContainer {
-    margin: 1rem 0;
+    margin-top: 1rem;
     visibility: hidden;
     display: none;
     -webkit-animation: fadeIn .5s ease-out;

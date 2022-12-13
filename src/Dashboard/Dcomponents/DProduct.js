@@ -4,7 +4,7 @@ import { useProductContext } from '../../context/product_context';
 import "../Css/DProduct.css";
 
 const DProduct = () => {
-  const { products, AddProduct, CalcDiscount } = useProductContext();
+  const { products, AddProduct } = useProductContext();
   const [active, setActive] = useState("Add Product");
   const [product, setProduct] = useState({
     name: "",
@@ -46,8 +46,31 @@ const DProduct = () => {
   const handleAdd = (e) => {
     e.preventDefault();
     AddProduct(product);
-    // setProduct();
     alert("Product Added Successfully");
+    setProduct({
+      name: "",
+      id: "",
+      price: "",
+      stock: "",
+      discount: "",
+      tag: "",
+      brand: "",
+      feature: "",
+      category: "",
+      color: "",
+      date: "",
+      PImage1: "",
+      PImage2: "",
+      PImage3: "",
+      PImage4: "",
+      image: [],
+      Meta1: "",
+      Meta2: "",
+      Meta3: "",
+      Meta4: "",
+      productMeta: [],
+      description: "",
+    });
   };
 
   const onChange = (e) => {
@@ -90,7 +113,7 @@ const DProduct = () => {
       <div className="AddProduct text-center" id="AddProductContainer" style={active === "Add Product" ? style1 : style2}>
         <h2>What's New</h2>
         <p>Please fill in the information below:</p>
-        <form className="pt-4 d-flex flex-wrap justify-content-between" id="AddProductForm" action='' method='POST' onSubmit={handleAdd}>
+        <form className="pt-4 d-flex flex-wrap justify-content-between" id="AddProductForm" action='no-action' method='POST' onSubmit={handleAdd}>
           <input id="name" name="name" placeholder="PRODUCT NAME" className="w-100 form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" value={product.name} type="text" onChange={onChange} required />
           <input id="id" name="id" placeholder="PRODUCT ID" className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" value={product.id} type="text" onChange={onChange} required />
           <input id="price" name="price" placeholder="PRICE" className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" value={product.price} type="text" onChange={onChange} required />

@@ -6,14 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import { AppProvider } from "./context/product_context";
 import { CartProvider } from "./context/cart_context";
 import { BlogProvider } from './context/blog_context';
+import { UserProvider } from './context/user_context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <AppProvider>
-    <BlogProvider>
-      <CartProvider>
-        <App />
-      </CartProvider>
+    <UserProvider>
+      <BlogProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
       </BlogProvider>
+    </UserProvider>
   </AppProvider>
 );
 

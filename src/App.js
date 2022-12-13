@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/Header';
 import Home from './components/pages/Home';
 import AllProducts from './components/pages/AllProducts';
-// import NewArrivals from './components/pages/NewArrivals';
+import NewArrivals from './components/pages/NewArrivals';
 // import HelpCenter from './components/pages/HelpCenter';
 // import Download from './components/pages/Download';
 import Blog from './components/pages/Blog';
@@ -45,7 +45,7 @@ function App(props) {
           <Route path="/" element={<Header />} >
             <Route index element={<Home />} setProgress={setProgress} />
             <Route path="allproducts" element={<AllProducts setProgress={setProgress} />} />
-            <Route path="newarrivals" element={<ComingSoon />} />
+            <Route path="newarrivals" element={<NewArrivals />} />
             <Route path="helpcenter" element={<ComingSoon />} />
             <Route path="download" element={<ComingSoon />} />
             <Route path="blog" element={<Blog setProgress={setProgress} />} />

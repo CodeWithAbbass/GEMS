@@ -105,16 +105,16 @@ const Checkout = ({ setProgress }) => {
               <div className="shipping">
                 {/* ***********************Subtotal******************************** */}
                 <div className="card-total">
-                  <h3 className="sub__total">Subtotal</h3>
-                  <h3 className="sub__total_price"><span>{PriceFormat(total_price)}</span></h3>
+                  <h6 className="sub__total">Subtotal</h6>
+                  <h6 className="sub__total_price"><span>{PriceFormat(total_price)}</span></h6>
                 </div>
 
                 {/* ***********************discount******************************** */}
                 <div className="card-total">
-                  <h3 className="discount">Discount</h3>
-                  <h3 className="discount__price">
+                  <h6 className="discount">Discount</h6>
+                  <h6 className="discount__price">
                     <span>-{PriceFormat(DiscountAmount)}</span>
-                  </h3>
+                  </h6>
                 </div>
 
                 <div className="discount_tag">
@@ -124,10 +124,8 @@ const Checkout = ({ setProgress }) => {
 
                 {/* ***********************shipping__price************************** */}
                 <div className="card-total">
-                  <h3 className="discount">Shipping</h3>
-                  <h3 className="discount__price">
-                    <span>{PriceFormat(shipping_fee)}</span>
-                  </h3>
+                  <h6 className="discount">Shipping</h6>
+                  <h6 className="discount__price"><span>{PriceFormat(shipping_fee)}</span></h6>
                 </div>
               </div>
 

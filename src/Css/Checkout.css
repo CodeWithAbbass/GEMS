@@ -61,6 +61,7 @@
 .payment_info>.payment_container>.contact__info>.ship {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .shipping_info>.shipping_container>.contact__info>.contact>.contact__heading,
@@ -207,10 +208,6 @@
     margin-right: auto;
 }
 
-.checkout__info>.checkout_container>.express__checkout>.paypal__payment>.btn {
-    width: 45%;
-    margin: 20px 0;
-}
 
 .checkout__info>.checkout_container>.divider {
     border-top: 1px solid rgb(187, 187, 187);
@@ -570,6 +567,22 @@
         margin-top: 4rem;
     }
 
+    
+.shipping_info>.shipping_container>.contact__info>.ship>.contact__heading,
+.payment_info>.payment_container>.contact__info>.ship>.contact__heading,
+.shipping_info>.shipping_container>.contact__info>.ship>.ship_to__heading,
+.payment_info>.payment_container>.contact__info>.ship>.ship_to__heading {
+    width: 25%;
+}
+
+.shipping_info>.shipping_container>.contact__info>.contact__heading>.address,
+.payment_info>.payment_container>.contact__info>.contact__heading>.address,
+.shipping_info>.shipping_container>.contact__info>.ship>.address,
+.payment_info>.payment_container>.contact__info>.ship>.address {
+    width: 55%;
+}
+
+
     /* //////////////////////////// Mobile Accordion Css ///////////////////////////// */
 
     .checkout__info>.MobileAccordion,
@@ -583,12 +596,6 @@
     .payment_info .cart_item>.cart_item_details>.cart_item_details_info {
         max-width: 100%;
         width: 100%;
-    }
-
-    .paypal__payment>.btn {
-        background-color: rgb(255 196 57);
-        width: 90%;
-        margin: 20px 0;
     }
 
     /* //////////////////////////// Checkout Container Css ///////////////////////////// */
@@ -641,11 +648,15 @@
         margin-bottom: 1rem;
     }
 
-    .checkout__info>.checkout_container>.form_container>.CheckoutForm>.CheckoutFooterBtn {
+    .checkout__info>.checkout_container>.form_container>.CheckoutForm>.CheckoutFooterBtn,
+    .shipping_info>.shipping_container>.ShippingFooterBtn,
+    .payment_info>.payment_container>.PaymentFooterBtn {
         flex-direction: column-reverse;
     }
 
-    .checkout__info>.checkout_container>.form_container>.CheckoutForm>.CheckoutFooterBtn>.btn {
+    .checkout__info>.checkout_container>.form_container>.CheckoutForm>.CheckoutFooterBtn>.btn,
+    .shipping_info>.shipping_container>.ShippingFooterBtn>.btn,
+    .payment_info>.payment_container>.PaymentFooterBtn>.btn {
         width: 100%;
         margin-bottom: 1rem;
     }
