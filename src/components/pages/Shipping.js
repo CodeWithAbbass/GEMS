@@ -9,7 +9,6 @@ import PriceFormat from "../../Helpers/PriceFormat";
 
 const Shipping = ({ setProgress }) => {
   const { cart, shipping_fee, total_price } = useCartContext();
-
   let DiscountAmount = 0;
 
   useEffect(() => {

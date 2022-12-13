@@ -106,6 +106,7 @@
     margin: 0px 5px;
 }
 
+
 .shipping_info>.shipping_container>.shipping__method,
 .payment_info>.payment_container>.payment__method {
     margin: 40px 0px;
@@ -166,6 +167,13 @@
     color: #000000;
 }
 
+.shipping_info>.shipping_container>.ShippingFooterBtn>.btn,
+.payment_info>.payment_container>.PaymentFooterBtn>.btn{
+    background-color: #000;
+    border-radius: 3px;
+    padding: 14px 24px;
+}
+
 
 .checkout__info>.checkout_container>.express__checkout {
     border: 1px solid rgb(187, 187, 187);
@@ -184,6 +192,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 
 .checkout__info>.checkout_container>.express__checkout>.paypal__payment>.btn {
     width: 45%;
@@ -411,7 +420,7 @@
 .checkout__info .card-total {
     display: flex;
     justify-content: space-between;
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 
 .checkout__info .card-total>.total {

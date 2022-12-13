@@ -41,18 +41,10 @@ const Payment = ({ setProgress }) => {
 
           <nav className="breadcrumb" aria-label="breadcrumb">
             <ol className="breadcrumb">
-              <li className="breadcrumb-item">
-                <Link to={"/cart"}>Cart</Link>
-              </li>
-              <li className="breadcrumb-item" aria-current="page">
-                Information
-              </li>
-              <li className="breadcrumb-item" aria-current="page">
-                Shipping
-              </li>
-              <li className="breadcrumb-item" aria-current="page">
-                Payment
-              </li>
+              <li className="breadcrumb-item"><Link to={"/cart"}>Cart</Link></li>
+              <li className="breadcrumb-item" aria-current="page">Information</li>
+              <li className="breadcrumb-item" aria-current="page">Shipping</li>
+              <li className="breadcrumb-item" aria-current="page">Payment</li>
             </ol>
           </nav>
 

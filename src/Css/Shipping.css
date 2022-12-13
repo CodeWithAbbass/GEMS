@@ -1,12 +1,5 @@
 
 
-
-.shipping_info>.shipping_container>.ShippingFooterBtn>.btn{
-    background-color: #000;
-    border-radius: 3px;
-    padding: 14px 24px;
-} 
-
 .shipping_info>.shipping_container>.ShippingFooterBtn>.btn>a{
     font-size: 14px;
     font-weight: 600;
