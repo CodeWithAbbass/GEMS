@@ -1,13 +1,6 @@
 
 
 
-
-.shipping_info>.shipping_container>.ShippingFooterBtn>.return__checkout{
-    font-size: 14px;
-    font-weight: 500;
-    color: #000000;
-}
-
 .shipping_info>.shipping_container>.ShippingFooterBtn>.btn{
     background-color: #000;
     border-radius: 3px;

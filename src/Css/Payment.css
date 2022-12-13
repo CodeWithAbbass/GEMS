@@ -4,11 +4,6 @@
 
 
 
-.payment_info>.payment_container>.PaymentFooterBtn>.return__shipping{
-    font-size: 14px;
-    font-weight: 500;
-    color: #000000;
-}
 
 .payment_info>.payment_container>.PaymentFooterBtn>.btn>a{
     font-size: 14px;

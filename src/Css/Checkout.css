@@ -159,7 +159,12 @@
     align-items: center;
 }
 
-
+.shipping_info>.shipping_container>.ShippingFooterBtn>.return__checkout,
+.payment_info>.payment_container>.PaymentFooterBtn>.return__shipping{
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+}
 
 
 .checkout__info>.checkout_container>.express__checkout {
