@@ -23,10 +23,16 @@
   color: white;
 }
 
-.hamBurgerIcon {
+.header__navBar>.navBar__left>.hamBurgerIcon {
   width: 20%;
   cursor: pointer;
+}
 
+.header__navBar>.navBar__left>.hamBurgerIcon>.hamburger__Icon {
+  width: 20px;
+  height: 1px;
+  background-color: white;
+  margin: 6px 0;
 }
 
 .navBar__center {
@@ -111,13 +117,6 @@
 }
 
 
-.hamburger__Icon {
-  width: 20px;
-  height: 1px;
-  background-color: white;
-  margin: 6px 0;
-}
-
 .sidenav {
   height: 100%;
   width: 0%;
@@ -154,7 +153,7 @@
   margin-top: 5rem;
 }
 
-.AllProducts {
+#mySidenav>.container>.AllProducts {
   border-bottom: 1px solid white;
 }
 
@@ -200,9 +199,9 @@
   color: #1fbaff !important;
 }
 
-.sidenav>.container>.accordion>.accordion-item>.accordion-collapse>.accordion-body {
+/* .sidenav>.container>.accordion>.accordion-item>.accordion-collapse>.accordion-body {
   padding: 0rem 5rem;
-}
+} */
 
 .bottomBtn {
   border: none;
@@ -215,12 +214,14 @@
   position: fixed;
   top: 6%;
   transform: translateY(-25px);
+  transition: 0.5s;
 }
 
 .searchBar .form-control {
   padding: 3rem 5rem;
   padding-top: 6rem;
   width: 100%;
+  background-color: green;
 }
 
 
@@ -236,27 +237,47 @@
   top: 0;
   right: 0;
   background-color: #fff;
-  overflow-x: hidden;
+  overflow: hidden;
   transition: 0.5s;
   padding-bottom: 50px;
-  box-shadow: 0 -1px #d9d9d9 inset;
-  border: 1px solid green;
+  box-shadow: 0px 20px 20px 0px #d9d9d9;
 }
 
-.sidecart>.sidecart_Header{
+.sidecart>.sidecart_Header {
   border-bottom: 1px solid #d9d9d9;
-  padding:10px 30px;
+  padding: 10px 30px;
 }
-.sidecart>.sidecart_Header>.sidecart_Header_heading{
+
+.sidecart>.sidecart_Header>.sidecart_Header_heading {
   font-size: 17px;
   font-weight: 500;
   color: #000;
 }
-.sidecart>.sidecart_Header>.sidecart_Header_closebtn{
+
+.sidecart>.sidecart_Header>.sidecart_Header_closebtn {
   font-size: 36px;
   line-height: 1;
   color: #000;
 }
+
+.sidecart>.container>.SideCart_checkoutBtn {
+  text-decoration: none;
+  min-width: 142px;
+  width: 100%;
+  color: white;
+  padding: 14px 24px;
+  margin-top: 2rem;
+  border: 1px solid black;
+  background: linear-gradient(to left, black 50%, white 50%) right;
+  background-size: 200%;
+  transition: .3s ease-out;
+}
+
+.sidecart>.container>.SideCart_checkoutBtn:hover {
+  background-position: left;
+  color: black;
+}
+
 
 
 /* 

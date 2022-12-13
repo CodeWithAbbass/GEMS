@@ -1,0 +1,22 @@
+.DHome {
+    background-color: #000;
+    height: 100vh;
+}
+
+.DHome>.DHome_Container>.Container_Item {
+    background-color: #191C24;
+}
+
+.DHome>.DHome_Container>.Container_Item>i {
+    color: #EB1616 !important;
+}
+
+.DHome>.DHome_Container>.Container_Item>.Item_txt>.Item_txt_heading {
+    color: #6C7293;
+    font-weight: 500;
+}
+
+.DHome>.DHome_Container>.Container_Item>.Item_txt>.Item_txt_value {
+    color: white;
+    font-weight: 600;
+}

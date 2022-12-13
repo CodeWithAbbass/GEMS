@@ -1,18 +1,23 @@
 import React, { useEffect, } from "react";
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, Outlet } from 'react-router-dom';
 import { useCartContext } from "../context/cart_context";
 import "../Css/Header.css";
 import GEMSLOGO from ".././images/GEMS/GEMSLOGO.png"
 import SideCartitem from './SideCartitem';
+import PriceFormat from "../Helpers/PriceFormat";
+import Footer from "./Footer";
 
 const Header = () => {
-  const { cart, total_item } = useCartContext();
+  const { cart, total_item, total_price } = useCartContext();
+
   const location = useLocation();
+  let itemExist;
 
 
   function openNav() {
     const width = window.innerWidth;
     if (width <= 768) {
+      closeCart();
       document.getElementById("mySidenav").style.width = "100%";
     } else {
       document.getElementById("mySidenav").style.width = "30%";
@@ -24,6 +29,7 @@ const Header = () => {
   function openCart() {
     const width = window.innerWidth;
     if (width <= 768) {
+      closeNav();
       document.getElementById("myCart").style.width = "100%";
     } else {
       document.getElementById("myCart").style.width = "30%";
@@ -117,19 +123,26 @@ const Header = () => {
     const searchBar = document.querySelector(".searchBar");
     if (searchBar.style.display === "none") {
       searchBar.style.display = "block";
-      searchBar.style.transition = "0.3s ease - out";
     } else {
       searchBar.style.display = "none";
     }
   }
+
+
   useEffect(() => {
-    // document.addEventListener("mousedown", function () {
-    //   closeCart();
-    //   closeNav();
+    // document.addEventListener("mousedown", function (e) {
+    //   if (e.target.id !== "mySidenav") {
+    //     closeNav();
+    //   }
+    //   if (e.target.id !== "myCart") {
+    //     closeCart();
+    //   }
     // })
+    if (location.pathname==="/admin") {
+      document.querySelector(".header").style.display = "none";
+    }
     // eslint-disable-next-line
   }, [location]);
-
 
   return (
     <div className="header">
@@ -238,6 +251,7 @@ const Header = () => {
         </div>
         <div className="container">
           {cart.map((curItem, index) => {
+            itemExist = curItem;
             return (
               <SideCartitem
                 key={curItem.id}
@@ -245,8 +259,11 @@ const Header = () => {
               />
             )
           })}
+          {itemExist !== undefined && <Link to={"/checkout"} className="SideCart_checkoutBtn btn rounded-0 shadow-0">Checkout: {PriceFormat(total_price)}</Link>}
         </div>
       </div>
+      <Outlet/>
+      <Footer />
     </div>
   );
 

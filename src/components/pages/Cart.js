@@ -4,15 +4,15 @@ import "../../Css/Cart.css"
 import { useCartContext } from "../../context/cart_context";
 import CartItem from '../CartItem';
 import PriceFormat from '../../Helpers/PriceFormat';
-const Cart = (props) => {
+const Cart = ({setProgress}) => {
   const location = useLocation();
   const { cart, clearCart, total_price } = useCartContext();
   useEffect(() => {
-    props.setProgress(10)
-    props.setProgress(30)
-    props.setProgress(50)
-    props.setProgress(100)
-    window.scrollTo(0, 0)
+    setProgress(10);
+    setProgress(30);
+    setProgress(50);
+    setProgress(100);
+    window.scrollTo(0, 0);
     // eslint-disable-next-line
   }, [location]);
 

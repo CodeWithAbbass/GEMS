@@ -25,7 +25,6 @@ const SingleProduct = ({ setProgress }) => {
   }, [location]);
 
 
-
   return (
     <div className='SingleProduct py-5'>
       {Data.map((item, index) => {

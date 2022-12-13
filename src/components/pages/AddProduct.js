@@ -15,7 +15,8 @@ const AddProduct = (props) => {
         description: "",
         oldPrice: "",
         pMainImg: "",
-        pOtherImg: "",});
+        pOtherImg: "",
+    });
 
     const { addProductItem, getProducts } = useCartContext(); 
     const handleAdd = (e) => {

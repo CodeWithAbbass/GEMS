@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import img1 from '../images/1.jpg'
 import img2 from '../images/2.jpg'
 import img3 from '../images/3.jpg'
@@ -6,9 +6,20 @@ import img4 from '../images/4.jpg'
 import PaymentList from '../images/PaymentList-removebg-preview.png'
 import '../Css/Footer.css'
 import '../Css/General.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
+
+  const location = useLocation();
+  
+  useEffect(() => {
+    if (location.pathname === "/admin") {
+      document.querySelector(".footer").style.display = "none";
+    }
+    // eslint-disable-next-line
+  }, [location]);
+
+
   return (
     <div className='footer'>
       <div className="why_choose_us py-5 text-center ">

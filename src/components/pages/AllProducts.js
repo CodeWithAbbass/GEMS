@@ -140,7 +140,7 @@ const AllProducts = ({ setProgress }) => {
       <div className={`container d-flex justify-content-center g-0 ${Grid3xActive ? "d-block" : "d-none"}`}>
         <div className="row w-100 justify-content-between">
           {data.map((item, index) => {
-            const { id, name, tag, brand, category, weight, discount, description, price, image, } = item;
+            const { id, name, tag, brand, category, discount, description, price, image, } = item;
             const [pMainImg, pOtherImg] = image; // Destructuring From Array
             return (
               <div className="col-4 m-0 p-0 mb-5" key={index}>
@@ -150,7 +150,6 @@ const AllProducts = ({ setProgress }) => {
                   tag={tag}
                   brand={brand}
                   category={category}
-                  weight={weight}
                   discount={discount}
                   description={description}
                   price={price}
@@ -164,7 +163,7 @@ const AllProducts = ({ setProgress }) => {
       <div className={`container ProductGrid2x_Column d-flex justify-content-center g-0 ${Grid2xActive ? "d-block" : "d-none"}`}>
         <div className="row w-100 justify-content-between m-0">
           {data.map((item, index) => {
-            const { id, name, tag, brand, category, weight, discount, description, price, image } = item;
+            const { id, name, tag, brand, category, discount, description, price, image } = item;
             const [pMainImg, pOtherImg] = image; // Destructuring From Array
             return (
               <div className="col-6 m-0 p-0 mb-5" key={index}>
@@ -174,7 +173,6 @@ const AllProducts = ({ setProgress }) => {
                   tag={tag}
                   brand={brand}
                   category={category}
-                  weight={weight}
                   discount={discount}
                   description={window.innerWidth <= 768 ? `${description.slice(0, 50)}...` : description}
                   price={price}

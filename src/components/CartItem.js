@@ -4,7 +4,6 @@ import { useCartContext } from "../context/cart_context";
 import { useProductContext } from '../context/product_context';
 import PriceFormat from '../Helpers/PriceFormat';
 
-
 const CartItem = ({ id, name, color, discount, price, image, quantity, }) => {
     const { CalcDiscount } = useProductContext();
     const NewAmount = CalcDiscount(discount, price);
@@ -38,7 +37,7 @@ const CartItem = ({ id, name, color, discount, price, image, quantity, }) => {
             {/* Total  */}
             <div className="cart_item_priceList d-flex justify-content-end">
                 <div className="cart_item_priceList_innerDiv align-self-center">
-                    <span className="Total">{PriceFormat(NewAmount)}</span>
+                    <span className="Total">{`${discount > 0 ? PriceFormat(NewAmount) : PriceFormat(price)}`}</span>
                 </div>
             </div>
         </div>

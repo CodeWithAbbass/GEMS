@@ -1,0 +1,56 @@
+.DHeader {
+    background-color: #191C24;
+}
+
+.DHeader>.container-fluid>.row {
+    overflow: hidden;
+}
+
+
+.DHeader>.container-fluid>.DHeader_Left>.SearchContainer>i {
+    cursor: pointer;
+    background-color: #000;
+    border-radius: 100%;
+    padding: 10px !important;
+    color: #6C7293;
+}
+
+.DHeader>.container-fluid>.DHeader_Left>.SearchContainer>.form-control {
+    background-color: #000;
+    color: #6C7293;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.DHeader>.container-fluid>.DHeader_Left>.SearchContainer>.form-control:focus {
+    box-shadow: none;
+}
+
+.DHeader>.container-fluid>.DHeader_Right {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6C7293;
+}
+
+.DHeader>.container-fluid>.DHeader_Right>.Message_Col>i,
+.Notification_Col>i {
+    background-color: #000;
+    border-radius: 100%;
+    padding: 10px !important;
+    color: #6C7293;
+}
+
+.DHeader>.container-fluid>#DSidebar_Container {
+    margin-top: 4rem;
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #191C24;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding: 20px 0px 50px 0px;
+}

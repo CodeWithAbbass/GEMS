@@ -1,5 +1,34 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import reducer from "../reducer/productReducer";
+import GEMS11 from "../images/Product_Image/GEMS11.png";
+import GEMS12 from "../images/Product_Image/GEMS12.png";
+import GEMS13 from "../images/Product_Image/GEMS13.png";
+import GEMS14 from "../images/Product_Image/GEMS14.png";
+import GEMS21 from "../images/Product_Image/GEMS21.png";
+import GEMS22 from "../images/Product_Image/GEMS22.png";
+import GEMS23 from "../images/Product_Image/GEMS23.png";
+import GEMS24 from "../images/Product_Image/GEMS24.png";
+import GEMS31 from "../images/Product_Image/GEMS31.png";
+import GEMS32 from "../images/Product_Image/GEMS32.png";
+import GEMS33 from "../images/Product_Image/GEMS33.png";
+import GEMS34 from "../images/Product_Image/GEMS34.png";
+import GEMS41 from "../images/Product_Image/GEMS41.png";
+import GEMS42 from "../images/Product_Image/GEMS42.png";
+import GEMS43 from "../images/Product_Image/GEMS43.png";
+import GEMS44 from "../images/Product_Image/GEMS44.png";
+import GEMS51 from "../images/Product_Image/GEMS51.png";
+import GEMS52 from "../images/Product_Image/GEMS52.png";
+import GEMS53 from "../images/Product_Image/GEMS53.png";
+import GEMS54 from "../images/Product_Image/GEMS54.png";
+import GEMS61 from "../images/Product_Image/GEMS61.png";
+import GEMS62 from "../images/Product_Image/GEMS62.png";
+import GEMS63 from "../images/Product_Image/GEMS63.png";
+import GEMS64 from "../images/Product_Image/GEMS64.png";
+import GEMS71 from "../images/Product_Image/GEMS71.png";
+import GEMS72 from "../images/Product_Image/GEMS72.png";
+import GEMS73 from "../images/Product_Image/GEMS73.png";
+import GEMS74 from "../images/Product_Image/GEMS74.png";
+
 
 const AppContext = createContext();
 
@@ -26,17 +55,13 @@ const initialState = {
         "25 Hrs Total Playtime & Type-C Charge",
         "Standardized Smart Control & Game Mode",
       ],
-      image: [
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/5_61575362-ea8e-44b3-9fdd-d8bb54d97e68_700x.jpg?v=1668768268",
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/4_a399eded-22b7-411d-9642-2bedac206ce7_700x.jpg?v=1668768268",
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/1_083d03d2-ef4e-4f34-997a-2b2d115f92c8_700x.jpg?v=1668768268",
-      ]
+      image: [GEMS11, GEMS12, GEMS13, GEMS14,]
     },
     {
       id: "12342",
       tag: "NEW",
       feature: "no",
-      brand: "SoundPeates",
+      brand: "HUAWAI",
       name: "BEST Wireless Earbuds",
       category: "True Wireless",
       color: "Black",
@@ -52,17 +77,13 @@ const initialState = {
         "25 Hrs Total Playtime & Type-C Charge",
         "Standardized Smart Control & Game Mode",
       ],
-      image: [
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/2_c18d8e59-91f7-4ab0-af8a-753475cf5b96_700x.jpg?v=1630635974",
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/8_700x.jpg?v=1637308390",
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/5_700x.png?v=1637309328",
-      ]
+      image: [GEMS21, GEMS22, GEMS23, GEMS24,]
     },
     {
       id: "12343",
       tag: "Personal",
       feature: "no",
-      brand: "BRAND",
+      brand: "SOUNDPEATS",
       name: "SOUNDPEATS Free2 Classic Wireless Earbuds",
       category: "Noise Cancelling",
       color: "Black",
@@ -78,22 +99,18 @@ const initialState = {
         "25 Hrs Total Playtime & Type-C Charge",
         "Standardized Smart Control & Game Mode",
       ],
-      image: [
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/Free2classic_35f34fc0-30dc-43ab-9d14-4b2e53b34764_700x.png?v=1658806095",
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/2_c061dae1-5613-4bd5-a2b6-04d8f12def70_700x.jpg?v=1658806095",
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/3_5b5e2ee6-86b0-4a09-aef5-b8ccc3dd63e0_700x.jpg?v=1658806095",
-      ]
+      image: [GEMS31, GEMS32, GEMS33, GEMS34,]
     },
     {
       id: "12344",
       tag: "Old",
       feature: "no",
-      brand: "Adidas",
-      name: "SOUNDPEATS TrueFree + True Wireless In-Ear Sports Earbuds",
+      brand: "GEMS",
+      name: "GEMS WaterProof In-Ear Sports Earbuds",
       category: "Others",
       color: "Black",
       date: "07/08/22",
-      discount: "50",
+      discount: "20",
       description: "Zero Boundaries. Max Performance.",
       price: "49.99",
       quantity: 1,
@@ -104,20 +121,15 @@ const initialState = {
         "25 Hrs Total Playtime & Type-C Charge",
         "Standardized Smart Control & Game Mode",
       ],
-      image: [
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/TFp_1_2_700x.png?v=1637316524",
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/TFp_1_4_700x.png?v=1637316524",
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/TFp_3_4_700x.png?v=1637316524",
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/TFp_1_4_700x.png?v=1637316524",
-      ]
+      image: [GEMS41, GEMS42, GEMS43, GEMS44,]
     },
     {
       id: "12345",
       tag: "Feature",
       feature: "yes",
-      brand: "BRAND",
-      name: "SOUNDPEATS TrueFree + True Wireless In-Ear Sports Earbuds",
-      category: "CATEGORY",
+      brand: "GEMS",
+      name: "GEMS Reduce Disturbance In-Ear Sports Earbuds",
+      category: "Others",
       color: "Black",
       date: "07/08/22",
       discount: "50",
@@ -131,12 +143,51 @@ const initialState = {
         "25 Hrs Total Playtime & Type-C Charge",
         "Standardized Smart Control & Game Mode",
       ],
-      image: [
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/TFp_1_2_700x.png?v=1637316524",
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/TFp_1_4_700x.png?v=1637316524",
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/TFp_3_4_700x.png?v=1637316524",
-        "https://cdn.shopify.com/s/files/1/0508/7461/3942/products/TFp_1_4_700x.png?v=1637316524",
-      ]
+      image: [GEMS51, GEMS52, GEMS53, GEMS54,]
+    },
+    {
+      id: "12346",
+      tag: "Feature",
+      feature: "yes",
+      brand: "GEMS",
+      name: "GEMS True Wireless + TrueFree In-Ear Sports Earbuds",
+      category: "Noise Cancelling",
+      color: "Black",
+      date: "08/08/22",
+      discount: "10",
+      description: "Max Performance. Zero Boundaries.",
+      price: "79.99",
+      quantity: 1,
+      stock: 9,
+      productMeta: [
+        "Active Noise Canceling 25dB & V5.2",
+        "12mm Large Drivers & Premium Bass",
+        "25 Hrs Total Playtime & Type-C Charge",
+        "Standardized Smart Control & Game Mode",
+      ],
+      image: [GEMS61, GEMS62, GEMS63, GEMS64,]
+    },
+    {
+      id: "12347",
+      tag: "Feature",
+      feature: "yes",
+      brand: "SAMSUNG",
+      name: "SAMSUNG TrueFree + True Wireless In-Ear Sports Earbuds",
+      category: "Others",
+      color: "Black",
+      date: "07/08/22",
+      discount: "15",
+      description: "Zero Boundaries. Max Performance.",
+      price: "49.99",
+      quantity: 1,
+      stock: 9,
+      productMeta: [
+        "Active Noise Canceling 25dB & V5.2",
+        "12mm Large Drivers & Premium Bass",
+        "25 Hrs Total Playtime & Type-C Charge",
+        "Standardized Smart Control & Game Mode",
+      ],
+      image: [GEMS71, GEMS72, GEMS73, GEMS74,]
     },
   ],
 };
@@ -152,6 +203,9 @@ const AppProvider = ({ children }) => {
     }
   }
 
+  const AddProduct = (product) => {
+    dispatch({ type: "ADD_PRODUCT", payload: product });
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -161,6 +215,7 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider value={{
       ...state,
+      AddProduct,
       CalcDiscount,
     }}>
       {children}

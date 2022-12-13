@@ -18,6 +18,14 @@ const Paypal_Checkout_Button = (props) => {
     // initialOptions}}
     >
       <PayPalButtons
+        style={{
+          layout: "horizontal",
+          tagline: "false",
+          shape: "rect",
+          label: "paypal",
+          color: "gold",
+          height: 40,
+        }}
         createOrder={async (data, actions) => {
           return await actions.order.create({
             purchase_units: [
