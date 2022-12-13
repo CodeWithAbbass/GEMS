@@ -20,9 +20,11 @@ import User from './components/pages/User';
 // import About from './components/pages/About';
 // import NewsRoom from './components/pages/NewsRoom';
 import AddProduct from './components/pages/AddProduct';
-import Footer from './components/Footer';
+ import Footer from './components/Footer';
 import LoadingBar from 'react-top-loading-bar';
 import SingleProduct from './components/pages/SingleProduct';
+import Shipping from './components/pages/Shipping';
+import Payment from './components/pages/Payment';
 import ErrorPage from './components/pages/ErrorPage';
 import ComingSoon from './Coming Soon Page/ComingSoon';
 
@@ -38,7 +40,7 @@ function App(props) {
             shadow={true}
             progress={progress}
           />
-          <Header />
+           <Header /> 
           <Routes>
             <Route path='/' element={<Home />} setProgress={setProgress} />
             <Route path="/allproducts" element={<AllProducts setProgress={setProgress} />} />
@@ -50,6 +52,8 @@ function App(props) {
             <Route path="/wheretobuy" element={<ComingSoon />} />
             <Route path="/cart" element={<Cart setProgress={setProgress} />} />
             <Route path="/checkout" element={<Checkout setProgress={setProgress} />} />
+            <Route path="/shipping" element={<Shipping setProgress={setProgress} />} />
+            <Route path="/payment" element={<Payment setProgress={setProgress} />} />
             <Route path="/search" element={<Search setProgress={setProgress} />} />
             <Route path="/login" element={<Login setProgress={setProgress} />} />
             <Route path="/signup" element={<Signup setProgress={setProgress} />} />
@@ -60,7 +64,7 @@ function App(props) {
             <Route path="/singleproduct/:id" element={<SingleProduct setProgress={setProgress} />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
-          <Footer />
+           <Footer /> 
           <a href="#Back_to_Top" className="btn scrollUp bg-white border-5 border-white"><i className="fa fa-angle-up" /></a>
         </BrowserRouter>
       </div>

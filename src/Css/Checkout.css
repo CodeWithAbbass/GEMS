@@ -18,7 +18,6 @@
     font-size: 13px;
     font-weight: 500;
     color: #000000;
-    ;
 }
 
 .checkout__info>.checkout_container>nav>ol>li:nth-child(2) {
@@ -50,9 +49,8 @@
 }
 
 .checkout__info>.checkout_container>.express__checkout>.paypal__payment>.btn {
-    background-color: rgb(255 196 57);
-    width: 90%;
-    margin: 20px 0;
+    width: 65%;
+    margin: 5px 0; 
 }
 
 .checkout__info>.checkout_container>.divider {
@@ -276,7 +274,7 @@
 .checkout__info .card-total {
     display: flex;
     justify-content: space-between;
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 
 .checkout__info .card-total>.total {

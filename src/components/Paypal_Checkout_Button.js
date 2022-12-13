@@ -2,7 +2,6 @@ import React from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 const Paypal_Checkout_Button = (props) => {
-
   // const initialOptions = {
   //   "client-id": "test",
   //   currency: "USD",
@@ -12,12 +11,20 @@ const Paypal_Checkout_Button = (props) => {
 
   return (
     <PayPalScriptProvider
-    // deferLoading={true} 
+    // deferLoading={true}
     // options={{
-    // "client-id":process.env.REACT_APP_PAYPAL_CLIENT_ID 
+    // "client-id":process.env.REACT_APP_PAYPAL_CLIENT_ID
     // initialOptions}}
     >
       <PayPalButtons
+        style={{
+          layout: "horizontal",
+          tagline: "false",
+          shape: "rect",
+          label: "paypal",
+          color: "gold",
+          height: 40,
+        }}
         createOrder={async (data, actions) => {
           return await actions.order.create({
             purchase_units: [

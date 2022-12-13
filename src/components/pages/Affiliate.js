@@ -43,7 +43,7 @@ const Affiliate = ({setProgress}) => {
 
         {/* *********************************************************
                         Affilitate TabSection
-      ********************************************************* */}
+      ******************************************************** */}
         <div className="affilitate_container">
           <hr />
           <div className="affilitate_navbar">

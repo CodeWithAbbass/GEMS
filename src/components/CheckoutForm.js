@@ -1,9 +1,22 @@
-import React from "react";
+import React, {useState}from "react";
 import { Link } from "react-router-dom";
 
 
 const CheckoutForm = () => {
 
+    const [ user, setUser] = useState({
+        email:"", address:""
+})
+
+let name, value;
+
+const handleInputs = (e) => {
+    console.log(e)
+    name = e.target.name;
+    value = e.target.value;
+
+    setUser({...user, [name]:value})
+}
     return (
         <form className="CheckoutForm mb-3">
             <div className="CheckoutForm_headings d-flex justify-content-between mb-3">
@@ -12,7 +25,7 @@ const CheckoutForm = () => {
             </div>
 
             <div className="form-floating mb-3">
-                <input type="text" className="form-control shadow-none" id="email" placeholder="Email Address" required />
+                <input type="text" className="form-control shadow-none" name="email" id="email" placeholder="Email Address" value={user.email} onChange={handleInputs} required />
                 <label htmlFor="email">Email address</label>
             </div>
 
@@ -139,7 +152,7 @@ const CheckoutForm = () => {
                 </div>
 
                 <div className="form-floating mb-3">
-                    <input type="text" className="form-control shadow-none" id="address" placeholder="address" required />
+                    <input type="text" className="form-control shadow-none" name="address" id="address" placeholder="address" value={user.address} onChange={handleInputs} required />
                     <label htmlFor="address">Address</label>
                 </div>
 
