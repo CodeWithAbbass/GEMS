@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import disc__Img from "../../images/discount.png";
-import "../../Css/Shipping.css";
 import "../../Css/Checkout.css";
 import { useCartContext } from "../../context/cart_context";
 import CheckoutItem from "../CheckoutItem";
@@ -38,17 +37,10 @@ const Shipping = ({ setProgress }) => {
 
           <nav className="breadcrumb" aria-label="breadcrumb">
             <ol className="breadcrumb">
-              <li className="breadcrumb-item">
-                <Link to={"/cart"}>Cart</Link>
-              </li>
-              <li className="breadcrumb-item" aria-current="page">
-                Information
-              </li>
-              <li className="breadcrumb-item" aria-current="page">
-                Shipping
-              </li>
-              <li className="breadcrumb-item" aria-current="page">
-                Payment
+              <li className="breadcrumb-item"><Link to={"/cart"}>Cart</Link></li>
+              <li className="breadcrumb-item" aria-current="page">Information</li>
+              <li className="breadcrumb-item" aria-current="page">Shipping</li>
+              <li className="breadcrumb-item" aria-current="page">Payment
               </li>
             </ol>
           </nav>
@@ -58,9 +50,7 @@ const Shipping = ({ setProgress }) => {
             <div className="contact">
               <h6 className="contact__heading">Contact</h6>
               <div className="email">Lorem ipsum dolor sit amet.</div>
-              <Link to={"/checkout"} className="change">
-                Change
-              </Link>
+              <Link to={"/checkout"} className="change">Change</Link>
             </div>
 
             <hr />
@@ -68,64 +58,37 @@ const Shipping = ({ setProgress }) => {
             <div className="ship">
               <h6 className="ship_to__heading">Ship to</h6>
               <div className="address">Lorem ipsum dolor sit amet.</div>
-              <Link to={"/checkout"} className="change">
-                Change
-              </Link>
+              <Link to={"/checkout"} className="change">Change</Link>
             </div>
           </div>
 
           {/* **************************************************************************** */}
           {/* ***************************** Shipping method *************************** */}
-           <div className={`shipping__method`}>
+          <div className={`shipping__method`}>
             <h5 className="shippping_method__heading">Shipping method</h5>
             <div className="radio_btn">
               <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="radio"
-                  id="radio"
-                  checked
-                />
-                <label className="radio-check-label" htmlFor="radio">
-                  free shipping
-                </label>
+                <input className="form-check-input" type="radio" name="radio" id="radio" defaultChecked />
+                <label className="radio-check-label" htmlFor="radio">free shipping</label>
               </div>
               <div className="free">Free</div>
             </div>
-          </div> 
+          </div>
 
           {/* *************************** continue/return btn ************************************* */}
-           <div className={`ShippingFooterBtn`}>
-            <Link to="/checkout" className="return__checkout">
-              <i className="fa-solid fa-chevron-left me-3"></i>Return to
-              information
-            </Link>
+          <div className={`ShippingFooterBtn`}>
+            <Link to="/checkout" className="return__checkout"><i className="fa-solid fa-chevron-left me-3"></i>Return to information</Link>
             <button type="submit" className="btn shadow-none">
-              <Link  to="/payment" className="text-white">  Continue to payment  </Link>
+              <Link to="/payment" className="text-white">Continue to payment</Link>
             </button>
-          </div> 
-          </div> 
+          </div>
+        </div>
 
         {/* *************************** payment ********************************* */}
-        <div
-          className="accordion accordion-flush MobileAccordion"
-          id="accordionFlushExample"
-        >
+        <div className="accordion accordion-flush MobileAccordion" id="accordionFlushExample">
           <div className="accordion-item">
-            <h2
-              className="accordion-header d-flex justify-content-between py-3"
-              id="flush-headingOne"
-            >
-              <div
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne"
-                aria-expanded="false"
-                aria-controls="flush-collapseOne"
-                onClick={handleShowDetailstTxt}
-              >
+            <h2 className="accordion-header d-flex justify-content-between py-3" id="flush-headingOne">
+              <div className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" onClick={handleShowDetailstTxt}>
                 <div className="summeryDetails">
                   <i className="fa-solid fa-cart-shopping me-2" id=""></i>
                   {showDetails}
@@ -135,12 +98,7 @@ const Shipping = ({ setProgress }) => {
                 {PriceFormat(shipping_fee + total_price)}
               </div>
             </h2>
-            <div
-              id="flush-collapseOne"
-              className="accordion-collapse collapse"
-              aria-labelledby="flush-headingOne"
-              data-bs-parent="#accordionFlushExample"
-            >
+            <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample" >
               <div className="accordion-body">
                 {/* ***********************order confirmation************************* */}
 
@@ -155,19 +113,11 @@ const Shipping = ({ setProgress }) => {
                 {/* ***********************Discount__btn********************************** */}
                 <div className="discount__code d-flex my-3">
                   <div className="form-floating col-9">
-                    <input
-                      type="text"
-                      className="form-control shadow-none"
-                      id="DiscountCode"
-                      placeholder="Discount Code"
-                      required
-                    />
+                    <input type="text" className="form-control shadow-none" id="DiscountCode" placeholder="Discount Code" required />
                     <label htmlFor="DiscountCode">Discount Code</label>
                   </div>
 
-                  <button type="submit" className="btn btn-dark mx-2 col-3">
-                    Apply
-                  </button>
+                  <button type="submit" className="btn btn-dark mx-2 col-3">Apply</button>
                 </div>
 
                 {/* ***********************separater********************************** */}
@@ -177,36 +127,24 @@ const Shipping = ({ setProgress }) => {
                   {/* ***********************Subtotal******************************** */}
                   <div className="card-total">
                     <h3 className="sub__total">Subtotal</h3>
-                    <h3 className="sub__total_price">
-                      <span>{PriceFormat(total_price)}</span>
-                    </h3>
+                    <h3 className="sub__total_price"><span>{PriceFormat(total_price)}</span></h3>
                   </div>
 
                   {/* ***********************discount******************************** */}
                   <div className="card-total">
                     <h3 className="discount">Discount</h3>
-                    <h3 className="discount__price">
-                      <span>-{PriceFormat(DiscountAmount)}</span>
-                    </h3>
+                    <h3 className="discount__price"><span>-{PriceFormat(DiscountAmount)}</span></h3>
                   </div>
 
                   <div className="discount_tag">
                     <img src={disc__Img} alt="" />
-                    <h6 className="my-2">
-                      SAVE{" "}
-                      <span className="fw-bold">
-                        {PriceFormat(DiscountAmount)}
-                      </span>{" "}
-                      AT CHECKOUT
-                    </h6>
+                    <h6 className="my-2">SAVE{" "}<span className="fw-bold">{PriceFormat(DiscountAmount)}</span>{" "}AT CHECKOUT</h6>
                   </div>
 
                   {/* ***********************shipping__price************************** */}
                   <div className="card-total">
                     <h3 className="discount">Shipping</h3>
-                    <h3 className="discount__price">
-                      <span>{PriceFormat(shipping_fee)}</span>
-                    </h3>
+                    <h3 className="discount__price"><span>{PriceFormat(shipping_fee)}</span></h3>
                   </div>
                 </div>
 
@@ -225,6 +163,7 @@ const Shipping = ({ setProgress }) => {
             </div>
           </div>
         </div>
+
         <div className="payment DesktopPayment">
           {/* ***********************order confirmation************************* */}
 
@@ -239,19 +178,11 @@ const Shipping = ({ setProgress }) => {
           {/* ***********************Discount__btn********************************** */}
           <div className="discount__code d-flex my-3">
             <div className="form-floating col-9">
-              <input
-                type="text"
-                className="form-control shadow-none"
-                id="DiscountCode"
-                placeholder="Discount Code"
-                required
-              />
+              <input type="text" className="form-control shadow-none" id="DiscountCode" placeholder="Discount Code" required />
               <label htmlFor="DiscountCode">Discount Code</label>
             </div>
 
-            <button type="submit" className="btn btn-dark mx-2 col-3">
-              Apply
-            </button>
+            <button type="submit" className="btn btn-dark mx-2 col-3">Apply</button>
           </div>
 
           {/* ***********************separater********************************** */}
@@ -260,35 +191,25 @@ const Shipping = ({ setProgress }) => {
           <div className="shipping">
             {/* ***********************Subtotal******************************** */}
             <div className="card-total">
-              <h3 className="sub__total">Subtotal</h3>
-              <h3 className="sub__total_price">
-                <span>{PriceFormat(total_price)}</span>
-              </h3>
+              <h6 className="sub__total">Subtotal</h6>
+              <h6 className="sub__total_price"><span>{PriceFormat(total_price)}</span></h6>
             </div>
 
             {/* ***********************discount******************************** */}
             <div className="card-total">
-              <h3 className="discount">Discount</h3>
-              <h3 className="discount__price">
-                <span>-{PriceFormat(DiscountAmount)}</span>
-              </h3>
+              <h6 className="discount">Discount</h6>
+              <h6 className="discount__price"><span>-{PriceFormat(DiscountAmount)}</span></h6>
             </div>
 
             <div className="discount_tag">
               <img src={disc__Img} alt="" />
-              <h6 className="my-2">
-                SAVE{" "}
-                <span className="fw-bold">{PriceFormat(DiscountAmount)}</span>{" "}
-                AT CHECKOUT
-              </h6>
+              <h6 className="my-2">SAVE <span className="fw-bold">{PriceFormat(DiscountAmount)}</span> AT CHECKOUT</h6>
             </div>
 
             {/* ***********************shipping__price************************** */}
             <div className="card-total">
-              <h3 className="discount">Shipping</h3>
-              <h3 className="discount__price">
-                <span>{PriceFormat(shipping_fee)}</span>
-              </h3>
+              <h6 className="discount">Shipping</h6>
+              <h6 className="discount__price"><span>{PriceFormat(shipping_fee)}</span></h6>
             </div>
           </div>
 

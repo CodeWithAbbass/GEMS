@@ -40,12 +40,7 @@ function App(props) {
   return (
     <div id="Back_to_Top">
       <BrowserRouter>
-        <LoadingBar
-          color='#1FBAFF'
-          height={3}
-          shadow={true}
-          progress={progress}
-        />
+        <LoadingBar color='#1FBAFF' height={3} shadow={true} progress={progress}/>
         <Routes>
           <Route path="/" element={<Header />} >
             <Route index element={<Home />} setProgress={setProgress} />

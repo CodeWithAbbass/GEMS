@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import disc__Img from "../../images/discount.png";
-import "../../Css/Payment.css";
 import "../../Css/Checkout.css";
 import { useCartContext } from "../../context/cart_context";
 import CheckoutItem from "../CheckoutItem";
@@ -53,9 +52,7 @@ const Payment = ({ setProgress }) => {
             <div className="contact">
               <h6 className="contact__heading">Contact</h6>
               <div className="email">Lorem ipsum dolor sit amet.</div>
-              <Link to={"/checkout"} className="change">
-                Change
-              </Link>
+              <Link to="/checkout" className="change">Change</Link>
             </div>
 
             <hr />
@@ -63,78 +60,39 @@ const Payment = ({ setProgress }) => {
             <div className="ship">
               <h6 className="ship_to__heading">Ship to</h6>
               <div className="address">Lorem ipsum dolor sit amet.</div>
-              <Link to={"/checkout"} className="change">
-                Change
-              </Link>
+              <Link to="/checkout" className="change">Change</Link>
             </div>
           </div>
 
           {/* ***************************** payment method *************************** */}
-          <div
-            className={`payment__method`}>
+          <div className={`payment__method`}>
             <h5 className="payment_method__heading">Payment method</h5>
-            <p className="Payment_title">
-              All transactions are secure and encrypted.
-            </p>
+            <p className="Payment_title">All transactions are secure and encrypted.</p>
             <div className="paypal w-100">
-              <img
-                className="PayPal_Logo w-25"
-                src={PayPal_Logo}
-                alt="PayPal Logo"
-              />
+              <img className="PayPal_Logo w-25" src={PayPal_Logo} alt="PayPal Logo" />
             </div>
           </div>
 
           {/* *************************** pay with paypal btn ************************************* */}
-          <div
-            className={`PaymentFooterBtn`}>
-            <Link to="/shipping" className="return__shipping">
-              <i className="fa-solid fa-chevron-left me-3"></i>Return to
-              shipping
-            </Link>
+          <div className={`PaymentFooterBtn`}>
+            <Link to="/shipping" className="return__shipping"><i className="fa-solid fa-chevron-left me-3"></i>Return to shipping</Link>
             <button type="submit" className="btn shadow-none">
-              <Link to="" className="text-white">
-                <PayPalCheckoutButtons/>
-              </Link>
+              <Link to="" className="text-white"><PayPalCheckoutButtons /></Link>
             </button>
           </div>
         </div>
 
         {/* **************************************************************************** */}
         {/* *************************** payment ********************************* */}
-        <div
-          className="accordion accordion-flush MobileAccordion"
-          id="accordionFlushExample"
-        >
+        <div className="accordion accordion-flush MobileAccordion" id="accordionFlushExample" >
           <div className="accordion-item">
-            <h2
-              className="accordion-header d-flex justify-content-between py-3"
-              id="flush-headingOne"
-            >
-              <div
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne"
-                aria-expanded="false"
-                aria-controls="flush-collapseOne"
-                onClick={handleShowDetailstTxt}
-              >
-                <div className="summeryDetails">
-                  <i className="fa-solid fa-cart-shopping me-2" id=""></i>
-                  {showDetails}
-                </div>
+            <h2 className="accordion-header d-flex justify-content-between py-3" id="flush-headingOne" >
+              <div className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" onClick={handleShowDetailstTxt} >
+                <div className="summeryDetails"><i className="fa-solid fa-cart-shopping me-2" id=""></i>{showDetails}</div>
               </div>
-              <div className="priceDetails">
-                {PriceFormat(shipping_fee + total_price)}
-              </div>
+              <div className="priceDetails">{PriceFormat(shipping_fee + total_price)}</div>
             </h2>
-            <div
-              id="flush-collapseOne"
-              className="accordion-collapse collapse"
-              aria-labelledby="flush-headingOne"
-              data-bs-parent="#accordionFlushExample"
-            >
+            <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample" >
               <div className="accordion-body">
                 {/* ***********************order confirmation************************* */}
 
@@ -149,19 +107,10 @@ const Payment = ({ setProgress }) => {
                 {/* ***********************Discount__btn********************************** */}
                 <div className="discount__code d-flex my-3">
                   <div className="form-floating col-9">
-                    <input
-                      type="text"
-                      className="form-control shadow-none"
-                      id="DiscountCode"
-                      placeholder="Discount Code"
-                      required
-                    />
+                    <input type="text" className="form-control shadow-none" id="DiscountCode" placeholder="Discount Code" required />
                     <label htmlFor="DiscountCode">Discount Code</label>
                   </div>
-
-                  <button type="submit" className="btn btn-dark mx-2 col-3">
-                    Apply
-                  </button>
+                  <button type="submit" className="btn btn-dark mx-2 col-3">Apply</button>
                 </div>
 
                 {/* ***********************separater********************************** */}
@@ -170,37 +119,25 @@ const Payment = ({ setProgress }) => {
                 <div className="shipping">
                   {/* ***********************Subtotal******************************** */}
                   <div className="card-total">
-                    <h3 className="sub__total">Subtotal</h3>
-                    <h3 className="sub__total_price">
-                      <span>{PriceFormat(total_price)}</span>
-                    </h3>
+                    <h6 className="sub__total">Subtotal</h6>
+                    <h6 className="sub__total_price"><span>{PriceFormat(total_price)}</span></h6>
                   </div>
 
                   {/* ***********************discount******************************** */}
                   <div className="card-total">
-                    <h3 className="discount">Discount</h3>
-                    <h3 className="discount__price">
-                      <span>-{PriceFormat(DiscountAmount)}</span>
-                    </h3>
+                    <h6 className="discount">Discount</h6>
+                    <h6 className="discount__price"><span>-{PriceFormat(DiscountAmount)}</span></h6>
                   </div>
 
                   <div className="discount_tag">
                     <img src={disc__Img} alt="" />
-                    <h6 className="my-2">
-                      SAVE{" "}
-                      <span className="fw-bold">
-                        {PriceFormat(DiscountAmount)}
-                      </span>{" "}
-                      AT CHECKOUT
-                    </h6>
+                    <h6 className="my-2">SAVE <span className="fw-bold">{PriceFormat(DiscountAmount)}</span> AT CHECKOUT</h6>
                   </div>
 
                   {/* ***********************shipping__price************************** */}
                   <div className="card-total">
-                    <h3 className="discount">Shipping</h3>
-                    <h3 className="discount__price">
-                      <span>{PriceFormat(shipping_fee)}</span>
-                    </h3>
+                    <h6 className="discount">Shipping</h6>
+                    <h6 className="discount__price"><span>{PriceFormat(shipping_fee)}</span></h6>
                   </div>
                 </div>
 
@@ -233,19 +170,10 @@ const Payment = ({ setProgress }) => {
           {/* ***********************Discount__btn********************************** */}
           <div className="discount__code d-flex my-3">
             <div className="form-floating col-9">
-              <input
-                type="text"
-                className="form-control shadow-none"
-                id="DiscountCode"
-                placeholder="Discount Code"
-                required
-              />
+              <input type="text" className="form-control shadow-none" id="DiscountCode" placeholder="Discount Code" required/>
               <label htmlFor="DiscountCode">Discount Code</label>
             </div>
-
-            <button type="submit" className="btn btn-dark mx-2 col-3">
-              Apply
-            </button>
+            <button type="submit" className="btn btn-dark mx-2 col-3">Apply</button>
           </div>
 
           {/* ***********************separater********************************** */}
@@ -254,35 +182,25 @@ const Payment = ({ setProgress }) => {
           <div className="shipping">
             {/* ***********************Subtotal******************************** */}
             <div className="card-total">
-              <h3 className="sub__total">Subtotal</h3>
-              <h3 className="sub__total_price">
-                <span>{PriceFormat(total_price)}</span>
-              </h3>
+              <h6 className="sub__total">Subtotal</h6>
+              <h6 className="sub__total_price"><span>{PriceFormat(total_price)}</span></h6>
             </div>
 
             {/* ***********************discount******************************** */}
             <div className="card-total">
-              <h3 className="discount">Discount</h3>
-              <h3 className="discount__price">
-                <span>-{PriceFormat(DiscountAmount)}</span>
-              </h3>
+              <h6 className="discount">Discount</h6>
+              <h6 className="discount__price"><span>-{PriceFormat(DiscountAmount)}</span></h6>
             </div>
 
             <div className="discount_tag">
               <img src={disc__Img} alt="" />
-              <h6 className="my-2">
-                SAVE{" "}
-                <span className="fw-bold">{PriceFormat(DiscountAmount)}</span>{" "}
-                AT CHECKOUT
-              </h6>
+              <h6 className="my-2">SAVE <span className="fw-bold">{PriceFormat(DiscountAmount)}</span> AT CHECKOUT</h6>
             </div>
 
             {/* ***********************shipping__price************************** */}
             <div className="card-total">
-              <h3 className="discount">Shipping</h3>
-              <h3 className="discount__price">
-                <span>{PriceFormat(shipping_fee)}</span>
-              </h3>
+              <h6 className="discount">Shipping</h6>
+              <h6 className="discount__price"><span>{PriceFormat(shipping_fee)}</span></h6>
             </div>
           </div>
 

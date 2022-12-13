@@ -161,19 +161,33 @@
 }
 
 .shipping_info>.shipping_container>.ShippingFooterBtn>.return__checkout,
-.payment_info>.payment_container>.PaymentFooterBtn>.return__shipping{
+.payment_info>.payment_container>.PaymentFooterBtn>.return__shipping {
     font-size: 14px;
     font-weight: 500;
     color: #000000;
 }
 
-.shipping_info>.shipping_container>.ShippingFooterBtn>.btn,
-.payment_info>.payment_container>.PaymentFooterBtn>.btn{
+.shipping_info>.shipping_container>.ShippingFooterBtn>.btn {
     background-color: #000;
     border-radius: 3px;
     padding: 14px 24px;
 }
 
+.payment_info>.payment_container>.PaymentFooterBtn>.btn {
+    border-radius: 3px;
+    padding: 14px 24px;
+}
+
+.shipping_info>.shipping_container>.ShippingFooterBtn>.btn>a,
+.payment_info>.payment_container>.PaymentFooterBtn>.btn>a {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* 
+********************************************************************
+                        Express Checkout 
+******************************************************************** */
 
 .checkout__info>.checkout_container>.express__checkout {
     border: 1px solid rgb(187, 187, 187);
@@ -192,7 +206,6 @@
     margin-left: auto;
     margin-right: auto;
 }
-
 
 .checkout__info>.checkout_container>.express__checkout>.paypal__payment>.btn {
     width: 45%;
@@ -321,22 +334,23 @@
 *******************************************************************
                             Payment Css
 ******************************************************************* */
-.checkout__info>.payment {
+.checkout__info>.payment,
+.shipping_info>.payment,
+.payment_info>.payment {
     width: 40%;
     padding-right: 30px;
     padding-left: 30px;
 }
 
-.checkout__info.cart_item>.cart_item_details {
-    align-items: center;
-    width: 50%;
-}
-
-.checkout__info .cart_item>.cart_item_priceList {
+.checkout__info .cart_item>.cart_item_priceList,
+.shipping_info .cart_item>.cart_item_priceList,
+.payment_info .cart_item>.cart_item_priceList {
     width: 10%;
 }
 
-.checkout__info .cart_item>.cart_item_details>.cart_item_img {
+.checkout__info .cart_item>.cart_item_details>.cart_item_img,
+.shipping_info .cart_item>.cart_item_details>.cart_item_img,
+.payment_info .cart_item>.cart_item_details>.cart_item_img {
     min-width: 70px;
     width: 70px;
     height: 70px;
@@ -345,7 +359,9 @@
     border-radius: 5px;
 }
 
-.checkout__info .cart_item>.cart_item_details>.cart_item_img>.total_cartProduct {
+.checkout__info .cart_item>.cart_item_details>.cart_item_img>.total_cartProduct,
+.shipping_info .cart_item>.cart_item_details>.cart_item_img>.total_cartProduct,
+.payment_info .cart_item>.cart_item_details>.cart_item_img>.total_cartProduct {
     color: #fff;
     font-size: 12px;
     font-weight: 600;
@@ -359,84 +375,113 @@
     padding: 2px 0px;
 }
 
-.checkout__info .cart_item>.cart_item_details>.cart_item_img img {
+.checkout__info .cart_item>.cart_item_details>.cart_item_img img,
+.shipping_info .cart_item>.cart_item_details>.cart_item_img img,
+.payment_info .cart_item>.cart_item_details>.cart_item_img img {
     width: 100%;
     height: 100%;
     border-radius: 5px;
 }
 
-.checkout__info .cart_item>.cart_item_details>.cart_item_details_info {
+.checkout__info .cart_item>.cart_item_details>.cart_item_details_info,
+.shipping_info .cart_item>.cart_item_details>.cart_item_details_info,
+.payment_info .cart_item>.cart_item_details>.cart_item_details_info {
     max-width: 200px;
     width: 200px;
     margin-left: 20px;
 }
 
-.checkout__info .cart_item>.cart_item_details>.cart_item_details_info>h6 {
+.checkout__info .cart_item>.cart_item_details>.cart_item_details_info>h6,
+.shipping_info .cart_item>.cart_item_details>.cart_item_details_info>h6,
+.payment_info .cart_item>.cart_item_details>.cart_item_details_info>h6 {
     font-size: 12px;
     font-weight: 700;
     margin-bottom: .3rem;
 }
 
-.checkout__info .cart_item>.cart_item_details>.cart_item_details_info>h6>a {
+.checkout__info .cart_item>.cart_item_details>.cart_item_details_info>h6>a,
+.shipping_info .cart_item>.cart_item_details>.cart_item_details_info>h6>a,
+.payment_info .cart_item>.cart_item_details>.cart_item_details_info>h6>a {
     text-decoration: none;
     color: #000;
 }
 
-.checkout__info .cart_item>.cart_item_details>.cart_item_details_info>p {
+.checkout__info .cart_item>.cart_item_details>.cart_item_details_info>p,
+.shipping_info .cart_item>.cart_item_details>.cart_item_details_info>p,
+.payment_info .cart_item>.cart_item_details>.cart_item_details_info>p {
     font-size: 12px;
     font-weight: 500;
     color: #000;
     margin-bottom: .5rem;
 }
 
-.checkout__info .cart_item>.cart_item_details>.cart_item_details_price>.cart_item_details_info_priceList>.oldPrice {
+.checkout__info .cart_item>.cart_item_details>.cart_item_details_price>.cart_item_details_info_priceList>.oldPrice,
+.shipping_info .cart_item>.cart_item_details>.cart_item_details_price>.cart_item_details_info_priceList>.oldPrice,
+.payment_info .cart_item>.cart_item_details>.cart_item_details_price>.cart_item_details_info_priceList>.oldPrice {
     font-size: 12px;
     font-weight: 500;
     color: #737373;
     margin: 0px 5px;
 }
 
-.checkout__info .cart_item>.cart_item_details>.cart_item_details_price>.cart_item_details_info_priceList>.newPrice {
+.checkout__info .cart_item>.cart_item_details>.cart_item_details_price>.cart_item_details_info_priceList>.oldPrice,
+.shipping_info .cart_item>.cart_item_details>.cart_item_details_price>.cart_item_details_info_priceList>.oldPrice,
+.payment_info .cart_item>.cart_item_details>.cart_item_details_price>.cart_item_details_info_priceList>.oldPrice {
+    text-decoration: line-through;
+}
+
+.checkout__info .cart_item>.cart_item_details>.cart_item_details_price>.cart_item_details_info_priceList>.newPrice,
+.shipping_info .cart_item>.cart_item_details>.cart_item_details_price>.cart_item_details_info_priceList>.newPrice,
+.payment_info .cart_item>.cart_item_details>.cart_item_details_price>.cart_item_details_info_priceList>.newPrice {
     font-size: 14px;
     font-weight: 600;
     color: #6A6A6A;
     margin: 0px 5px;
 }
 
-.checkout__info .cart_item>.cart_item_details>.cart_item_details_price>.cart_item_details_info_priceList>.oldPrice {
-    text-decoration: line-through;
-}
 
-.checkout__info .shipping>.discount_tag>h6 {
+.checkout__info .shipping>.discount_tag>h6,
+.shipping_info .shipping>.discount_tag>h6,
+.payment_info .shipping>.discount_tag>h6 {
     font-size: 14px;
     font-weight: 500;
 }
 
-.checkout__info .shipping>.card-total {
+.checkout__info .shipping>.card-total,
+.shipping_info .shipping>.card-total,
+.payment_info .shipping>.card-total {
     display: flex;
     justify-content: space-between;
 }
 
-.checkout__info .card-total {
+.checkout__info .card-total,
+.shipping_info .card-total,
+.payment_info .card-total {
     display: flex;
     justify-content: space-between;
     margin: 10px 0px;
 }
 
-.checkout__info .card-total>.total {
+.checkout__info .card-total>.total,
+.shipping_info .card-total>.total,
+.payment_info .card-total>.total {
     font-weight: 500;
     font-size: 18px;
     color: black;
 }
 
-.checkout__info .card-total>.price__format>abbr {
+.checkout__info .card-total>.price__format>abbr,
+.shipping_info .card-total>.price__format>abbr,
+.payment_info .card-total>.price__format>abbr {
     font-size: 12px;
     font-weight: 500;
     margin-right: 10px;
     margin-bottom: 10px;
 }
 
-.checkout__info .card-total>.price__format>h2 {
+.checkout__info .card-total>.price__format>h2,
+.shipping_info .card-total>.price__format>h2,
+.payment_info .card-total>.price__format>h2 {
     font-size: 24px;
     font-weight: 500;
 }
@@ -447,13 +492,17 @@
                         MobileAccordion Css
 ******************************************************************* */
 
-.checkout__info>.MobileAccordion {
+.checkout__info>.MobileAccordion,
+.shipping_info>.MobileAccordion,
+.payment_info>.MobileAccordion {
     display: none;
     width: 100%;
     margin-bottom: 2rem;
 }
 
-.checkout__info>.accordion>.accordion-item>.accordion-header>.accordion-button::after {
+.checkout__info>.accordion>.accordion-item>.accordion-header>.accordion-button::after,
+.shipping_info>.accordion>.accordion-item>.accordion-header>.accordion-button::after,
+.payment_info>.accordion>.accordion-item>.accordion-header>.accordion-button::after {
     width: 15px !important;
     height: 15px !important;
     margin-left: 5px;
@@ -461,24 +510,32 @@
     color: #000;
 }
 
-.checkout__info>.accordion>.accordion-item>.accordion-header>.accordion-button::after:not(.collapsed) {
+.checkout__info>.accordion>.accordion-item>.accordion-header>.accordion-button::after:not(.collapsed),
+.shipping_info>.accordion>.accordion-item>.accordion-header>.accordion-button::after:not(.collapsed),
+.payment_info>.accordion>.accordion-item>.accordion-header>.accordion-button::after:not(.collapsed) {
     color: #000 !important;
 }
 
-.checkout__info>.accordion>.accordion-item>.accordion-header>.accordion-button {
+.checkout__info>.accordion>.accordion-item>.accordion-header>.accordion-button,
+.shipping_info>.accordion>.accordion-item>.accordion-header>.accordion-button,
+.payment_info>.accordion>.accordion-item>.accordion-header>.accordion-button {
     font-size: 14px;
     font-weight: 400;
     width: 80%;
     padding: 0;
 }
 
-.checkout__info>.accordion>.accordion-item>.accordion-header>.accordion-button:not(.collapsed) {
+.checkout__info>.accordion>.accordion-item>.accordion-header>.accordion-button:not(.collapsed),
+.shipping_info>.accordion>.accordion-item>.accordion-header>.accordion-button:not(.collapsed),
+.payment_info>.accordion>.accordion-item>.accordion-header>.accordion-button:not(.collapsed) {
     color: black !important;
     background: none !important;
     box-shadow: none !important;
 }
 
-.checkout__info .accordion>.accordion-item>.accordion-header>.priceDetails {
+.checkout__info .accordion>.accordion-item>.accordion-header>.priceDetails,
+.shipping_info .accordion>.accordion-item>.accordion-header>.priceDetails,
+.payment_info .accordion>.accordion-item>.accordion-header>.priceDetails {
     font-size: 18px;
     font-weight: 600;
 }
@@ -489,17 +546,25 @@
                             Media Query
 ******************************************************************* */
 @media (max-width: 768px) {
-    .checkout__info {
+
+    .checkout__info,
+    .shipping_info,
+    .payment_info {
         margin-top: 1rem !important;
     }
 }
 
 @media (max-width: 992px) {
-    .checkout__info>.DesktopPayment {
+
+    .checkout__info>.DesktopPayment,
+    .shipping_info>.DesktopPayment,
+    .payment_info>.DesktopPayment {
         display: none;
     }
 
-    .checkout__info {
+    .checkout__info,
+    .shipping_info,
+    .payment_info {
         flex-wrap: wrap;
         flex-direction: column-reverse;
         margin-top: 4rem;
@@ -507,11 +572,15 @@
 
     /* //////////////////////////// Mobile Accordion Css ///////////////////////////// */
 
-    .checkout__info>.MobileAccordion {
+    .checkout__info>.MobileAccordion,
+    .shipping_info>.MobileAccordion,
+    .payment_info>.MobileAccordion {
         display: block;
     }
 
-    .checkout__info .cart_item>.cart_item_details>.cart_item_details_info {
+    .checkout__info .cart_item>.cart_item_details>.cart_item_details_info,
+    .shipping_info .cart_item>.cart_item_details>.cart_item_details_info,
+    .payment_info .cart_item>.cart_item_details>.cart_item_details_info {
         max-width: 100%;
         width: 100%;
     }
@@ -524,24 +593,32 @@
 
     /* //////////////////////////// Checkout Container Css ///////////////////////////// */
 
-    .checkout__info>.checkout_container {
+    .checkout__info>.checkout_container,
+    .shipping_info>.shipping_container,
+    .payment_info>.payment_container {
         width: 100%;
         border-right: none;
         padding-right: 0px;
         padding-left: 0px;
     }
 
-    .checkout__info>.checkout_container>nav>ol>li>a {
+    .checkout__info>.checkout_container>nav>ol>li>a,
+    .shipping_info>.shipping_container>nav>ol>li>a,
+    .payment_info>.payment_container>nav>ol>li>a {
         font-size: 11px;
     }
 
-    .checkout__info>.checkout_container>nav>ol>li:nth-child(2) {
+    .checkout__info>.checkout_container>nav>ol>li:nth-child(2),
+    .shipping_info>.shipping_container>nav>ol>li:nth-child(-n+3),
+    .payment_info>.payment_container>nav>ol>li {
         font-size: 11px;
         font-weight: 500;
         color: #000000;
     }
 
-    .checkout__info>.checkout_container>nav>ol>li {
+    .checkout__info>.checkout_container>nav>ol>li,
+    .shipping_info>.shipping_container>nav>ol>li,
+    .payment_info>.payment_container>nav>ol>li {
         font-size: 11px;
     }
 
