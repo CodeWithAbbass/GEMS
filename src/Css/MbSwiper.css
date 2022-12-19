@@ -1,7 +1,8 @@
 
 
 .MbSwiper>.SliderSlicker>.slick-slider {
-  height: 70vh!important;
+  height: 100%;
+  /* height: 70vh!important; */
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.8s;  
  }
 
@@ -13,8 +14,8 @@
 }
 
 .MbSwiper>.SliderSlicker>.slick-slider>.slick-list>.slick-track>.slick-active{
-  margin-top: -15px;
-  padding: 30px 0;
+  /* margin-top: -15px; */
+  /* padding: 30px 0; */
   background: #f2f2f2;
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.8s;  
 }
@@ -30,7 +31,7 @@
   margin: 0 10px;
 }
 
-.fpc>img {
+.fpc>.fpc_imgContainer>img {
   display: block;
   width: 100%;
   height: 100%;

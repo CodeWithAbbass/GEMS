@@ -9,16 +9,13 @@ const initialState = {
         {
             id: 123456,
             email: "A@gmail.com",
-            emailMe: "Yes",
             country: "PK",
-            fName: "Abbas",
-            lName: "Ali",
-            address: "Lahore",
-            apartment: "Lahore",
+            fName: "Abbas Ali",
+            lName: "Developer",
+            address: "Thokar Niaz Baig Lahore",
             city: "Lahore",
-            postalCode: "12345",
+            state: "Punjab",
             phone: "03016083148",
-            saveInfoCheckbox: "Yes",
         }
     ],
 }
@@ -26,8 +23,9 @@ const initialState = {
 const UserProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    const SaveFillingUserInfo = (userInfo) => {
-        dispatch({ type: "SAVE_USER_INFO", payload: userInfo })
+    const SaveUserInfo = (userInfo) => {
+        dispatch({ type: "SAVE_USER_INFO", payload: userInfo });
+        return userInfo;
     }
 
     useEffect(() => {
@@ -38,7 +36,7 @@ const UserProvider = ({ children }) => {
     return (
         <UserContext.Provider value={{
             ...state,
-            SaveFillingUserInfo,
+            SaveUserInfo,
         }}>
             {children}
         </UserContext.Provider>

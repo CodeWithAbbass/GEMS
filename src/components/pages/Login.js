@@ -33,9 +33,9 @@ const Login = ({setProgress}) => {
          <div className='Login text-center'>
       <h2>Login In</h2>
       <p>Please enter your e-mail and password:</p>
-      <form style={style} onSubmit={handleSubmit} className="my-4">
+      <form className="my-4" style={style} method="post" onSubmit={handleSubmit} >
           <input type="email" className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" onChange={onChange} name="email" id="email" aria-describedby="emailHelp" placeholder='Email' required />
-          <input type="password" className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" onChange={onChange} name="password" minLength={3} id="password" placeholder='Password' required/>
+          <input type="password" className="form-control outline-none shadow-none rounded-0 mb-3 py-2 px-3" onChange={onChange} name="password" minLength={3} id="password" autoComplete="true" placeholder='Password' required/>
           <button type="button" className="btn rounded-0">Forgot Password?</button>
           <button type="submit" className="btn rounded-0 border border-1 border-dark w-100 py-2 px-3" onChange={onChange}>LOGIN</button>
           <div className="createOne">Don't have an account? <Link to={"/signup"}>Create one</Link></div>

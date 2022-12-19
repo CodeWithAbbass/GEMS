@@ -90,20 +90,20 @@ const DProduct = () => {
   return (
     <div className='DProduct' id='DProductContainer'>
       <div className="DProduct_Container row flex-lg-wrap w-100 py-4 mx-auto align-items-center justify-content-evenly">
-        <div className="Container_Item col-2 rounded d-flex align-items-center justify-content-between p-4" onClick={() => ProductFunc("Add Product")}>
-          <i className="fa-solid fa-plus fa-3x"></i>
+        <div className="Container_Item col-2 rounded d-flex align-items-center justify-content-evenly" onClick={() => ProductFunc("Add Product")}>
+          <i className="fa-solid fa-plus"></i>
           <h6 className='Item_txt_value mb-0'>Add Product</h6>
         </div>
-        <div className="Container_Item col-2 rounded d-flex align-items-center justify-content-between p-4" onClick={() => ProductFunc("Delete Product")}>
-          <i className="fa-solid fa-minus fa-3x"></i>
+        <div className="Container_Item col-2 rounded d-flex align-items-center justify-content-evenly" onClick={() => ProductFunc("Delete Product")}>
+          <i className="fa-solid fa-minus"></i>
           <h6 className='Item_txt_value mb-0'>Delete Product</h6>
         </div>
-        <div className="Container_Item col-2 rounded d-flex align-items-center justify-content-between p-4" onClick={() => ProductFunc("Edit Product")}>
-          <i className="fa-solid fa-pen-to-square fa-3x"></i>
+        <div className="Container_Item col-2 rounded d-flex align-items-center justify-content-evenly" onClick={() => ProductFunc("Edit Product")}>
+          <i className="fa-solid fa-pen-to-square"></i>
           <h6 className='Item_txt_value mb-0'>Edit Product</h6>
         </div>
-        <div className="Container_Item col-2 rounded d-flex align-items-center justify-content-between p-4" onClick={() => ProductFunc("All Products")}>
-          <i className="fa-solid fa-store fa-3x"></i>
+        <div className="Container_Item col-2 rounded d-flex align-items-center justify-content-evenly" onClick={() => ProductFunc("All Products")}>
+          <i className="fa-solid fa-store"></i>
           <h6 className='Item_txt_value mb-0'>All Products</h6>
         </div>
       </div>

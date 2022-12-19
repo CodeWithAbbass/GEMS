@@ -106,11 +106,11 @@ const Footer = () => {
 
               {/* // ******************Social Icons****************** */}
               <div className="col align-self-end ">
-                <Link className='twitter text-light px-2' to="https://twitter.com/SOUNDPEATS/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-twitter socialIcon" /></Link>
-                <Link className='facebook text-light px-2' to="https://www.facebook.com/SOUNDPEATS.Official/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-facebook socialIcon" /></Link>
-                <Link className='instagram text-light px-2' to="https://www.instagram.com/soundpeats_global/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-instagram socialIcon" /></Link>
-                <Link className='youtube text-light px-2' to="https://www.youtube.com/channel/UCYRNJk2TjaTj_fWJ5omNoBA/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-youtube socialIcon" /></Link>
-                <Link className='tiktok text-light px-2' to="https://www.tiktok.com/@soundpeatsaudio/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-tiktok socialIcon" /></Link>
+                <Link className='twitter text-light px-1' to="https://twitter.com/SOUNDPEATS/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-twitter socialIcon" /></Link>
+                <Link className='facebook text-light px-1' to="https://www.facebook.com/SOUNDPEATS.Official/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-facebook socialIcon" /></Link>
+                <Link className='instagram text-light px-1' to="https://www.instagram.com/soundpeats_global/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-instagram socialIcon" /></Link>
+                <Link className='youtube text-light px-1' to="https://www.youtube.com/channel/UCYRNJk2TjaTj_fWJ5omNoBA/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-youtube socialIcon" /></Link>
+                <Link className='tiktok text-light px-1' to="https://www.tiktok.com/@soundpeatsaudio/" target={'_blank'} rel="noreferrer"><i className="fa-brands fa-tiktok socialIcon" /></Link>
               </div>
             </div>
           </div>

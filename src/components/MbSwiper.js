@@ -3,10 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Css/MbSwiper.css";
-import MbEarbud1 from "../images/MbSwiperEarbud1.png"
-import MbEarbud2 from "../images/MbSwiperEarbud2.png"
-import MbEarbud3 from "../images/MbSwiperEarbud3.png"
-import MbEarbud4 from "../images/MbSwiperEarbud4.png"
+import MbEarbud1 from "../images/MbSwiperEarbud1.png";
+import MbEarbud2 from "../images/MbSwiperEarbud2.png";
+import MbEarbud3 from "../images/MbSwiperEarbud3.png";
 
 export default class MbSwiper extends Component {
     render() {
@@ -23,7 +22,9 @@ export default class MbSwiper extends Component {
                 <Slider {...settings}>
                     <div className="slick-wrapper">
                         <div className="fpc text-center">
-                            <img src={MbEarbud1} alt="ProductImg" />
+                            <div className="fpc_imgContainer">
+                                <img src={MbEarbud1} alt="ProductImg" />
+                            </div>
                             <div className="text_box align-self-end">
                                 <p className="subtitle fw-bold mt-5" >T3</p>
                                 <p className="title fw-bold my-2" >BEST BUDGET ANC</p>
@@ -33,7 +34,9 @@ export default class MbSwiper extends Component {
                     </div>
                     <div >
                         <div className="fpc">
-                            <img src={MbEarbud2} alt="ProductImg" />
+                            <div className="fpc_imgContainer">
+                                <img src={MbEarbud2} alt="ProductImg" />
+                            </div>
                             <div className="text_box align-self-end">
                                 <p className="subtitle fw-bold mt-5" >Air3 Pro</p>
                                 <p className="title fw-bold my-2" >Best AirPods Alternative</p>
@@ -43,7 +46,9 @@ export default class MbSwiper extends Component {
                     </div>
                     <div >
                         <div className="fpc">
-                            <img src={MbEarbud3} alt="ProductImg" />
+                            <div className="fpc_imgContainer">
+                                <img src={MbEarbud3} alt="ProductImg" />
+                            </div>
                             <div className="text_box align-self-end">
                                 <p className="subtitle fw-bold mt-5" >Free2 Classic</p>
                                 <p className="title fw-bold my-2" >STYLISH ALL-DAY COMPANION</p>
@@ -53,7 +58,9 @@ export default class MbSwiper extends Component {
                     </div>
                     <div >
                         <div className="fpc">
-                            <img src={MbEarbud4} alt="ProductImg" className="w-75" />
+                            <div className="fpc_imgContainer">
+                                <img src={MbEarbud1} alt="ProductImg" />
+                            </div>
                             <div className="text_box align-self-end">
                                 <p className="subtitle fw-bold mt-5" >Mini Pro</p>
                                 <p className="title fw-bold my-2" >NEXT LEVEL ANC EXPERIENCE</p>

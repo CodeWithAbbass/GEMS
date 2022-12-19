@@ -200,6 +200,8 @@ const AppProvider = ({ children }) => {
     if (discount > 0) {
       let NewAmount = (amount - ((amount * discount) / 100));
       return NewAmount;
+    }else{
+      return amount;
     }
   }
 

@@ -6,15 +6,18 @@
 .DProduct>.DProduct_Container>.Container_Item {
     background-color: #191C24;
     cursor: pointer;
+    padding: 1.5rem;
 }
 
 .DProduct>.DProduct_Container>.Container_Item>i {
     color: #EB1616 !important;
+    font-size: 40px;
 }
 
 .DProduct>.DProduct_Container>.Container_Item>.Item_txt_value {
     color: white;
     font-weight: 600;
+    font-size: 14px;
 }
 
 
@@ -123,7 +126,7 @@
 }
 
 .DProduct>.AddProduct>form>.btn,
-.DProduct>.modal>.modal-dialog>.modal-content>.modal-body>form>.btn{
+.DProduct>.modal>.modal-dialog>.modal-content>.modal-body>form>.btn {
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.2em;
@@ -318,4 +321,52 @@
 
 .modal-content>.modal-footer>.btn:hover {
     background-position: left;
+}
+
+
+
+/* ////////////////////////////////// */
+/* Media Query */
+@media (max-width: 768px) {
+
+    .DProduct>.DProduct_Container>.Container_Item {
+        flex-wrap: wrap;
+        padding: 0.5rem;
+    }
+
+    .DProduct>.DProduct_Container>.Container_Item>i {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .DProduct>.DProduct_Container>.Container_Item>.Item_txt_value {
+        width: 100%;
+        text-align: center;
+        margin-top: .5rem;
+        font-size: 8px;
+    }
+
+    .DProduct>.AddProduct>form>input,
+    .DProduct>.AddProduct>form>select,
+    .DProduct>.AddProduct>form>select>option,
+    .DProduct>.AddProduct>form>textarea,
+    .DProduct>.modal>.modal-dialog>.modal-content>.modal-body>form>input,
+    .DProduct>.modal>.modal-dialog>.modal-content>.modal-body>form>select,
+    .DProduct>.modal>.modal-dialog>.modal-content>.modal-body>form>select>option,
+    .DProduct>.modal>.modal-dialog>.modal-content>.modal-body>form>textarea {
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .DProduct>.DProduct_Container>.Container_Item>i {
+        font-size: 20px;
+    }
+
+    .DProduct>.DProduct_Container>.Container_Item>.Item_txt_value {
+        font-size: 12px;
+    }
+
 }

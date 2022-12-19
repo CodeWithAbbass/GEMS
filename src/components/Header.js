@@ -19,7 +19,13 @@ const Header = () => {
     if (width <= 768) {
       closeCart();
       document.getElementById("mySidenav").style.width = "100%";
-    } else {
+    } 
+    else if (width <= 1024) {
+      closeCart();
+      document.getElementById("mySidenav").style.width = "40%";
+    }
+    else {
+      closeCart();
       document.getElementById("mySidenav").style.width = "30%";
     }
   }
@@ -31,7 +37,13 @@ const Header = () => {
     if (width <= 768) {
       closeNav();
       document.getElementById("myCart").style.width = "100%";
-    } else {
+    }
+    else if (width <= 1024) {
+      closeNav();
+      document.getElementById("myCart").style.width = "40%";
+    }
+    else {
+      closeNav();
       document.getElementById("myCart").style.width = "30%";
     }
   }
@@ -138,7 +150,7 @@ const Header = () => {
     //     closeCart();
     //   }
     // })
-    if (location.pathname==="/admin") {
+    if (location.pathname === "/admin") {
       document.querySelector(".header").style.display = "none";
     }
     // eslint-disable-next-line
@@ -192,7 +204,7 @@ const Header = () => {
         </div>
       </div>
       <div className="input-group searchBar" tabIndex={1}>
-        <input type="text" className="form-control rounded-0 border-0" id="search" name="search" aria-label="Text input with dropdown button" placeholder="Search..." onChange={handleOnChange} />
+        <input type="text" className="form-control rounded-0 border-0 shadow-none" id="search" name="search" aria-label="Text input with dropdown button" placeholder="Search..." onChange={handleOnChange} />
       </div>
 
       {/**************************************************************
@@ -262,7 +274,7 @@ const Header = () => {
           {itemExist !== undefined && <Link to={"/checkout"} className="SideCart_checkoutBtn btn rounded-0 shadow-0">Checkout: {PriceFormat(total_price)}</Link>}
         </div>
       </div>
-      <Outlet/>
+      <Outlet />
       <Footer />
     </div>
   );

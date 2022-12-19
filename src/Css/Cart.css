@@ -2,34 +2,6 @@
     margin: 10rem 0;
 }
 
-.Continue_Shopping {
-    height: 100vh;
-}
-
-.Continue_Shopping>.EmptyStateTitle {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.Continue_Shopping>.Continue_Shopping_Btn {
-    font-size: 14px;
-    margin-top: .5rem;
-    float: right;
-    min-width: 142px;
-    color: white;
-    padding: 8px 30px;
-    border: 1px solid black;
-    background: linear-gradient(to left, black 50%, white 50%) right;
-    background-size: 201%;
-    transition: .3s ease-out;
-    z-index: 1;
-    text-transform: capitalize;
-}
-
-.Continue_Shopping>.Continue_Shopping_Btn:hover {
-    background-position: left;
-    color: black;
-}
 
 /* ////////////////////////////////// */
 

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import "../../Css/Cart.css"
+import "../../Css/Cart.css";
+import "../../Css/General.css";
 import { useCartContext } from "../../context/cart_context";
 import CartItem from '../CartItem';
 import PriceFormat from '../../Helpers/PriceFormat';
